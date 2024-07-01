@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoalGrove 로그인</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+    <link rel="stylesheet" href="{% static 'css/loginstyles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="{% static 'img/logo_shadow.svg' %}" alt="GoalGrove 로고" class="logo">
+            <p class="description">
+                <span>GoalGrove</span>에서 목표를 세우고 공유하며<br>주체적 성장을 시작하세요.
+            </p>
+        </div>
+        <div class="main-content">
+            <div class="login-container">
+                <h2>로그인</h2>
+                <form id="loginForm" method="POST" novalidate>
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+                    <label for="username">아이디를 입력하세요.</label>
+                    {{ form.username.errors }}
+                    {{ form.username }}
+                    <div class="password-container">
+                        <label for="password">비밀번호를 입력하세요.</label>
+                        <img src="{% static 'img/hideicon.svg' %}" alt="Hide" class="hide-icon" id="togglePassword">
+                    </div>
+                    <input type="password" id="password" name="password">
+                    {{ form.password.errors }}
+                    {{ form.password }}
+                    <button type="submit">로그인하기</button>
+                </form>
+                <div class="error-message" id="errorMessage"></div>
+                <div class="divider">
+                    <span class="line"></span>
+                    <span class="or">OR</span>
+                    <span class="line"></span>
+                </div>
+                <div class="social-buttons">
+                    <button class="social-button kakao">카카오톡으로 로그인하기</button>
+                </div>
+                <a href="#" class="forgot-password">비밀번호찾기</a>
+            </div>
+            <div class="signup-container">
+                <p class="signup">
+                    GoalGrove를 처음 사용하시나요? <a href="{% url 'users:signup' %}">회원가입하기</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/app.js' %}"></script>
+</body>
+</html>
