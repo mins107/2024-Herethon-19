@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoalGrove 회원가입</title>
+    <link rel="stylesheet" href="loginstyles">
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="./img/logo_shadow.svg" alt="GoalGrove 로고" class="logo">
+            <p class="description">
+                <span>GoalGrove</span>에서 목표를 세우고 공유하며<br>주체적 성장을 시작하세요.
+            </p>
+        </div>
+        <div class="main-content">
+            <div class="signup-container">
+                <h2>회원가입</h2>
+                <form id="signupForm" novalidate>
+                    <label for="signupUsername">아이디</label>
+                    <input type="text" id="signupUsername" name="username">
+                    <label for="signupPassword">비밀번호</label>
+                    <input type="password" id="signupPassword" name="password">
+                    <label for="signupConfirmPassword">비밀번호 재입력</label>
+                    <input type="password" id="signupConfirmPassword" name="confirmPassword">
+                    <label for="signupName">이름</label>
+                    <input type="text" id="signupName" name="name">
+                    <label for="signupEmail">이메일</label>
+                    <input type="text" id="signupEmail" name="email">
+                    <div id="signupErrorMessage" class="error-message"></div>
+                    <button type="submit">회원가입하기</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
