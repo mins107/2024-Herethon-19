@@ -164,12 +164,6 @@ body {
     background-color: #FFEB00;
 }
 
-.forgot-password {
-    display: block;
-    font-size: 13px;
-    text-decoration: underline;
-    color: #333333;
-}
 
 .signup {
     font-size: 14px;
