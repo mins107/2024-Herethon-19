@@ -222,3 +222,51 @@ body {
         align-items: center;
     }
 }
+
+.messages {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* 오류 메시지 스타일 */
+.errorlist,
+.error-message,
+.messages .error {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 13px;
+    color: #dc3545;
+    margin-top: -15px;
+    margin-bottom: 15px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.errorlist li,
+.error-message li {
+    margin-bottom: 5px;
+}
+
+/* 성공 메시지 스타일 */
+.messages .success {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 14px;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Django의 기본 스타일을 덮어쓰기 위한 추가 스타일 */
+.signup-container ul.errorlist,
+.login-container ul.errorlist {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 13px;
+    color: #dc3545;
+    margin-top: -15px;
+    margin-bottom: 15px;
+    list-style-type: none;
+    padding: 0;
+}

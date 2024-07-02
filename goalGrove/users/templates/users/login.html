@@ -21,20 +21,18 @@
                 <h2>로그인</h2>
                 <form id="loginForm" method="POST" novalidate>
                     {% csrf_token %}
-                    {{ form.non_field_errors }}
                     <label for="username">아이디를 입력하세요.</label>
-                    {{ form.username.errors }}
-                    {{ form.username }}
+                    <input type="text" name="username" id="username" required>
                     <div class="password-container">
                         <label for="password">비밀번호를 입력하세요.</label>
                         <img src="{% static 'img/hideicon.svg' %}" alt="Hide" class="hide-icon" id="togglePassword">
                     </div>
-                    <input type="password" id="password" name="password">
-                    {{ form.password.errors }}
-                    {{ form.password }}
+                    <input type="password" name="password" id="password" required>
                     <button type="submit">로그인하기</button>
                 </form>
-                <div class="error-message" id="errorMessage"></div>
+                {% if error_message %}
+                    <div class="error-message">{{ error_message }}</div>
+                {% endif %}
                 <div class="divider">
                     <span class="line"></span>
                     <span class="or">OR</span>
