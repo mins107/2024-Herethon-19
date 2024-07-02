@@ -8,16 +8,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 회원가입 폼 관련 요소
     const signupForm = document.getElementById('signupForm');
-    const signupUsernameInput = document.getElementById('signupUsername');
-    const signupPasswordInput = document.getElementById('signupPassword');
-    const signupConfirmPasswordInput = document.getElementById('signupConfirmPassword');
-    const signupNameInput = document.getElementById('signupName');
-    const signupEmailInput = document.getElementById('signupEmail');
-    const signupErrorMessage = document.createElement('div');
-    signupErrorMessage.className = 'error-message';
-    if (signupForm) {
-        signupForm.insertBefore(signupErrorMessage, signupForm.querySelector('button[type="submit"]'));
-    }
+    const errorMessage = document.getElementById('signupErrorMessage');
+
+    signupForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // 폼 데이터 가져오기
+        const username = document.getElementById('id_username').value;
+        const password1 = document.getElementById('id_password1').value;
+        const password2 = document.getElementById('id_password2').value;
+        const email = document.getElementById('id_email').value;
+        const nickname = document.getElementById('id_nickname').value;
+
+        // 간단한 유효성 검사
+        if (!username || !password1 || !password2 || !email || !nickname) {
+            errorMessage.textContent = '모든 필드를 입력해주세요.';
+            return;
+        }
+
+        if (password1 !== password2) {
+            errorMessage.textContent = '비밀번호가 일치하지 않습니다.';
+            return;
+        }
+
+        // 이메일 형식 검사
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            errorMessage.textContent = '올바른 이메일 형식이 아닙니다.';
+            return;
+        }
+
+        // 모든 검사를 통과하면 폼 제출
+        signupForm.submit();
+    });
 
     // 로그인 폼 제출 이벤트
     if (loginForm) {
