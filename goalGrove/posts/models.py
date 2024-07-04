@@ -22,7 +22,7 @@ class Post(models.Model):
     date = models.DateField() #게시물 작성 날짜
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True) 
     content = models.TextField() #내용
-    entry_number = models.PositiveIntegerField()
+    entry_number = models.PositiveIntegerField(null=True)
 
     def __str__(self):
         return f"{self.title} (Entry {self.entry_number})"
