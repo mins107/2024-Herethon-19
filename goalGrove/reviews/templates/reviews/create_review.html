@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>리뷰 작성</title>
+</head>
+<body>
+    <h1>리뷰 작성</h1>
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="content" cols="30" rows="10"></textarea><br>
+        <input type="submit" value="작성">
+    </form>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+</body>
+</html>
