@@ -154,17 +154,20 @@ window.onload = () => {
   navBtn.addEventListener("click", () => {
     let navBar = document.getElementsByClassName("navBar")[0];
     let menuText = document.getElementsByClassName("menuText");
+    let logoutbtn = document.getElementsByClassName("logout")[0];
     clickCount++;
     // 메뉴 텍스트 요소들의 스타일 변경
 
     if (clickCount % 2 !== 0) {
       navBar.style.width = "270px";
+      logoutbtn.style.marginLeft = "140px";
       for (let i = 0; i < menuText.length; i++) {
         menuText[i].style.display = "block";
       }
     } else {
       navBar.style.width = ""; // 초기 상태로 돌아가기
       navBar.style.position = "";
+      logoutbtn.style.marginLeft = "";
       for (let i = 0; i < menuText.length; i++) {
         menuText[i].style.display = "none";
       }

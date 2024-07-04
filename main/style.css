@@ -15,7 +15,7 @@ body {
 .navBar {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: top;
   justify-content: top;
   background-color: #ffffff;
   display: flex;
@@ -31,13 +31,15 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
-  margin: 50px;
+  justify-content: left;
+  margin: 30px;
 }
 
 .menuText {
   text-align: left;
   display: none;
+  margin-left: 20px;
+  flex-wrap: wrap;
 }
 
 .menu {
@@ -47,7 +49,7 @@ body {
   width: 30px;
   height: 30px;
   border: none;
-  margin: 60px;
+  margin: 30px;
   background-color: #ffffff;
 }
 
@@ -59,6 +61,8 @@ body {
   height: 26px;
   border: none;
   background-color: #ffffff;
+  margin-left: 33px;
+  transition: margin 0.3s ease;
 }
 
 .logoTop {
