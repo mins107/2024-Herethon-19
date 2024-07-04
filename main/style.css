@@ -49,7 +49,7 @@ body {
 }
 
 .menu {
-  background-image: url("{% static 'img/Menu.png'%}");
+  background-image: url("image/Menu.png");
   background-size: cover;
   background-position: center;
   width: 30px;
@@ -60,7 +60,7 @@ body {
 }
 
 .logout {
-  background-image: url("{% static 'img/Logout.png'%}");
+  background-image: url("image/Logout.png");
   background-size: cover;
   background-position: center;
   width: 26px;

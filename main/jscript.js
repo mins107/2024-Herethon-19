@@ -38,7 +38,7 @@ window.onload = () => {
                     <button class="dropbtn_category">
                       <div class="dropbtn_category_content">취미</div>
                       <img
-                        src="{% static 'img/dropdownWhite.svg'%}"
+                        src="image/dropdownWhite.svg"
                         class="dropbtn_category_click dropbtn_category_icon"
                         onclick="dropdownCategory()"
                       />
@@ -94,7 +94,7 @@ window.onload = () => {
               <div class="line"></div>
               <div class="goalDetail">
                 <img
-                  src="{% static 'img/groveimg.svg'%}"
+                  src="image/groveimg.svg"
                   alt="사진 이미지"
                   class="goalImg"
                 />
@@ -104,7 +104,7 @@ window.onload = () => {
                       <button class="dropbtnT">
                         <div class="dropbtn_contentT">하루에</div>
                         <img
-                          src="{% static 'img/dropdown.svg'%}"
+                          src="image/dropdown.svg"
                           class="dropbtn_clickT dropbtn_iconT"
                           onclick="dropdownT()"
                         />
@@ -150,12 +150,12 @@ window.onload = () => {
               <div class="Wrapper6">
                 <div class="goalWrapper">
                   <span class="marketName">말하는 감자</span>
-                  <img src="{% static 'img/X.svg'%}" alt="창 닫기" class="marketX" />
+                  <img src="image/X.svg" alt="창 닫기" class="marketX" />
                 </div>
                 <div class="goalWrapper">
                   <div class="marketWrapper">
                     <img
-                      src="{% static 'img/market.svg'%}"
+                      src="image/market.svg"
                       alt="장바구니 사진"
                       class="marketImg"
                     />
@@ -355,7 +355,7 @@ window.onload = () => {
           <button class="dropbtn_category2">
             <div class="dropbtn_category_content2">취미</div>
             <img
-              src="{% static 'img/dropdownWhite.svg'%}"
+              src="image/dropdownWhite.svg"
               class="dropbtn_category_click2 dropbtn_category_icon2"
               onclick="dropdownCategory2()"
             />
@@ -411,7 +411,7 @@ window.onload = () => {
     <div class="goalDetail2">
       <div class="goalDetail1">
         <img
-          src="{% static 'img/goalIng.png'%}"
+          src="image/goalIng.png"
           alt="이루고 있는 목표 이미지"
           class="imgIng"
         />
@@ -422,7 +422,7 @@ window.onload = () => {
         <div class="detailIcon">
           <img
             class="detailIconImg"
-            src="{% static 'img/Line_up.png'%}"
+            src="image/Line_up.png"
             alt="성취율 아이콘"
           />
           <span class="detailTxt2">성취율</span>
@@ -431,7 +431,7 @@ window.onload = () => {
         <div class="detailIcon">
           <img
             class="detailIconImg"
-            src="{% static 'img/Chart.png'%}"
+            src="image/Chart.png"
             alt="참가자 아이콘"
           />
           <span class="detailTxt2">참가자</span>
