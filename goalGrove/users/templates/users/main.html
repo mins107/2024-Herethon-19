@@ -4,13 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/mainstyle.css' %}">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    
     <div class="Wrapper">
       <div class="navBar">
         <button class="menu" id="menuButton"></button>
-        <button class="logout"></button>
+        <div class="userNav">
+          <div class="userNavTxt">
+            <div class="userName">닉네임</div>
+            <div class="userEmail">이메일주소</div>
+          </div>
+          <button class="logout"></button>
+        </div>
         <div id="navBarMenuContainer">
           <div class="navBarMenu">
             <img src="{% static 'img/Heart.svg' %}" />
@@ -27,11 +34,11 @@
         </div>
       </div>
       <div>
-        <img class="logoTop" alt="상단 로고" src="{% static 'img/LogoMain.png' %}" />
+        <img class="logoTop" alt="상단 로고" src="img/LogoMain.png" />
         <!-- 본문 내용 -->
         <div class="Wrapper">
           <!-- 목표 선정 -->
-          <div class="goalChice">
+          <div class="goalChoice">
             <!-- 목표 선정 제목 -->
             <div class="Wrapper1">
               <div class="mainTxt">목표 선정</div>
@@ -46,12 +53,8 @@
                   />
                 </button>
                 <div class="dropdown-content">
-                  <div class="dropdownMain" onclick="showMenu(this.innerText)">
-                    목표 만들기
-                  </div>
-                  <div class="dropdownMain" onclick="showMenu(this.innerText)">
-                    목표 장바구니
-                  </div>
+                  <div class="dropdownMain" id="createGoal">목표 만들기</div>
+                  <div class="dropdownMain" id="goalCart">목표 장바구니</div>
                 </div>
               </div>
               <div class="detailTxt">
@@ -60,21 +63,23 @@
             </div>
             <!-- 목표 선정 박스 -->
 
+            <!-- 목표장바구니 -->
+
             <div class="Wrapper2">
+              
+
               <!--
-              <div class="goalWrapper">
-                <div class="goalTxt">목표 장바구니</div>
-              </div>
+              <div class="goalTxt">목표 장바구니</div>
               <div class="line"></div>
               <div class="Wrapper6">
                 <div class="goalWrapper">
                   <span class="marketName">말하는 감자</span>
-                  <img src="image/X.svg" alt="창 닫기" />
+                  <img src="img/X.svg" alt="창 닫기" class="marketX" />
                 </div>
                 <div class="goalWrapper">
                   <div class="marketWrapper">
                     <img
-                      src="image/market.svg"
+                      src="img/market.svg"
                       alt="장바구니 사진"
                       class="marketImg"
                     />
@@ -83,26 +88,28 @@
                         <span class="marketgoalTxt">주 3회 요가</span>
                         <span class="category_content">운동</span>
                       </div>
-                      <div>
+                      <div class="marketWrapper4">
                         <span class="timeIng_market">일주일에</span>
                         <span class="countTxt_market">3회</span>
                       </div>
                     </div>
                   </div>
-                  <div>선택하기</div>
+                  <div class="marketChoicebtn">선택하기</div>
+                
                 </div>
+              
               </div>
-              -->
-
+          -->
+              
               <div class="goalWrapper">
-                <div class="goalTxt">주 1회 독서</div>
+                <input placeholder="목표 이름 작성하기" class="goalTxtInput"></input>
                 <div>
                   <span class="categoryExp">카테고리</span>
                   <div class="dropdownCategory">
                     <button class="dropbtn_category">
                       <div class="dropbtn_category_content">취미</div>
                       <img
-                        src="{% static 'img/dropdownWhite.svg' %}"
+                        src="img/dropdownWhite.svg"
                         class="dropbtn_category_click dropbtn_category_icon"
                         onclick="dropdownCategory()"
                       />
@@ -154,11 +161,12 @@
                   </div>
                 </div>
               </div>
+
               <div class="line"></div>
               <div class="goalDetail">
                 <img
-                  src="{% static 'img/goalImg.png' %}" 
-                  alt="독서 이미지"
+                  src="{% static 'img/groveimg.svg' %}"
+                  alt="사진 추가"
                   class="goalImg"
                 />
                 <div class="goalContent">
@@ -167,7 +175,7 @@
                       <button class="dropbtnT">
                         <div class="dropbtn_contentT">하루에</div>
                         <img
-                          src="{% static 'img/dropdown.svg' %}" 
+                          src="{% static 'img/dropdown.svg' %}"
                           class="dropbtn_clickT dropbtn_iconT"
                           onclick="dropdownT()"
                         />
@@ -200,14 +208,14 @@
                   </div>
 
                   <div class="goalExplain">
-                    <div>
-                      장르 불문 책 1권 이상 읽고 독후감 너무 얇은 책 X 양심 있게
-                      꼼꼼히 읽기
-                    </div>
+                    <textarea rows="1"class="goalExplainInput" placeholder="구체적인 설명 작성하기"></textarea>
                   </div>
                 </div>
               </div>
+              
             </div>
+            
+            <button class="goalAdd" onclick="addGoalEvent()">목표 추가하기</button>
           </div>
 
           <!-- 이루고 있는 목표 -->
@@ -218,7 +226,7 @@
               <div class="detailTxt">목표를 얼마나 이루었는지 확인해요!</div>
             </div>
             <!-- 이루고 있는 목표 박스 -->
-            <div>
+            <div class="goalingg">
               <div class="Wrapper3">
                 <div class="goalWrapper">
                   <div class="goalTxt">주 4회 헬스장에서 운동</div>
@@ -228,7 +236,7 @@
                       <button class="dropbtn_category2">
                         <div class="dropbtn_category_content2">취미</div>
                         <img
-                          src="{% static 'img/dropdownWhite.svg' %}" 
+                          src="{% static 'img/dropdownWhite.svg' %}"
                           class="dropbtn_category_click2 dropbtn_category_icon2"
                           onclick="dropdownCategory2()"
                         />
@@ -284,18 +292,20 @@
                 <div class="goalDetail2">
                   <div class="goalDetail1">
                     <img
-                      src="{% static 'img/goalIng.png' %}" 
+                      src="{% static 'img/goalIng.png'%}"
                       alt="이루고 있는 목표 이미지"
                       class="imgIng"
                     />
                     <div class="timeIng">일주일에</div>
                     <div class="countTxt">4회</div>
+                    
                   </div>
+                  
                   <div>
                     <div class="detailIcon">
                       <img
                         class="detailIconImg"
-                        src="{% static 'img/Line_up.png' %}" 
+                        src="{% static 'img/Line_up.png'%}"
                         alt="성취율 아이콘"
                       />
                       <span class="detailTxt2">성취율</span>
@@ -304,7 +314,7 @@
                     <div class="detailIcon">
                       <img
                         class="detailIconImg"
-                        src="{% static 'img/Chart.png' %}" 
+                        src="{% static 'img/Chart.png' %}"
                         alt="참가자 아이콘"
                       />
                       <span class="detailTxt2">참가자</span>
@@ -314,15 +324,7 @@
                 </div>
               </div>
 
-              <!-- 목표 추가하기 -->
-              <div class="Wrapper4 goal-img-container">
-                <img
-                  class="goal-img"
-                  src="{% static 'img/Logo30.png' %}" 
-                  alt="투명도 30의 로고"
-                />
-                <span class="goal-text">목표를 추가해보세요!</span>
-              </div>
+              
             </div>
           </div>
         </div>
@@ -330,7 +332,7 @@
         <!-- 과정 나누기 -->
         <div class="goalChice">
           <!-- 과정 나누기 제목 -->
-          <div class="Wrapper1">
+          <div class="Wrapper7">
             <div class="mainTxt">과정 나누기</div>
 
             <div class="detailTxt">
@@ -350,7 +352,7 @@
                   <button class="dropbtn_category3">
                     <div class="dropbtn_category_content3">취미</div>
                     <img
-                      src="{% static 'img/dropdownWhite.svg' %}" 
+                      src="{% static 'img/dropdownWhite.svg'%}"
                       class="dropbtn_category_click3 dropbtn_category_icon3"
                       onclick="dropdownCategory3()"
                     />
@@ -429,7 +431,7 @@
                 </div>
               </div>
               <img
-                src="{% static 'img/groveimg.svg' %}" 
+                src="{% static 'img/groveimg.svg' %}"
                 alt="로고 이미지"
                 class="processImg"
               />
