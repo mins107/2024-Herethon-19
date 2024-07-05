@@ -1,6 +1,13 @@
 from django.db import models
 from django.utils import timezone
 from datetime import timedelta
+import os
+from uuid import uuid4
+
+def upload_filepath(instance, filename):
+    today_str = timezone.now().strftime("%Y%m%d")
+    file_basename = os.path.basename(filename)
+    return f'{instance._meta.model_name}/{today_str}/{str(uuid4())}_{file_basename}'
 
 class Category(models.Model):
     CATEGORY_CHOICES = [
@@ -22,6 +29,8 @@ class Post(models.Model):
     date = models.DateField() #게시물 작성 날짜
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True) 
     content = models.TextField() #내용
+    image = models.ImageField(upload_to = upload_filepath, blank = True)
+    video = models.FileField(upload_to = upload_filepath, blank = True)
     entry_number = models.PositiveIntegerField(null=True)
 
     def __str__(self):
