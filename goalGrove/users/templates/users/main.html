@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    {% load static %}
     <link rel="stylesheet" href="{% static 'css/mainstyle.css' %}" />
   </head>
   <body>
@@ -25,6 +26,7 @@
       
       <div class="navBar">
         <button class="menu" id="menuButton"></button>
+
         <div class="userNav">
           <div class="userNavTxt">
             <div class="userName">닉네임</div>
@@ -48,7 +50,7 @@
         </div>
       </div>
       <div>
-        <img class="logoTop" alt="상단 로고" src="{% static img/LogoMain.png' %}" />
+        <img class="logoTop" alt="상단 로고" src="{% static 'img/LogoMain.png' %}" />
         <!-- 본문 내용 -->
         <div class="Wrapper">
           <!-- 목표 선정 -->
@@ -233,7 +235,7 @@
           </div>
 
           <!-- 이루고 있는 목표 -->
-          <div>
+          <div class="Wrapper11">
             <!-- 이루고 있는 목표 제목 -->
             <div class="Wrapper1">
               <div class="mainTxt">이루고 있는 목표</div>

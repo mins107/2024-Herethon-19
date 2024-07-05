@@ -49,7 +49,7 @@ body {
 }
 
 .menu {
-  background-image: url("{% static 'img/Menu.png'%}");
+  background-image: url("img/Menu.png");
   background-size: cover;
   background-position: center;
   width: 30px;

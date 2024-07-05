@@ -13,6 +13,8 @@
   padding: 5px;
   padding-left: 8px;
   padding-right: 8px;
+  font-size: 14px;
+  margin-left: 10px;
 }
 
 body {
@@ -74,8 +76,8 @@ body {
 }
 
 .menu {
-  background-image: url("image/Menu.png");
   background-size: cover;
+  background-image: url("../img/Menu.png");
   background-position: center;
   width: 30px;
   height: 30px;
@@ -85,7 +87,7 @@ body {
 }
 
 .logout {
-  background-image: url("image/Logout.png");
+  background-image: url("../img/Logout.png");
   background-size: cover;
   background-position: center;
   width: 26px;
@@ -94,6 +96,7 @@ body {
   background-color: #ffffff;
   margin-left: 33px;
   transition: margin 0.3s ease;
+  margin-right: 20px;
 }
 
 .logoTop {
@@ -115,7 +118,7 @@ body {
   margin-left: 90px;
   margin-top: 50px;
   margin-bottom: 20px;
-  width: 100%;
+  width: 33em;
   align-items: center;
 }
 
@@ -141,6 +144,10 @@ body {
   margin-bottom: 10px;
 }
 
+.Wrapper11 {
+  margin-left: 3rem;
+}
+
 .Wrapper2 {
   display: flex;
   background-color: #ffffff;
@@ -153,7 +160,7 @@ body {
   flex-direction: column;
   align-items: top;
   height: 330px;
-  width: 80%;
+  width: 90%;
   padding-top: 20px;
   padding-bottom: 20px;
   margin-bottom: 20px;
@@ -239,7 +246,7 @@ body {
 .goalingg {
   background-color: #c0dba7;
   border-radius: 20px;
-  width: 100%;
+  width: 85%;
   height: 330px;
   display: flex;
   margin-left: 90px;
