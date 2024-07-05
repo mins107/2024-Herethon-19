@@ -3,10 +3,12 @@ from django.contrib.auth.models import User
 from .models import Post
 from .forms import PostForm
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def create_post(request):
     if request.method == 'POST':
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
             post.user = User.objects.first()  # 임시
@@ -16,6 +18,7 @@ def create_post(request):
         form = PostForm()
     return render(request, 'posts/create_post.html', {'form': form})
 
+@login_required
 def post_list(request):
     if request.method == "GET":
         form = PostForm()
