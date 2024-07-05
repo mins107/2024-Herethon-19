@@ -13,8 +13,8 @@ class GCategory(models.Model):
     name = models.CharField(max_length=20)
 
     def __str__(self):
-        return f'{self.name}'
-
+        return f'[{self.id}] {self.name}'
+    
 class Goal(models.Model):
     title = models.CharField(max_length=50)
     content = models.TextField()
@@ -23,6 +23,7 @@ class Goal(models.Model):
     category = models.ManyToManyField(to=GCategory, through="GoalCategory", related_name="goals")
     like = models.ManyToManyField(to=User, through="GoalLike", related_name="liked_goal")
     image = models.ImageField(upload_to=upload_filepath, blank=True)
+    frequency = models.CharField(max_length=5, default=True)
 
     def __str__(self):
         return f'[{self.id}] {self.title}'

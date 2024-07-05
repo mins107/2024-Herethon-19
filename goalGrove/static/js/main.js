@@ -1,4 +1,4 @@
-window.onload = () => {
+document.addEventListener("DOMContentLoaded", function () {
   // 드롭다운 목표
   document.querySelector(".dropbtn_click").onclick = () => {
     dropdown();
@@ -123,16 +123,24 @@ window.onload = () => {
   }
 
   // 드롭다운 카테고리
-  document.querySelector(".dropbtn_category_click").onclick = () => {
-    dropdownCategory();
-  };
 
-  let categoryContentElements =
-    document.getElementsByClassName("category-content");
-  for (let i = 0; i < categoryContentElements.length; i++) {
-    categoryContentElements[i].onclick = (event) => {
+  // 드롭다운 카테고리
+  document.querySelector(".dropbtn_category").addEventListener("click", () => {
+    dropdownCategory();
+  });
+
+  let categoryContentElements = document.querySelectorAll(".category-content");
+  categoryContentElements.forEach((element) => {
+    element.addEventListener("click", (event) => {
       showCategory(event.target.innerText); // value를 event.target.innerText로 변경
-    };
+    });
+  });
+
+  function dropdown() {
+    var v = document.querySelector(".dropdown-content");
+    var dropbtn = document.querySelector(".dropbtn");
+    v.classList.toggle("show");
+    dropbtn.style.borderColor = "rgb(94, 94, 94)";
   }
 
   function dropdownCategory() {
@@ -153,238 +161,95 @@ window.onload = () => {
     dropbtn_category_icon.innerText = "";
     dropbtn_category_content.innerText = value;
   }
+});
 
-  const navBtn = document.getElementById("menuButton");
-  let clickCount = 0;
-  navBtn.addEventListener("click", () => {
-    let navBar = document.getElementsByClassName("navBar")[0];
-    let menuText = document.getElementsByClassName("menuText");
-    let logoutbtn = document.getElementsByClassName("logout")[0];
-    let userNavTxt = document.getElementsByClassName("userNavTxt")[0];
-    let userNav = document.getElementsByClassName("userNav")[0];
-    clickCount++;
-    // 메뉴 텍스트 요소들의 스타일 변경
+const navBtn = document.getElementById("menuButton");
+let clickCount = 0;
+navBtn.addEventListener("click", () => {
+  let navBar = document.getElementsByClassName("navBar")[0];
+  let menuText = document.getElementsByClassName("menuText");
+  let logoutbtn = document.getElementsByClassName("logout")[0];
+  let userNavTxt = document.getElementsByClassName("userNavTxt")[0];
+  let userNav = document.getElementsByClassName("userNav")[0];
+  clickCount++;
+  // 메뉴 텍스트 요소들의 스타일 변경
 
-    if (clickCount % 2 !== 0) {
-      navBar.style.width = "270px";
-      logoutbtn.style.marginLeft = "40px";
-      logoutbtn.style.backgroundColor = "#f1f1f1";
-      userNavTxt.style.display = "inline";
-      userNav.style.backgroundColor = "#f1f1f1";
-      for (let i = 0; i < menuText.length; i++) {
-        menuText[i].style.display = "block";
-      }
-    } else {
-      navBar.style.width = ""; // 초기 상태로 돌아가기
-      navBar.style.position = "";
-      logoutbtn.style.marginLeft = "";
-      logoutbtn.style.backgroundColor = "";
-      userNavTxt.style.display = "";
-      userNav.style.backgroundColor = "";
-      for (let i = 0; i < menuText.length; i++) {
-        menuText[i].style.display = "none";
-      }
+  if (clickCount % 2 !== 0) {
+    navBar.style.width = "270px";
+    logoutbtn.style.marginLeft = "40px";
+    logoutbtn.style.backgroundColor = "#f1f1f1";
+    userNavTxt.style.display = "inline";
+    userNav.style.backgroundColor = "#f1f1f1";
+    for (let i = 0; i < menuText.length; i++) {
+      menuText[i].style.display = "block";
     }
-  });
-
-  let selectedValue = "1회"; // 초기값 설정
-
-  // 확장 기능 추가 함수
-  const addExpandFunctionality = (wrapper) => {
-    wrapper.onclick = () => {
-      if (wrapper.classList.contains("expand")) {
-        goalOriginal(wrapper);
-      } else {
-        goalExpand(wrapper);
-      }
-    };
-  };
-
-  // 확장 함수
-  const goalExpand = (wrapper) => {
-    const goalIngDetail = wrapper.querySelector(".goalIngDetail");
-
-    wrapper.style.paddingBottom = "120px";
-    wrapper.classList.add("expand");
-    if (goalIngDetail) {
-      goalIngDetail.style.display = "block";
+  } else {
+    navBar.style.width = ""; // 초기 상태로 돌아가기
+    navBar.style.position = "";
+    logoutbtn.style.marginLeft = "";
+    logoutbtn.style.backgroundColor = "";
+    userNavTxt.style.display = "";
+    userNav.style.backgroundColor = "";
+    for (let i = 0; i < menuText.length; i++) {
+      menuText[i].style.display = "none";
     }
-  };
-
-  // 축소 함수
-  const goalOriginal = (wrapper) => {
-    const goalIngDetail = wrapper.querySelector(".goalIngDetail");
-
-    wrapper.style.paddingBottom = "";
-    wrapper.classList.remove("expand");
-    if (goalIngDetail) {
-      goalIngDetail.style.display = "";
-    }
-  };
-
-  // 기존 Wrapper3 요소에 확장 기능 추가
-  document.querySelectorAll(".Wrapper3").forEach(addExpandFunctionality);
-
-  // 목표 추가 함수
-
-  const addGoalEvent = () => {
-    const newGoalName = document.querySelector(".goalTxtInput").value;
-    const newGoalDetail = document.querySelector(".goalExplainInput").value;
-
-    const newGoal = document.createElement("div");
-    newGoal.innerHTML = `
-    <div class="Wrapper3">
-      <div class="goalWrapper">
-        <span>
-          <span class="goalTxt2" id="goalTxt">${newGoalName}</span>
-          <span class="categoryExp" id="goal-ing-end">종료하기</span>
-        </span>
-                  <div>
-                    <span class="categoryExp">카테고리</span>
-                    <div class="dropdownCategory2">
-
-                        <div class="goalIng-category">취미</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="line2"></div>
-                <div class="goalDetail2">
-                  <div class="goalDetail1">
-                    <img src="/static/img/goalIng.png" alt="이루고 있는 목표 이미지" class="imgIng" />
-                    <div class="countTxt">일주일에</div>
-                    <div class="timeIng">${selectedValue}</div>
-                  </div>
-                  <div>
-                    <div class="detailIcon">
-                      <img class="detailIconImg" src="/static/img/Line_up.png" alt="성취율 아이콘" />
-                      <span class="detailTxt2">성취율</span>
-                      <span class="percentage">65%</span>
-                    </div>
-                    <div class="detailIcon">
-                      <img class="detailIconImg" src="/static/img/Chart.png" alt="참가자 아이콘" />
-                      <span class="detailTxt2">참가자</span>
-                      <span class="participant">630명</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="goalIngDetail">
-                  ${newGoalDetail}
-                </div>
-              </div>
-    `;
-
-    // 추가된 Wrapper3 요소에 확장 기능 추가
-    const newWrapper = newGoal.querySelector(".Wrapper3");
-    document.querySelector(".goalingg").appendChild(newGoal);
-
-    // goal-ing-end 요소에 클릭 이벤트 핸들러 연결
-    newGoal.querySelector("#goal-ing-end").onclick = () => {
-      goalEnd(newWrapper);
-    };
-
-    // 추가된 Wrapper3 요소에 확장 기능 추가
-    addExpandFunctionality(newWrapper);
-  };
-
-  // 목표 종료 함수
-  const goalEnd = (wrapper) => {
-    wrapper.remove();
-  };
-
-  // 이벤트 핸들러 연결
-  document.querySelector("#goal-ing-end").onclick = () => {
-    // 현재 클릭된 목표(wrapper)를 찾아서 goalEnd 함수에 전달
-    const wrapper = document.querySelector(".Wrapper3.expand");
-    if (wrapper) {
-      goalEnd(wrapper);
-    }
-  };
-
-  // 드롭다운 기능
-  document.querySelector(".dropbtn_clickT").onclick = () => {
-    dropdownT();
-  };
-
-  let dropdownMainElementsT = document.getElementsByClassName("dropdownMainT");
-  for (let i = 0; i < dropdownMainElementsT.length; i++) {
-    dropdownMainElementsT[i].onclick = (event) => {
-      showMenuT(event.target);
-    };
   }
+});
 
-  dropdownT = () => {
-    var vT = document.querySelector(".dropdown-contentT");
-    var dropbtnT = document.querySelector(".dropbtnT");
-    vT.classList.toggle("show");
-    dropbtnT.style.borderColor = "rgb(94, 94, 94)";
-  };
+// let selectedValue = "1회"; // 초기값 설정
 
-  showMenuT = (element) => {
-    var dropbtn_iconT = document.querySelector(".dropbtn_iconT");
-    var dropbtn_contentT = document.querySelector(".dropbtn_contentT");
-
-    var value = element.innerText;
-    var id = element.id;
-
-    dropbtn_iconT.innerText = "";
-    dropbtn_contentT.innerText = value;
-
-    // 선택된 값을 저장
-    selectedValue = value;
-
-    // .timeIng 요소의 내용을 변경
-    var timeIng = document.querySelector(".timeIng");
-    if (timeIng) {
-      timeIng.innerHTML = value;
+// 확장 기능 추가 함수
+const addExpandFunctionality = (wrapper) => {
+  wrapper.onclick = () => {
+    if (wrapper.classList.contains("expand")) {
+      goalOriginal(wrapper);
+    } else {
+      goalExpand(wrapper);
     }
   };
+};
 
-  // 목표 추가 버튼에 이벤트 리스너 추가
-  document.querySelector(".goalAdd").onclick = addGoalEvent;
+// 확장 함수
+const goalExpand = (wrapper) => {
+  const goalIngDetail = wrapper.querySelector(".goalIngDetail");
 
-  // marketChoicebtn에 대한 이벤트 리스너 추가
-  let marketChoiceBtns = document.querySelectorAll(".marketChoicebtn");
-  marketChoiceBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      updateGoalInputsAndShowCreateGoal(btn);
-    });
-  });
-
-  // 목표 입력 내용을 업데이트하고 "목표 만들기"로 화면 변경하는 함수
-  function updateGoalInputsAndShowCreateGoal(button) {
-    // 부모 요소인 marketWrapper를 찾습니다
-    let marketWrapper = button.closest(".marketWrapper");
-
-    // 필요한 내용을 가져옵니다
-    let goalTxt = marketWrapper.querySelector(".marketgoalTxt").innerText;
-    let categoryContent =
-      marketWrapper.querySelector(".category_content").innerText;
-    let timeIng = marketWrapper.querySelector(".timeIng_market").innerText;
-
-    // goalTxtInput, goalExplainInput, dropbtn_contentT 업데이트
-    let goalTxtInput = document.querySelector(".goalTxtInput");
-    if (goalTxtInput) {
-      goalTxtInput.value = goalTxt;
-    }
-
-    let goalExplainInput = document.querySelector(".goalExplainInput");
-    if (goalExplainInput) {
-      goalExplainInput.value = categoryContent;
-    }
-
-    let dropbtn_contentT = document.querySelector(".dropbtn_contentT");
-    if (dropbtn_contentT) {
-      dropbtn_contentT.innerText = timeIng;
-    }
-
-    // "목표 만들기" 선택
-    let createGoalBtn = document.querySelector(".dropdownMain#createGoal");
-    if (createGoalBtn) {
-      showMenu("createGoal");
-    }
+  wrapper.style.paddingBottom = "120px";
+  wrapper.classList.add("expand");
+  if (goalIngDetail) {
+    goalIngDetail.style.display = "block";
   }
 };
+
+// 축소 함수
+const goalOriginal = (wrapper) => {
+  const goalIngDetail = wrapper.querySelector(".goalIngDetail");
+
+  wrapper.style.paddingBottom = "";
+  wrapper.classList.remove("expand");
+  if (goalIngDetail) {
+    goalIngDetail.style.display = "";
+  }
+};
+
+// 기존 Wrapper3 요소에 확장 기능 추가
+document.querySelectorAll(".Wrapper3").forEach(addExpandFunctionality);
+
+
+// 목표 종료 함수
+const goalEnd = (wrapper) => {
+  wrapper.remove();
+};
+
+// 이벤트 핸들러 연결
+document.querySelector("#goal-ing-end").onclick = () => {
+  // 현재 클릭된 목표(wrapper)를 찾아서 goalEnd 함수에 전달
+  const wrapper = document.querySelector(".Wrapper3.expand");
+  if (wrapper) {
+    goalEnd(wrapper);
+  }
+};
+
+
 
 window.onclick = (e) => {
   if (!e.target.matches(".dropbtn_click")) {

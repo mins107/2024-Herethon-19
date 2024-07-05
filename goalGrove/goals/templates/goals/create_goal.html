@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>과정나누기</title>
+    <title>Add Goal</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/poststyle.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -12,8 +12,8 @@
 <body>
     <div class="container mt-5">
     <div class="maincontainer">
-        <h2>과정 나누기</h2>
-        <form method="POST" action="{% url 'posts:create_post' %}" enctype="multipart/form-data">
+        <h2>목표 추가</h2>
+        <form method="POST" action="{% url 'goals:create_goal' %}" enctype="multipart/form-data">
         {%csrf_token%}    
             <input type="hidden">
             
@@ -21,27 +21,24 @@
             <input type="text" name="title">
 
             <label for="username">일주일에 </label>
-            <select id="frequency" name="frequency">
-                <option value="1회">1회</option>
-                <option value="2회">2회</option>
-                <option value="3회">3회</option>
-                <option value="4회">4회</option>
-                <option value="5회">5회</option>
-                <option value="6회">6회</option>
-                <option value="7회">7회</option>
-            </select>
+                <select id="frequency" name="frequency">
+                    <option value="1회">1회</option>
+                    <option value="2회">2회</option>
+                    <option value="3회">3회</option>
+                    <option value="4회">4회</option>
+                    <option value="5회">5회</option>
+                    <option value="6회">6회</option>
+                    <option value="7회">7회</option>
+                </select>
 
-            <label for="username">과정</label>
+            <label for="username">세부사항</label>
             <textarea name="content"></textarea>
-
-            <label for="username">동영상</label>
-            <input type="file" name="video">
-
+            
             <label for="username">이미지</label>
             <input type="file" name="image">
             
             <label for="username">카테고리</label>
-            <select name="category" multiple>
+            <select name="gcategory" multiple>
                 {% for category in categories %}
                 <option value="{{ category.id }}">{{ category.name }}</option>
                 {% endfor %}

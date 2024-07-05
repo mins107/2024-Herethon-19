@@ -6,18 +6,39 @@ from django.http import HttpResponse
 from .forms import SignUpForm, ResetPasswordForm
 from django.views.decorators.csrf import csrf_exempt
 import json
-from posts.models import Category
+from posts.models import Category, Post
+from goals.models import GCategory, Goal
 User = get_user_model()
 
 @login_required
 def main_view(request):
     user = request.user
     categories = Category.objects.all()
+    category_id = request.GET.get('category')
+    gcategories = GCategory.objects.all()
+    gcategory_id = request.GET.get('gcategory')
+    
+    if category_id:
+        category = get_object_or_404(Category, id = category_id)
+        posts = category.posts.all().order_by('-id')
+    else:
+        posts = Post.objects.all().order_by('-id')
+
+    if gcategory_id:
+        gcategory = get_object_or_404(GCategory, id = gcategory_id)
+        goals = gcategory.goals.all().order_by('-id')
+    else:
+        goals = Goal.objects.all().order_by('-id')
+
     context = {
         'user_name': user.username,
         'user_email': user.email,
         'categories': categories,
-    }
+        'gcategories': gcategories,
+        'posts': posts,
+        'goals': goals,
+    }  
+
     return render(request, 'users/main.html', context)
 
 @login_required

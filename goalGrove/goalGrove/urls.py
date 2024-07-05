@@ -9,6 +9,7 @@ urlpatterns = [
     path('', login_view, name='login'),
     path('users/', include('users.urls')),
     path('posts/', include('posts.urls')),
+    path('goals/', include('goals.urls')),
     path('reviews/', include('reviews.urls')),
     path('qna/', include('qna.urls')),
     path('community/', include('community.urls')),
