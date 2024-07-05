@@ -38,7 +38,11 @@ window.onload = () => {
                     <button class="dropbtn_category">
                       <div class="dropbtn_category_content">취미</div>
                       <img
+<<<<<<< HEAD
                         src="{% static 'img/dropdownWhite.svg' %}"
+=======
+                        src="image/dropdownWhite.svg"
+>>>>>>> 13dc50d10c6b60c5cbc36f67bc77c22a20072dd8
                         class="dropbtn_category_click dropbtn_category_icon"
                         onclick="dropdownCategory()"
                       />
@@ -94,8 +98,13 @@ window.onload = () => {
               <div class="line"></div>
               <div class="goalDetail">
                 <img
+<<<<<<< HEAD
                   src="{% static 'img/groveimg.svg' %}"
                   alt="사진 추가"
+=======
+                  src="image/groveimg.svg"
+                  alt="사진 이미지"
+>>>>>>> 13dc50d10c6b60c5cbc36f67bc77c22a20072dd8
                   class="goalImg"
                 />
                 <div class="goalContent">
@@ -104,7 +113,11 @@ window.onload = () => {
                       <button class="dropbtnT">
                         <div class="dropbtn_contentT">하루에</div>
                         <img
+<<<<<<< HEAD
                           src="{% static 'img/dropdown.svg' %}"
+=======
+                          src="image/dropdown.svg"
+>>>>>>> 13dc50d10c6b60c5cbc36f67bc77c22a20072dd8
                           class="dropbtn_clickT dropbtn_iconT"
                           onclick="dropdownT()"
                         />
@@ -152,12 +165,20 @@ window.onload = () => {
                 <div class="Wrapper6">
                   <div class="goalWrapper">
                     <span class="marketName">말하는 감자</span>
+<<<<<<< HEAD
                     <img src="{% static 'img/X.svg'}" alt="창 닫기" class="marketX" />
+=======
+                    <img src="image/X.svg" alt="창 닫기" class="marketX" />
+>>>>>>> 13dc50d10c6b60c5cbc36f67bc77c22a20072dd8
                   </div>
                   <div class="goalWrapper">
                     <div class="marketWrapper">
                       <img
+<<<<<<< HEAD
                         src="{% static 'img/market.svg'}"
+=======
+                        src="image/market.svg"
+>>>>>>> 13dc50d10c6b60c5cbc36f67bc77c22a20072dd8
                         alt="장바구니 사진"
                         class="marketImg"
                       />

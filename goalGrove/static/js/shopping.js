@@ -14,18 +14,18 @@ document.addEventListener("DOMContentLoaded", function () {
         var newReview = document.createElement("div");
         newReview.className = "review";
         newReview.innerHTML = `
-                <div class="logo-background">
-                    <img src="asset/Logo2 1.svg" alt="User Icon" class="user-icon">
-                </div>
-                <div class="review-content">
-                    <div class="review-username">New User</div>
-                    <div class="review-text">${reviewInput}</div>
-                </div>
-                <div class="review-actions">
-                    <button class="thumbs-up"><img src="asset/Thumbs Up.svg" alt="Thumbs Up"></button>
-                    <button class="thumbs-down"><img src="asset/Thumbs Down.svg" alt="Thumbs Down"></button>
-                </div>
-            `;
+                  <div class="logo-background">
+                      <img src="asset/Logo2 1.svg" alt="User Icon" class="user-icon">
+                  </div>
+                  <div class="review-content">
+                      <div class="review-username">New User</div>
+                      <div class="review-text">${reviewInput}</div>
+                  </div>
+                  <div class="review-actions">
+                      <button class="thumbs-up"><img src="asset/Thumbs Up.svg" alt="Thumbs Up"></button>
+                      <button class="thumbs-down"><img src="asset/Thumbs Down.svg" alt="Thumbs Down"></button>
+                  </div>
+              `;
         reviewList.appendChild(newReview);
         document.getElementById("reviewInput").value = "";
 
@@ -117,18 +117,18 @@ document.addEventListener("DOMContentLoaded", function () {
         var newReview = document.createElement("div");
         newReview.className = "review";
         newReview.innerHTML = `
-                <div class="logo-background">
-                    <img src="asset/Logo2 1.svg" alt="User Icon" class="user-icon">
-                </div>
-                <div class="review-content">
-                    <div class="review-username">New User</div>
-                    <div class="review-text">${reviewInput}</div>
-                </div>
-                <div class="review-actions">
-                    <button class="thumbs-up"><img src="asset/Thumbs Up.svg" alt="Thumbs Up"></button>
-                    <button class="thumbs-down"><img src="asset/Thumbs Down.svg" alt="Thumbs Down"></button>
-                </div>
-            `;
+                  <div class="logo-background">
+                      <img src="asset/Logo2 1.svg" alt="User Icon" class="user-icon">
+                  </div>
+                  <div class="review-content">
+                      <div class="review-username">New User</div>
+                      <div class="review-text">${reviewInput}</div>
+                  </div>
+                  <div class="review-actions">
+                      <button class="thumbs-up"><img src="asset/Thumbs Up.svg" alt="Thumbs Up"></button>
+                      <button class="thumbs-down"><img src="asset/Thumbs Down.svg" alt="Thumbs Down"></button>
+                  </div>
+              `;
         QList.appendChild(newReview);
         document.getElementById("QInput").value = "";
 

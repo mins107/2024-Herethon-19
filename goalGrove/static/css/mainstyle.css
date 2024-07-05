@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @font-face {
   font-family: "Pretendard-Regular";
   src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
@@ -6,6 +7,18 @@
   font-style: normal;
 }
 
+=======
+
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+>>>>>>> 13dc50d10c6b60c5cbc36f67bc77c22a20072dd8
 #goal-ing-end {
   background-color: #8f826f;
   color: #ffffff;
@@ -13,8 +26,11 @@
   padding: 5px;
   padding-left: 8px;
   padding-right: 8px;
+<<<<<<< HEAD
   font-size: 14px;
   margin-left: 10px;
+=======
+>>>>>>> 13dc50d10c6b60c5cbc36f67bc77c22a20072dd8
 }
 
 body {
@@ -33,6 +49,14 @@ body {
   width: 80rem;
 }
 
+<<<<<<< HEAD
+=======
+a {
+  text-decoration: none; /* 밑줄 제거 */
+  color: inherit; /* 링크의 기본 색상 유지 */
+}
+
+>>>>>>> 13dc50d10c6b60c5cbc36f67bc77c22a20072dd8
 /* General Styles */
 
 .Wrapper {
@@ -96,7 +120,10 @@ body {
   background-color: #ffffff;
   margin-left: 33px;
   transition: margin 0.3s ease;
+<<<<<<< HEAD
   margin-right: 20px;
+=======
+>>>>>>> 13dc50d10c6b60c5cbc36f67bc77c22a20072dd8
 }
 
 .logoTop {
@@ -118,7 +145,11 @@ body {
   margin-left: 90px;
   margin-top: 50px;
   margin-bottom: 20px;
+<<<<<<< HEAD
   width: 33em;
+=======
+  width: 100%;
+>>>>>>> 13dc50d10c6b60c5cbc36f67bc77c22a20072dd8
   align-items: center;
 }
 
@@ -144,10 +175,13 @@ body {
   margin-bottom: 10px;
 }
 
+<<<<<<< HEAD
 .Wrapper11 {
   margin-left: 3rem;
 }
 
+=======
+>>>>>>> 13dc50d10c6b60c5cbc36f67bc77c22a20072dd8
 .Wrapper2 {
   display: flex;
   background-color: #ffffff;
@@ -160,7 +194,11 @@ body {
   flex-direction: column;
   align-items: top;
   height: 330px;
+<<<<<<< HEAD
   width: 90%;
+=======
+  width: 80%;
+>>>>>>> 13dc50d10c6b60c5cbc36f67bc77c22a20072dd8
   padding-top: 20px;
   padding-bottom: 20px;
   margin-bottom: 20px;
@@ -246,7 +284,11 @@ body {
 .goalingg {
   background-color: #c0dba7;
   border-radius: 20px;
+<<<<<<< HEAD
   width: 85%;
+=======
+  width: 100%;
+>>>>>>> 13dc50d10c6b60c5cbc36f67bc77c22a20072dd8
   height: 330px;
   display: flex;
   margin-left: 90px;
