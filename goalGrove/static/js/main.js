@@ -30,7 +30,7 @@ window.onload = () => {
       dropbtn_content.innerHTML = "목표 만들기";
 
       goalContent.innerHTML = `
-<div class="goalWrapper">
+              <div class="goalWrapper">
                 <input placeholder="목표 이름 작성하기" class="goalTxtInput"></input>
                 <div>
                   <span class="categoryExp">카테고리</span>
@@ -38,7 +38,7 @@ window.onload = () => {
                     <button class="dropbtn_category">
                       <div class="dropbtn_category_content">취미</div>
                       <img
-                        src="image/dropdownWhite.svg"
+                        src="{% static 'img/dropdownWhite.svg' %}"
                         class="dropbtn_category_click dropbtn_category_icon"
                         onclick="dropdownCategory()"
                       />
@@ -94,7 +94,7 @@ window.onload = () => {
               <div class="line"></div>
               <div class="goalDetail">
                 <img
-                  src="image/groveimg.svg"
+                  src="img/groveimg.svg"
                   alt="사진 이미지"
                   class="goalImg"
                 />
@@ -104,26 +104,26 @@ window.onload = () => {
                       <button class="dropbtnT">
                         <div class="dropbtn_contentT">하루에</div>
                         <img
-                          src="image/dropdown.svg"
+                          src="{% static 'img/dropdown.svg' %}"
                           class="dropbtn_clickT dropbtn_iconT"
                           onclick="dropdownT()"
                         />
                       </button>
                       <div class="dropdown-contentT">
-                        <div
-                          class="dropdownMainT"
+                        <div 
+                          class="dropdownMainT" id="day"
                           onclick="showMenuT(this.innerText)"
                         >
                           하루에
                         </div>
                         <div
-                          class="dropdownMainT"
+                          class="dropdownMainT" id="week"
                           onclick="showMenuT(this.innerText)"
                         >
                           일주일에
                         </div>
                         <div
-                          class="dropdownMainT"
+                          class="dropdownMainT" id="month"
                           onclick="showMenuT(this.innerText)"
                         >
                           한달에
@@ -152,12 +152,12 @@ window.onload = () => {
                 <div class="Wrapper6">
                   <div class="goalWrapper">
                     <span class="marketName">말하는 감자</span>
-                    <img src="image/X.svg" alt="창 닫기" class="marketX" />
+                    <img src="img/X.svg" alt="창 닫기" class="marketX" />
                   </div>
                   <div class="goalWrapper">
                     <div class="marketWrapper">
                       <img
-                        src="image/market.svg"
+                        src="img/market.svg"
                         alt="장바구니 사진"
                         class="marketImg"
                       />
@@ -368,7 +368,7 @@ window.onload = () => {
             <div class="dropdownCategory2">
               <button class="dropbtn_category2">
                 <div class="dropbtn_category_content2">취미</div>
-                <img src="image/dropdownWhite.svg" class="dropbtn_category_click2 dropbtn_category_icon2" onclick="dropdownCategory2()" />
+                <img src="img/dropdownWhite.svg" class="dropbtn_category_click2 dropbtn_category_icon2" onclick="dropdownCategory2()" />
               </button>
             </div>
             <div class="dropdown-category-content2">
@@ -385,18 +385,18 @@ window.onload = () => {
         <div class="line2"></div>
         <div class="goalDetail2">
           <div class="goalDetail1">
-            <img src="image/goalIng.png" alt="이루고 있는 목표 이미지" class="imgIng" />
+            <img src="img/goalIng.png" alt="이루고 있는 목표 이미지" class="imgIng" />
             <div class="timeIng">${selectedValue}</div> <!-- 선택된 값 사용 -->
             <div class="countTxt">4회</div>
           </div>
           <div>
             <div class="detailIcon">
-              <img class="detailIconImg" src="image/Line_up.png" alt="성취율 아이콘" />
+              <img class="detailIconImg" src="img/Line_up.png" alt="성취율 아이콘" />
               <span class="detailTxt2">성취율</span>
               <span class="percentage">65%</span>
             </div>
             <div class="detailIcon">
-              <img class="detailIconImg" src="image/Chart.png" alt="참가자 아이콘" />
+              <img class="detailIconImg" src="img/Chart.png" alt="참가자 아이콘" />
               <span class="detailTxt2">참가자</span>
               <span class="participant">630명</span>
             </div>

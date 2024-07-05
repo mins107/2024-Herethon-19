@@ -26,7 +26,18 @@ a {
     display: flex;
     flex-direction: row;
   }
+
+  .Wrapper2 {
+    display: flex;
+    flex-direction: column;
+  }
   
+  .logoTop {
+    width: 100px;
+    margin-left: 50px;
+    margin-top: 10px;
+  }
+
   .navBar {
     display: flex;
     flex-direction: column;
@@ -120,7 +131,7 @@ a {
   
   .title {
     font-size: medium;
-    margin-top: 10%;
+    margin-top: -20px;
   }
   
   .category-buttons button {
