@@ -1,12 +1,21 @@
+<!-- templates/qna/create_question.html -->
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-    <title>qna작성</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>질문 작성</title>
 </head>
 <body>
-    <div class="container mt-5">
-        <h1>qna작성</h1>
-    </div>
+    <h1>질문 작성</h1>
+    <form method="post" action="{% url 'qna:create_question' %}">
+        {% csrf_token %}
+        <label for="title">제목:</label>
+        <input type="text" id="title" name="title" required><br><br>
+        <label for="content">내용:</label>
+        <textarea id="content" name="content" required></textarea><br><br>
+        <button type="submit">제출</button>
+    </form>
+    <a href="{% url 'qna:get_questions' %}">질문 목록으로 돌아가기</a>
 </body>
 </html>
+

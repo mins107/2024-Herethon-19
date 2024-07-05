@@ -11,4 +11,5 @@ urlpatterns = [
     path('posts/', include('posts.urls')),
     path('reviews/', include('reviews.urls')),
     path('qna/', include('qna.urls')),
+    path('community/', include('community.urls')),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

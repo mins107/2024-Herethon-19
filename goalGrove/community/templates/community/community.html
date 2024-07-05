@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/communitystyle.css' %}">
+    <script src="{% static 'js/community.js' %}" defer></script>
+</head>
+<body>
+
+  <div class="Wrapper">
+      
+    <div class="navBar">
+      <button class="menu" id="menuButton"></button>
+      <div class="userNav">
+        <div class="userNavTxt">
+          <div class="userName">{{ user_name }}</div>
+          <div class="userEmail">{{ user_email }}</div>
+        </div>
+        <button class="logout"></button>
+      </div>
+      <div id="navBarMenuContainer">
+        <div class="navBarMenu">
+          <img src="{% static 'img/Heart.svg' %}" />
+          <span class="menuText">메인</span>
+        </div>
+        <div class="navBarMenu">
+          <img src="{% static 'img/Cart.svg' %}" />
+          <span class="menuText">목표쇼핑</span>
+        </div>
+        <div class="navBarMenu">
+          <img src="{% static 'img/Group.svg' %}" />
+          <span class="menuText">커뮤니티</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <img class="logoTop" alt="상단 로고" src="{% static 'img/LogoMain.png' %}" />
+
+    <div class="content">
+        <div class="title"><h1>커뮤니티</h1></div>
+        <div class="top">
+        <div class="category-buttons">
+            <button onclick="filterCategory('all')">전체</button>
+            <button onclick="filterCategory('운동')">운동</button>
+            <button onclick="filterCategory('식단')">식단</button>
+            <button onclick="filterCategory('공부')">공부</button>
+            <button onclick="filterCategory('취미')">취미</button>
+            <button onclick="filterCategory('습관')">습관</button>
+            <button onclick="filterCategory('자기계발')">자기계발</button>
+            <button class="forGrove-btn" onclick="filterCategory('forGrove')">forGrove</button>
+        </div>
+
+        <button class="dropbtn_category">
+          <div class="dropbtn_category_content">이루고 있는 목표</div>
+          <img
+            src="{% static 'img/dropdown.svg' %}"
+            class="dropbtn_category_click dropbtn_category_icon"
+            onclick="dropdownCategory()"
+          />
+        </button>
+      </div>
+
+        <div id="goals-container">
+            <!-- Goal cards will be inserted here dynamically -->
+            {% for goal in goals %}
+            <div class="goal-card" data-username="{{ goal.username }}" data-title="{{ goal.title }}" data-type="{{ goal.category }}" data-image="{{ goal.image.url }}" data-frequency="{{ goal.frequency }}" data-description="{{ goal.description }}" data-challengecount="{{ goal.challenge_count }}" data-tupcount="{{ goal.tup_count }}" data-tdowncount="{{ goal.tdown_count }}">
+                <div class="goal-header">
+                    <div class="goal-left">
+                        <div class="logo-background">
+                            <img src="{% static 'img/asset/Logo2 1.svg' %}" alt="Title Logo" class="title-logo">
+                        </div>
+                        <div class="goal-title">
+                            <div class="goal-nickname">{{ goal.username }}</div>
+                            <a>{{ goal.title }}</a>
+                        </div>
+                    </div>
+
+                    <div class="goal-right">
+                        <a class="goal-type">{{ goal.category }}</a>
+                        <img src="{% static 'img/asset/Basket_alt_3.svg' %}" alt="Cart Icon" class="cart-icon">
+                    </div>
+                </div>
+                
+                <hr class="goal-separator">
+                
+                <div class="goal-info">
+                    <div class="goal-details">
+                      <div class="firstline">
+                        <div class="challengecount">{{ goal.challenge_count }}회차</div>
+                        <div class="first-line">
+                            <span class="highlight">{{ goal.frequency }}</span>
+                            <span>{{ goal.frequency }}</span>
+                        </div>
+                      </div>
+                        <div class="second-line">
+                            <p>{{ goal.description }}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="right-block">
+                        <img src="{{ goal.image.url }}" alt="Goal Image" class="goal-image">
+                        <div class="like-container">
+                          <img src="{% static 'img/asset/Thumbs Up.svg' %}" alt="Thumbs Up" class="ThumbsUp">
+                          <a class="TUpcount">{{ goal.tup_count }}</a>
+                          <img src="{% static 'img/asset/Thumbs Down.svg' %}" alt="Thumbs Down" class="ThumbsDown">
+                          <a class="TDowncount">{{ goal.tdown_count }}</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
