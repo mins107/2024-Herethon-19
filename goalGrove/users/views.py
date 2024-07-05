@@ -1,8 +1,8 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404 
 from django.contrib import messages
 from django.contrib.auth import authenticate, login as auth_login, get_user_model
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse
 from .forms import SignUpForm
 from .forms import ResetPasswordForm
 User = get_user_model()
