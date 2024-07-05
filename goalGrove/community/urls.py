@@ -3,8 +3,8 @@ from .views import *
 from django.conf import settings
 from django.conf.urls.static import static
 
-app_name = 'posts'
+app_name = 'community'
 
 urlpatterns = [
-    path('create/', create_post, name='create_post'),
+    path('', community_view, name='community'),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -152,7 +152,8 @@ window.onload = () => {
 
     if (clickCount % 2 !== 0) {
       navBar.style.width = "15rem";
-      logoutbtn.style.marginLeft = "30%";
+      logoutbtn.style.marginLeft = "10px";
+      logoutbtn.style.marginRight = "100px";
       logoutbtn.style.backgroundColor = "#f1f1f1";
       userNavTxt.style.display = "inline";
       userNav.style.backgroundColor = "#f1f1f1";

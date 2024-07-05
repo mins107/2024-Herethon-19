@@ -34,7 +34,7 @@
               <span class="menuText">목표쇼핑</span>
             </div>
           </a>
-          <a href="#">
+          <a href="{% url 'community:community' %}">
             <div class="navBarMenu">
               <img src="{% static 'img/Group.svg' %}" />
               <span class="menuText">커뮤니티</span>
@@ -202,58 +202,8 @@
                   <div>
                     <span class="categoryExp">카테고리</span>
                     <div class="dropdownCategory2">
-                      <button class="dropbtn_category2">
-                        <div class="dropbtn_category_content2">취미</div>
-                        <img
-                          src="{% static 'img/dropdownWhite.svg' %}"
-                          class="dropbtn_category_click2 dropbtn_category_icon2"
-                          onclick="dropdownCategory2()"
-                        />
-                      </button>
-                    </div>
-                    <div class="dropdown-category-content2">
-                      <div
-                        class="category-content2"
-                        onclick="showCategory2(this.innerText)"
-                      >
-                        취미
-                      </div>
-                      <div
-                        class="category-content2"
-                        onclick="showCategory2(this.innerText)"
-                      >
-                        건강
-                      </div>
-                      <div
-                        class="category-content2"
-                        onclick="showCategory2(this.innerText)"
-                      >
-                        소비
-                      </div>
-                      <div
-                        class="category-content2"
-                        onclick="showCategory2(this.innerText)"
-                      >
-                        공부
-                      </div>
-                      <div
-                        class="category-content2"
-                        onclick="showCategory2(this.innerText)"
-                      >
-                        식단
-                      </div>
-                      <div
-                        class="category-content2"
-                        onclick="showCategory2(this.innerText)"
-                      >
-                        자기계발
-                      </div>
-                      <div
-                        class="category-content2"
-                        onclick="showCategory2(this.innerText)"
-                      >
-                        기타
-                      </div>
+
+                        <div class="goalIng-category">취미</div>
                     </div>
                   </div>
                 </div>
@@ -309,7 +259,7 @@
           <!-- 과정 나누기 제목 -->
           <div class="Wrapper7">
             <div class="mainTxt">과정 나누기</div>
-
+            <button class="goalAdd2">과정 나누기 등록</button>
             <div class="detailTxt">
               다른 사람들과 목표를 이루는 과정을 나누고 인증해요!
             </div>
@@ -325,58 +275,7 @@
               <div>
                 <span class="categoryExp">카테고리</span>
                 <div class="dropdownCategory3">
-                  <button class="dropbtn_category3">
-                    <div class="dropbtn_category_content3">취미</div>
-                    <img
-                      src="{% static 'img/dropdownWhite.svg' %}"
-                      class="dropbtn_category_click3 dropbtn_category_icon3"
-                      onclick="dropdownCategory3()"
-                    />
-                  </button>
-                </div>
-                <div class="dropdown-category-content3">
-                  <div
-                    class="category-content3"
-                    onclick="showCategory3(this.innerText)"
-                  >
-                    취미
-                  </div>
-                  <div
-                    class="category-content3"
-                    onclick="showCategory3(this.innerText)"
-                  >
-                    건강
-                  </div>
-                  <div
-                    class="category-content3"
-                    onclick="showCategory3(this.innerText)"
-                  >
-                    소비
-                  </div>
-                  <div
-                    class="category-content3"
-                    onclick="showCategory3(this.innerText)"
-                  >
-                    공부
-                  </div>
-                  <div
-                    class="category-content3"
-                    onclick="showCategory3(this.innerText)"
-                  >
-                    식단
-                  </div>
-                  <div
-                    class="category-content3"
-                    onclick="showCategory3(this.innerText)"
-                  >
-                    자기계발
-                  </div>
-                  <div
-                    class="category-content3"
-                    onclick="showCategory3(this.innerText)"
-                  >
-                    기타
-                  </div>
+                  <div class="goalIng-category">취미</div>
                 </div>
               </div>
             </div>

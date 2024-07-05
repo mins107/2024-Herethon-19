@@ -155,8 +155,8 @@ window.onload = () => {
                           <span class="category_content">운동</span>
                         </div>
                         <div class="marketWrapper4">
-                          <span class="timeIng_market">일주일에</span>
-                          <span class="countTxt_market">3회</span>
+                          <span class="countTxt_market">일주일에</span>
+                          <span class="timeIng_market">3회</span>
                         </div>
                       </div>
                     </div>
@@ -183,14 +183,14 @@ window.onload = () => {
     };
   }
 
-  dropdownCategory = () => {
+  function dropdownCategory() {
     var va = document.querySelector(".dropdown-category-content");
     var dropbtn_category = document.querySelector(".dropbtn_category");
     va.classList.toggle("show");
     dropbtn_category.style.borderColor = "rgb(94, 94, 94)";
-  };
+  }
 
-  showCategory = (value) => {
+  function showCategory(value) {
     var dropbtn_category_icon = document.querySelector(
       ".dropbtn_category_icon"
     );
@@ -200,71 +200,7 @@ window.onload = () => {
 
     dropbtn_category_icon.innerText = "";
     dropbtn_category_content.innerText = value;
-  };
-
-  //드롭다운 카테고리2
-  document.querySelector(".dropbtn_category_click2").onclick = () => {
-    dropdownCategory2();
-  };
-
-  let categoryContentElements2 =
-    document.getElementsByClassName("category-content2");
-  for (let i = 0; i < categoryContentElements2.length; i++) {
-    categoryContentElements2[i].onclick = (event) => {
-      showCategory2(event.target.innerText); // value를 event.target.innerText로 변경
-    };
   }
-
-  dropdownCategory2 = () => {
-    var va2 = document.querySelector(".dropdown-category-content2");
-    var dropbtn_category2 = document.querySelector(".dropbtn_category2");
-    va2.classList.toggle("show");
-    dropbtn_category2.style.borderColor = "rgb(94, 94, 94)";
-  };
-
-  showCategory2 = (value) => {
-    var dropbtn_category_icon2 = document.querySelector(
-      ".dropbtn_category_icon2"
-    );
-    var dropbtn_category_content2 = document.querySelector(
-      ".dropbtn_category_content2"
-    );
-
-    dropbtn_category_icon2.innerText = "";
-    dropbtn_category_content2.innerText = value;
-  };
-
-  //드롭다운 카테고리 3(과정나누기)
-  document.querySelector(".dropbtn_category_click3").onclick = () => {
-    dropdownCategory3();
-  };
-
-  let categoryContentElements3 =
-    document.getElementsByClassName("category-content3");
-  for (let i = 0; i < categoryContentElements3.length; i++) {
-    categoryContentElements3[i].onclick = (event) => {
-      showCategory3(event.target.innerText); // value를 event.target.innerText로 변경
-    };
-  }
-
-  dropdownCategory3 = () => {
-    var va3 = document.querySelector(".dropdown-category-content3");
-    var dropbtn_category3 = document.querySelector(".dropbtn_category3");
-    va3.classList.toggle("show");
-    dropbtn_category3.style.borderColor = "rgb(94, 94, 94)";
-  };
-
-  showCategory3 = (value) => {
-    var dropbtn_category_icon3 = document.querySelector(
-      ".dropbtn_category_icon3"
-    );
-    var dropbtn_category_content3 = document.querySelector(
-      ".dropbtn_category_content3"
-    );
-
-    dropbtn_category_icon3.innerText = "";
-    dropbtn_category_content3.innerText = value;
-  };
 
   const navBtn = document.getElementById("menuButton");
   let clickCount = 0;
@@ -299,7 +235,7 @@ window.onload = () => {
     }
   });
 
-  let selectedValue = ""; // 초기값 설정
+  let selectedValue = "1회"; // 초기값 설정
 
   // 확장 기능 추가 함수
   const addExpandFunctionality = (wrapper) => {
@@ -354,57 +290,12 @@ window.onload = () => {
                   <div>
                     <span class="categoryExp">카테고리</span>
                     <div class="dropdownCategory2">
-                      <button class="dropbtn_category2">
-                        <div class="dropbtn_category_content2">취미</div>
-                        <img src="/static/img/dropdownWhite.svg" class="dropbtn_category_click2 dropbtn_category_icon2" onclick="dropdownCategory2()" />
-                      </button>
-                    </div>
-                    <div class="dropdown-category-content2">
-                      <div
-                        class="category-content2"
-                        onclick="showCategory2(this.innerText)"
-                      >
-                        취미
-                      </div>
-                      <div
-                        class="category-content2"
-                        onclick="showCategory2(this.innerText)"
-                      >
-                        건강
-                      </div>
-                      <div
-                        class="category-content2"
-                        onclick="showCategory2(this.innerText)"
-                      >
-                        소비
-                      </div>
-                      <div
-                        class="category-content2"
-                        onclick="showCategory2(this.innerText)"
-                      >
-                        공부
-                      </div>
-                      <div
-                        class="category-content2"
-                        onclick="showCategory2(this.innerText)"
-                      >
-                        식단
-                      </div>
-                      <div
-                        class="category-content2"
-                        onclick="showCategory2(this.innerText)"
-                      >
-                        자기계발
-                      </div>
-                      <div
-                        class="category-content2"
-                        onclick="showCategory2(this.innerText)"
-                      >
-                        기타
-                      </div>
+
+                        <div class="goalIng-category">취미</div>
                     </div>
                   </div>
                 </div>
+
                 <div class="line2"></div>
                 <div class="goalDetail2">
                   <div class="goalDetail1">
@@ -533,32 +424,6 @@ window.onclick = (e) => {
       let openDropdown_category = dropdowns_category[i];
       if (openDropdown_category.classList.contains("show")) {
         openDropdown_category.classList.remove("show");
-      }
-    }
-  }
-
-  if (!e.target.matches(".dropbtn_category_click2")) {
-    var dropdowns_category2 = document.getElementsByClassName(
-      "dropdown-category-content2"
-    );
-
-    for (let i = 0; i < dropdowns_category2.length; i++) {
-      let openDropdown_category2 = dropdowns_category2[i];
-      if (openDropdown_category2.classList.contains("show")) {
-        openDropdown_category2.classList.remove("show");
-      }
-    }
-  }
-
-  if (!e.target.matches(".dropbtn_category_click3")) {
-    var dropdowns_category3 = document.getElementsByClassName(
-      "dropdown-category-content3"
-    );
-
-    for (let i = 0; i < dropdowns_category3.length; i++) {
-      let openDropdown_category3 = dropdowns_category3[i];
-      if (openDropdown_category3.classList.contains("show")) {
-        openDropdown_category3.classList.remove("show");
       }
     }
   }
