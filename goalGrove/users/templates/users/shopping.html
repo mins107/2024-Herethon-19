@@ -44,8 +44,57 @@
         </div>
       </div>
     </div>
-    <div class="Wrapper2">
-      <img class="logoTop" alt="상단 로고" src="{% static 'img/LogoMain.png' %}" />
+    <!-- <div class="logo-container">
+      <img src="{% static 'img/asset/Logo1 1.svg' %}" alt="Logo" class="logo" />
+    </div>
+    <div class="sidebar" id="sidebar">
+      <div class="menu-icon" onclick="toggleMenu()">
+        <img src="{% static 'img/asset/menu1.svg' %}" alt="menu" />
+      </div>
+      <ul class="menu-items">
+        {% if user.is_authenticated %}
+        <li>
+          <form id="logoutForm" action="{% url 'users:logout' %}" method="post">
+            {% csrf_token %}
+            <span>
+              <div class="nickname">{{ user_name }}</div>
+              <div class="email">{{ user_email }}</div>
+            </span>
+            <button type="submit" style="border: none; background: none">
+              <img
+                src="{% static 'img/asset/Logout.svg' %}"
+                alt="Logout Icon"
+              />
+            </button>
+          </form>
+        </li>
+        <li>
+          <a href="{% url 'users:main' %}"
+            ><img
+              src="{% static 'img/asset/Vector.svg' %}"
+              alt="Heart Icon"
+            /><span>메인</span></a
+          >
+        </li>
+        <li>
+          <a href="{% url 'users:shop' %}"
+            ><img
+              src="{% static 'img/asset/Vector-2.svg' %}"
+              alt="Cart Icon"
+            /><span>목표 쇼핑</span></a
+          >
+        </li>
+        <li>
+          <a href="#"
+            ><img
+              src="{% static 'img/asset/Vector-3.svg' %}"
+              alt="Community Icon"
+            /><span>커뮤니티</span></a
+          >
+        </li>
+        {% endif %}
+      </ul>
+    </div> -->
     <div class="content">
       <div class="title"><h1>목표 쇼핑</h1></div>
       <div class="category-buttons">
@@ -148,6 +197,5 @@
         </div>
       </div>
     </div>
-  </div>
   </body>
 </html>

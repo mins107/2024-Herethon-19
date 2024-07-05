@@ -5,25 +5,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>큐엔에이</title>
-    <link rel="stylesheet" href="{% static 'css/q&astyle.css'}">
-    <script src="{% static 'js/q&a.js' %}"></script>
+    <title>QnA</title>
+    <link rel="stylesheet" href="{% static 'css/qnastyle.css' %}">
+    <script src="{% static 'js/qna.js' %}"></script>
 </head>
 <body>
     <div class="logo-container">
-        <img src="{% static 'img/asset/Logo1 1.svg %}" alt="Logo" class="logo">
+        <img src="{% static 'img/asset/Logo1 1.svg' %}" alt="Logo" class="logo">
     </div>
     <div class="sidebar" id="sidebar">
         <div class="menu-icon" onclick="toggleMenu()">
             <img src="{% static 'img/asset/menu1.svg' %}" alt="menu">
         </div>
         <ul class="menu-items">
-            <li><a href="#"><span><div class="nickname">닉네임</div>
-                <div class="email">이메일주소</div></span>
+            <li><a href="#"><span><div class="nickname">{{ user_name }}</div>
+                <div class="email">{{ user_email }}</div></span>
                 <img src="{% static 'img/asset/Logout.svg' %}" alt="Logout Icon"></a></li>
-            <li><a href="#"><img src="{% static 'img/asset/Vector.svg' %}" alt="Heart Icon"><span>메인</span></a></li>
-            <li><a href="#"><img src="{% static 'img/asset/Vector-2.svg' %}" alt="Cart Icon"><span>목표 쇼핑</span></a></li>
-            <li><a href="#"><img src="{% static 'img/asset/Vector-3.svg' %}" alt="Community Icon"><span>커뮤니티</span></a></li>
+                <li><a href="{% url 'users:main' %}"><img src="{% static 'img/asset/Vector.svg' %}" alt="Heart Icon"><span>메인</span></a></li>
+                <li><a href="{% url 'users:shop' %}"><img src="{% static 'img/asset/Vector-2.svg' %}" alt="Cart Icon"><span>목표 쇼핑</span></a></li>
+                <li><a href="{% url 'community:community' %}"><img src="{% static 'img/asset/Vector-3.svg' %}" alt="Community Icon"><span>커뮤니티</span></a></li>
         </ul>
     </div>
 
@@ -53,7 +53,7 @@
         </div>
         <div class="review-section">
             <div class="tabs">
-                <a href="{% reviews 'templates/review.html %}" class="tab review-tab">리뷰</a>
+                <a href="{% url 'users:review' %}" class="tab review-tab">리뷰</a>
                 <div class="tab qna-tab active">Q&A</div>
             </div>
             <div class="review-box">

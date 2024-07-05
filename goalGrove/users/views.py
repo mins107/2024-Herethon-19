@@ -3,16 +3,20 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login as auth_login, get_user_model
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
-from .forms import SignUpForm
-from .forms import ResetPasswordForm
+from .forms import SignUpForm, ResetPasswordForm
+from django.views.decorators.csrf import csrf_exempt
+import json
+from posts.models import Category
 User = get_user_model()
 
 @login_required
 def main_view(request):
     user = request.user
+    categories = Category.objects.all()
     context = {
         'user_name': user.username,
         'user_email': user.email,
+        'categories': categories,
     }
     return render(request, 'users/main.html', context)
 
@@ -24,6 +28,24 @@ def shop_view(request):
         'user_email': user.email,
     }
     return render(request, 'users/shopping.html', context)
+
+@login_required
+def review_view(request):
+    user = request.user
+    context = {
+        'user_name': user.username,
+        'user_email': user.email,
+    }
+    return render(request, 'reviews/review.html', context)
+
+@login_required
+def qna_view(request):
+    user = request.user
+    context = {
+        'user_name': user.username,
+        'user_email': user.email,
+    }
+    return render(request, 'qna/qna.html', context)
 
 def signup_view(request):
     if request.method == "GET":

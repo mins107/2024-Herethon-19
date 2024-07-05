@@ -27,7 +27,6 @@ body {
   display: flex;
   height: 100vh;
   position: relative;
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   padding-bottom: 50px;
@@ -55,7 +54,7 @@ a {
   background-color: #ffffff;
   display: flex;
   width: 104px;
-  min-height: 100vh;
+  min-height: 140%;
   padding-top: 20px;
   border-right: 1px solid #000000;
   font-family: Pretendard;
@@ -135,8 +134,8 @@ a {
   display: flex;
   flex-direction: row;
   margin-left: 90px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-bottom: 0px;
   width: 100%;
   align-items: center;
 }
@@ -230,13 +229,11 @@ a {
 }
 
 .goalAdd2 {
-  margin-top: 20px;
   background-color: #7db249;
   font-family: Pretendard;
   padding: 7px;
   margin-left: 15px;
   border-radius: 10px;
-  margin-bottom: 15px;
 
   width: 10%;
   border: none;
@@ -248,8 +245,29 @@ a {
   color: white;
 }
 
-.marketChoicebtn {
+.goalAdd3 {
+  background-color: #7db249;
+  font-family: Pretendard;
+  padding: 7px;
+  margin-left: 15px;
+  border-radius: 10px;
+
+  width: 20%;
   border: none;
+  box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  justify-content: center;
+  color: white;
+}
+
+.Wrapper12 {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  flex-wrap: wrap;
+  margin-left: 50px;
 }
 
 .Wrapper2market {
@@ -365,10 +383,11 @@ a {
   padding-right: 30px;
   padding-bottom: 10px;
   justify-content: center;
-  margin-left: 90px;
+  margin-left: 40px;
   flex-direction: column;
   height: 245px;
   width: 42%;
+  margin-top: 30px;
 }
 
 .Wrapper10 {
