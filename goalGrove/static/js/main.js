@@ -64,29 +64,66 @@ window.onload = () => {
       alt="사진 추가"
       class="goalImg"
     />
-    <div class="goalContent">
-      <div class="goalTime">
-        <div class="dropdownT">
-          <button class="dropbtnT">
-            <div class="dropbtn_contentT">하루에</div>
-            <img
-              src="/static/img/dropdown.svg"
-              class="dropbtn_clickT dropbtn_iconT"
-              onclick="dropdownT()"
-            />
-          </button>
-          <div class="dropdown-contentT">
-            <div class="dropdownMainT" id="day" onclick="showMenuT('하루에')">하루에</div>
-            <div class="dropdownMainT" id="week" onclick="showMenuT('일주일에')">일주일에</div>
-            <div class="dropdownMainT" id="month" onclick="showMenuT('한달에')">한달에</div>
-          </div>
-        </div>
-        <span>
-          <span class="count">1</span>
-          <span class="countTxt">회</span>
-        </span>
-      </div>
-
+                <div class="goalContent">
+                  <div class="goalTime">
+                    <span>
+                      <span class="countTxt">일주일에</span>
+                    </span>
+                    <div class="dropdownT">
+                      <button class="dropbtnT">
+                        <div class="dropbtn_contentT">1회</div>
+                        <img
+                          src="/static/img/dropdown.svg"
+                          class="dropbtn_clickT dropbtn_iconT"
+                          onclick="dropdownT()"
+                        />
+                      </button>
+                      <div class="dropdown-contentT">
+                        <div 
+                          class="dropdownMainT" id="t1"
+                          onclick="showMenuT(this.innerText)"
+                        >
+                          1회
+                        </div>
+                        <div 
+                          class="dropdownMainT" id="t2"
+                          onclick="showMenuT(this.innerText)"
+                        >
+                          2회
+                        </div>
+                        <div
+                          class="dropdownMainT" id="t3"
+                          onclick="showMenuT(this.innerText)"
+                        >
+                          3회
+                        </div>
+                        <div
+                          class="dropdownMainT" id="t4"
+                          onclick="showMenuT(this.innerText)"
+                        >
+                          4회
+                        </div>
+                        <div 
+                          class="dropdownMainT" id="t5"
+                          onclick="showMenuT(this.innerText)"
+                        >
+                          5회
+                        </div>
+                        <div 
+                          class="dropdownMainT" id="t6"
+                          onclick="showMenuT(this.innerText)"
+                        >
+                          6회
+                        </div>
+                        <div 
+                          class="dropdownMainT" id="t7"
+                          onclick="showMenuT(this.innerText)"
+                        >
+                          7회
+                        </div>
+                      </div>
+                    </div>
+                  </div>
       <div class="goalExplain">
         <textarea rows="1" class="goalExplainInput" placeholder="구체적인 설명 작성하기"></textarea>
       </div>
@@ -262,7 +299,7 @@ window.onload = () => {
     }
   });
 
-  let selectedValue = "일주일에"; // 초기값 설정
+  let selectedValue = ""; // 초기값 설정
 
   // 확장 기능 추가 함수
   const addExpandFunctionality = (wrapper) => {
@@ -301,18 +338,19 @@ window.onload = () => {
   document.querySelectorAll(".Wrapper3").forEach(addExpandFunctionality);
 
   // 목표 추가 함수
+
   const addGoalEvent = () => {
     const newGoalName = document.querySelector(".goalTxtInput").value;
     const newGoalDetail = document.querySelector(".goalExplainInput").value;
 
     const newGoal = document.createElement("div");
     newGoal.innerHTML = `
-<div class="Wrapper3">
-                <div class="goalWrapper">
-                  <span>
-                    <span class="goalTxt2">주 4회 헬스장에서 운동</span>
-                    <span class="categoryExp"  id="goalTxt">${newGoalName}</span>
-                  </span>
+    <div class="Wrapper3">
+      <div class="goalWrapper">
+        <span>
+          <span class="goalTxt2" id="goalTxt">${newGoalName}</span>
+          <span class="categoryExp" id="goal-ing-end">종료하기</span>
+        </span>
                   <div>
                     <span class="categoryExp">카테고리</span>
                     <div class="dropdownCategory2">
@@ -371,8 +409,8 @@ window.onload = () => {
                 <div class="goalDetail2">
                   <div class="goalDetail1">
                     <img src="/static/img/goalIng.png" alt="이루고 있는 목표 이미지" class="imgIng" />
-                    <div class="timeIng">${selectedValue}</div> <!-- 선택된 값 사용 -->
-                    <div class="countTxt">4회</div>
+                    <div class="countTxt">일주일에</div>
+                    <div class="timeIng">${selectedValue}</div>
                   </div>
                   <div>
                     <div class="detailIcon">
@@ -386,6 +424,9 @@ window.onload = () => {
                       <span class="participant">630명</span>
                     </div>
                   </div>
+                </div>
+                <div class="goalIngDetail">
+                  ${newGoalDetail}
                 </div>
               </div>
     `;

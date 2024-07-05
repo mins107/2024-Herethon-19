@@ -9,19 +9,6 @@
   </head>
   <body>
 
-    <!-- <div class="sidebar" id="sidebar">
-        <div class="menu-icon" onclick="toggleMenu()">
-            <img src="asset/menu1.svg" alt="menu">
-        </div>
-        <ul class="menu-items">
-            <li><a href="#"><span><div class="nickname">닉네임</div>
-                <div class="email">이메일주소</div></span>
-                <img src="asset/Logout.svg" alt="Logout Icon"></a></li>
-            <li><a href="#"><img src="asset/Vector.svg" alt="Heart Icon"><span>메인</span></a></li>
-            <li><a href="#"><img src="asset/Vector-2.svg" alt="Cart Icon"><span>목표 쇼핑</span></a></li>
-            <li><a href="#"><img src="asset/Vector-3.svg" alt="Community Icon"><span>커뮤니티</span></a></li>
-        </ul>
-    </div> -->
     <div class="Wrapper">
       
       <div class="navBar">
@@ -88,40 +75,7 @@
             <!-- 목표장바구니 -->
 
             <div class="Wrapper2">
-              
-
-              <!--
-              <div class="goalTxt">목표 장바구니</div>
-              <div class="line"></div>
-              <div class="Wrapper6">
-                <div class="goalWrapper">
-                  <span class="marketName">말하는 감자</span>
-                  <img src="image/X.svg" alt="창 닫기" class="marketX" />
-                </div>
-                <div class="goalWrapper">
-                  <div class="marketWrapper">
-                    <img
-                      src="image/market.svg"
-                      alt="장바구니 사진"
-                      class="marketImg"
-                    />
-                    <div class="marketWrapper2">
-                      <div class="marketWrapper3">
-                        <span class="marketgoalTxt">주 3회 요가</span>
-                        <span class="category_content">운동</span>
-                      </div>
-                      <div class="marketWrapper4">
-                        <span class="timeIng_market">일주일에</span>
-                        <span class="countTxt_market">3회</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="marketChoicebtn">선택하기</div>
-                
-                </div>
-              
-              </div>
-          -->
+            
               
               <div class="goalWrapper">
                 <input placeholder="목표 이름 작성하기" class="goalTxtInput"></input>
@@ -138,51 +92,18 @@
                     </button>
                   </div>
                   <div class="dropdown-category-content">
+                    {% for category in categories %}
                     <div
                       class="category-content"
                       onclick="showCategory(this.innerText)"
                     >
-                      취미
+                      {{ category.name }}
                     </div>
-                    <div
-                      class="category-content"
-                      onclick="showCategory(this.innerText)"
-                    >
-                      건강
-                    </div>
-                    <div
-                      class="category-content"
-                      onclick="showCategory(this.innerText)"
-                    >
-                      소비
-                    </div>
-                    <div
-                      class="category-content"
-                      onclick="showCategory(this.innerText)"
-                    >
-                      공부
-                    </div>
-                    <div
-                      class="category-content"
-                      onclick="showCategory(this.innerText)"
-                    >
-                      식단
-                    </div>
-                    <div
-                      class="category-content"
-                      onclick="showCategory(this.innerText)"
-                    >
-                      자기계발
-                    </div>
-                    <div
-                      class="category-content"
-                      onclick="showCategory(this.innerText)"
-                    >
-                      기타
-                    </div>
+                    {% endfor %}
                   </div>
                 </div>
               </div>
+
 
               <div class="line"></div>
               <div class="goalDetail">
@@ -207,22 +128,46 @@
                       </button>
                       <div class="dropdown-contentT">
                         <div 
-                          class="dropdownMainT" id="day"
+                          class="dropdownMainT" id="t1"
+                          onclick="showMenuT(this.innerText)"
+                        >
+                          1회
+                        </div>
+                        <div 
+                          class="dropdownMainT" id="t2"
                           onclick="showMenuT(this.innerText)"
                         >
                           2회
                         </div>
                         <div
-                          class="dropdownMainT" id="week"
+                          class="dropdownMainT" id="t3"
                           onclick="showMenuT(this.innerText)"
                         >
                           3회
                         </div>
                         <div
-                          class="dropdownMainT" id="month"
+                          class="dropdownMainT" id="t4"
                           onclick="showMenuT(this.innerText)"
                         >
                           4회
+                        </div>
+                        <div 
+                          class="dropdownMainT" id="t5"
+                          onclick="showMenuT(this.innerText)"
+                        >
+                          5회
+                        </div>
+                        <div 
+                          class="dropdownMainT" id="t6"
+                          onclick="showMenuT(this.innerText)"
+                        >
+                          6회
+                        </div>
+                        <div 
+                          class="dropdownMainT" id="t7"
+                          onclick="showMenuT(this.innerText)"
+                        >
+                          7회
                         </div>
                       </div>
                     </div>

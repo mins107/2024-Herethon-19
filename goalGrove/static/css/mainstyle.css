@@ -639,6 +639,18 @@ textarea:focus {
   box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
 }
 
+.timeIng2 {
+  border-radius: 24px;
+  background-color: #f2f2f2;
+  font-family: Pretendard;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 20px;
+  margin-right: 10px;
+  box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
+}
+
 .timeIng_market {
   border-radius: 24px;
   font-size: 12px;
@@ -760,7 +772,7 @@ textarea:focus {
   background-color: #7db249;
   width: 90px;
   border-radius: 20px;
-  height: 200px;
+  height: 220px;
   box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
   margin-top: 10px;
   z-index: 1000;
@@ -943,9 +955,9 @@ textarea:focus {
   font-weight: 400;
   font-family: Pretendard;
   background-color: #f2f2f2;
-  width: 90px;
+  width: 75px;
   border-radius: 20px;
-  height: 90px;
+  height: 200px;
   box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
   margin-top: 10px;
   z-index: 1000;
