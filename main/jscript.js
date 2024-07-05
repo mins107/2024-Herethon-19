@@ -28,7 +28,7 @@ window.onload = () => {
 
     if (id === "createGoal") {
       dropbtn_content.innerHTML = "목표 만들기";
-      goalAdd.style.display = "block";
+
       goalContent.innerHTML = `
 <div class="goalWrapper">
                 <input placeholder="목표 이름 작성하기" class="goalTxtInput"></input>
@@ -140,10 +140,11 @@ window.onload = () => {
                     <textarea rows="1"class="goalExplainInput" placeholder="구체적인 설명 작성하기"></textarea>
                   </div>
                 </div>
+              </div>
+              <button class="goalAdd" onclick="addGoalEvent()">목표 추가하기</button>
             `;
     } else if (id === "goalCart") {
       dropbtn_content.innerHTML = "목표 장바구니";
-      goalAdd.style.display = "none";
       goalContent.innerHTML = `
 <div class="goalTxt">목표 장바구니</div>
               <div class="line"></div>
@@ -348,7 +349,7 @@ window.onload = () => {
   
   <div class="Wrapper3">
     <div class="goalWrapper">
-      <div class="goalTxt" id="goalTxt">${newGoalName}</div>
+      <div class="goalTxt2" id="goalTxt">${newGoalName}</div>
       <div>
         <span class="categoryExp">카테고리</span>
         <div class="dropdownCategory2">

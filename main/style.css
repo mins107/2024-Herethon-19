@@ -126,8 +126,13 @@ body {
   justify-content: center;
   margin-left: 90px;
   flex-direction: column;
-  height: 270px;
+  align-items: top;
+  height: 330px;
   width: 80%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  overflow-y: auto;
 }
 
 .Wrapper8 {
@@ -167,10 +172,12 @@ body {
   margin-top: 20px;
   background-color: #7db249;
   font-family: Pretendard;
-  padding: 10px;
-  margin-left: 270px;
+  padding: 7px 0px 8px 0px;
+  margin-left: 180px;
   margin-right: 5px;
-  width: 30%;
+  border-radius: 10px;
+  margin-top: 50px;
+  width: 25%;
   border: none;
   box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
   display: flex;
@@ -204,20 +211,65 @@ body {
   width: 100%;
 }
 
+.goalingg {
+  background-color: #c0dba7;
+  border-radius: 20px;
+  width: 100%;
+  height: 330px;
+  display: flex;
+  margin-left: 90px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  flex-direction: column;
+  overflow-y: scroll;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.goalingg::-webkit-scrollbar {
+  width: 10px; /* 세로축 스크롤바 폭 너비 */
+  height: 15px; /* 가로축 스크롤바 폭 너비 */
+}
+
+.goalingg::-webkit-scrollbar-thumb {
+  background: rgb(102, 102, 102);
+  border-radius: 10px;
+}
+
+.goalingg::-webkit-scrollbar-track {
+  background: #d9d9d9;
+  border-radius: 10px;
+}
+
 .Wrapper3 {
   display: flex;
   background-color: #ffffff;
   border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 25px;
+  padding-right: 25px;
   padding-top: 20px;
-  padding-bottom: 10px;
-  margin-left: 90px;
+  padding-bottom: 30px;
+  margin-top: 10px;
   flex-direction: column;
-  width: 100%;
+  width: 90%;
   height: 120px;
   margin-bottom: 20px;
+}
+
+.Wrapper3::after {
+  content: url("image/downArrow.svg");
+  width: 109%;
+  margin-left: -25px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  height: 25px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: #e8eee3;
+  border-radius: 0px 0px 20px 20px;
 }
 
 .Wrapper4 {
@@ -255,6 +307,22 @@ body {
   height: 30%;
   border-radius: 20px;
   padding: 15px 0px 30px 0px;
+  overflow-y: scroll;
+}
+
+.Wrapper6::-webkit-scrollbar {
+  width: 10px; /* 세로축 스크롤바 폭 너비 */
+  height: 15px; /* 가로축 스크롤바 폭 너비 */
+}
+
+.Wrapper6::-webkit-scrollbar-thumb {
+  background: rgb(102, 102, 102);
+  border-radius: 10px;
+}
+
+.Wrapper6::-webkit-scrollbar-track {
+  background: #d9d9d9;
+  border-radius: 10px;
 }
 
 .detailTxt,
@@ -277,6 +345,15 @@ body {
   font-size: 20px;
   font-weight: bold;
   color: #404040;
+  margin-top: -90px;
+}
+
+.goalTxt2 {
+  font-family: Pretendard;
+  font-size: 20px;
+  font-weight: bold;
+  color: #404040;
+  width: 280px;
 }
 
 .goalExplainInput {
@@ -292,7 +369,7 @@ textarea {
   font-weight: light;
   color: #555555;
   font-size: 13px;
-  width: 100;
+  width: 100px;
   background-color: none;
 }
 
