@@ -1,46 +1,157 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping</title>
-    {% load static %}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
-    <link rel="stylesheet" href="{% static 'css/shopping.css' %}">
-    <script src="{% static 'js/scripts.js' %}"></script>
-</head>
-<body>
-    <div class="logo-container">
-        <img src="{% static 'img/asset/Logo1 1.svg' %}" alt="Logo" class="logo">
-    </div>
-    <div class="sidebar" id="sidebar">
-        <div class="menu-icon" onclick="toggleMenu()">
-            <img src="{% static 'img/asset/menu1.svg' %}" alt="menu">
+
+    <link rel="stylesheet" href="{% static 'css/shoppingstyle.css' %}" />
+    <script src="{% static 'js/shopping.js' %}"></script>
+  </head>
+  <body>
+    <div class="Wrapper">
+      <div class="navBar">
+        <button class="menu" id="menuButton"></button>
+        <div class="userNav">
+          <div class="userNavTxt">
+            <div class="userName">{{ user_name }}</div>
+            <div class="userEmail">{{ user_email }}</div>
+          </div>
+          <button class="logout"></button>
         </div>
-        <ul class="menu-items">
-            <li><a href="#"><span><div class="nickname">닉네임</div>
-                <div class="email">이메일주소</div></span>
-                <img src="{% static 'img/asset/Logout.svg' %}" alt="Logout Icon"></a></li>
-            <li><a href="#"><img src="{% static 'img/asset/Vector.svg' %}" alt="Heart Icon"><span>메인</span></a></li>
-            <li><a href="#"><img src="{% static 'img/asset/Vector-2.svg' %}" alt="Cart Icon"><span>목표 쇼핑</span></a></li>
-            <li><a href="#"><img src="{% static 'img/asset/Vector-3.svg' %}" alt="Community Icon"><span>커뮤니티</span></a></li>
-        </ul>
+        <div id="navBarMenuContainer">
+          <a href="{% url 'users:main' %}">
+            <div class="navBarMenu">
+              <img src="{% static 'img/Heart.svg' %}" />
+              <span class="menuText">메인</span>
+            </div>
+          </a>
+          <a href="{% url 'users:shop' %}">
+            <div class="navBarMenu">          
+              <img src="{% static 'img/Cart.svg' %}" />
+              <span class="menuText">목표쇼핑</span>
+            </div>
+          </a>
+          <a href="{% url 'community:community' %}">
+            <div class="navBarMenu">
+              <img src="{% static 'img/Group.svg' %}" />
+              <span class="menuText">커뮤니티</span>
+            </div>
+          </a>
+        </div>
+        </div>
+      </div>
     </div>
+    <div class="Wrapper2">
+      <img class="logoTop" alt="상단 로고" src="{% static 'img/LogoMain.png' %}" />
     <div class="content">
-        <div class="title"><h1>목표 쇼핑</h1></div>
-        <div class="category-buttons">
-            <button onclick="filterCategory('all')">전체</button>
-            <button onclick="filterCategory('exercise')">운동</button>
-            <button onclick="filterCategory('diet')">식단</button>
-            <button onclick="filterCategory('study')">공부</button>
-            <button onclick="filterCategory('hobby')">취미</button>
-            <button onclick="filterCategory('habit')">습관</button>
-            <button onclick="filterCategory('self')">자기계발</button>
-            <button class="forGrove-btn" onclick="filterCategory('forGrove')">forGrove</button>
-            
+      <div class="title"><h1>목표 쇼핑</h1></div>
+      <div class="category-buttons">
+        <button onclick="filterCategory('all')">전체</button>
+        <button onclick="filterCategory('exercise')">운동</button>
+        <button onclick="filterCategory('diet')">식단</button>
+        <button onclick="filterCategory('study')">공부</button>
+        <button onclick="filterCategory('hobby')">취미</button>
+        <button onclick="filterCategory('habit')">습관</button>
+        <button onclick="filterCategory('self')">자기계발</button>
+        <button class="forGrove-btn" onclick="filterCategory('forGrove')">
+          forGrove
+        </button>
+      </div>
+      <div id="goals-container">
+        <div class="goal-card" data-category="운동">
+          <div class="goal-header">
+            <div class="logo-background">
+              <img src="{% static 'img/asset/Logo2 1.svg' %}" alt="Goal Icon" />
+            </div>
+            <div class="goal-nickname">말하는 감자</div>
+            <div class="goal-title">주 3회 요가</div>
+            <div class="goal-type">운동</div>
+            <div class="cart-icon">
+              <img
+                src="{% static 'img/asset/Basket_alt_3.svg' %}"
+                alt="Cart Icon"
+              />
+            </div>
+          </div>
+          <div class="goal-info">
+            <img
+              src="{% static 'img/asset/woman-2573216_1280 1.svg' %}"
+              alt="주 3회 요가 Image"
+            />
+            <div class="goal-details">
+              <div class="first-line">
+                <span class="highlight">일주일에</span>
+                <span>3회</span>
+              </div>
+              <div class="second-line">
+                <p>1회당 1시간 30분 소요</p>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="goal-actions">
+            <button>
+              <a href="{% url 'users:review' %}">
+                리뷰 확인하기
+              </a>
+            </button>
+            <button>
+              <a href="{% url 'users:qna' %}">
+                Q&A
+              </a>
+            </button>
+          </div>
         </div>
-    <div id="goals-container">
-        <!-- Goal cards will be inserted here dynamically -->
+        <div class="goal-card" data-category="식단">
+          <div class="goal-header">
+            <div class="logo-background">
+              <img src="{% static 'img/asset/Logo2 1.svg' %}" alt="Goal Icon" />
+            </div>
+            <div class="goal-nickname">꿀고구마</div>
+            <div class="goal-title">삼시세끼 알맞게 챙겨먹기</div>
+            <div class="goal-type">식단</div>
+            <div class="cart-icon">
+              <img
+                src="{% static 'img/asset/Basket_alt_3.svg' %}"
+                alt="Cart Icon"
+              />
+            </div>
+          </div>
+          <div class="goal-info">
+            <img
+              src="{% static 'img/asset/image 4.svg' %}"
+              alt="삼시세끼 알맞게 챙겨먹기 Image"
+            />
+            <div class="goal-details">
+              <div class="first-line">
+                <span class="highlight">하루에</span>
+                <span>3회</span>
+              </div>
+              <div class="second-line">
+                <p>아침: 오전 7시</p>
+                <p>점심: 오후 12시</p>
+                <p>저녁: 오후 6시</p>
+                <p>1700kcal 전후로 너무 적거나 많지 않게 식사</p>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="goal-actions">
+            <button onclick="window.location.href='review.html'">
+              리뷰 확인하기
+            </button>
+            <button
+              onclick="window.location.href='q&a.html?goal=삼시세끼 알맞게 챙겨먹기'"
+            >
+              Q&A
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
+  </div>
+  </body>
 </html>

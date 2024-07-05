@@ -1,11 +1,72 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404 
 from django.contrib import messages
 from django.contrib.auth import authenticate, login as auth_login, get_user_model
-from django.http import HttpResponse, JsonResponse
-from .forms import SignUpForm
-from .forms import ResetPasswordForm
-
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
+from .forms import SignUpForm, ResetPasswordForm
+from django.views.decorators.csrf import csrf_exempt
+import json
+from posts.models import Category, Post
+from goals.models import GCategory, Goal
 User = get_user_model()
+
+@login_required
+def main_view(request):
+    user = request.user
+    categories = Category.objects.all()
+    category_id = request.GET.get('category')
+    gcategories = GCategory.objects.all()
+    gcategory_id = request.GET.get('gcategory')
+    
+    if category_id:
+        category = get_object_or_404(Category, id = category_id)
+        posts = category.posts.all().order_by('-id')
+    else:
+        posts = Post.objects.all().order_by('-id')
+
+    if gcategory_id:
+        gcategory = get_object_or_404(GCategory, id = gcategory_id)
+        goals = gcategory.goals.all().order_by('-id')
+    else:
+        goals = Goal.objects.all().order_by('-id')
+
+    context = {
+        'user_name': user.username,
+        'user_email': user.email,
+        'categories': categories,
+        'gcategories': gcategories,
+        'posts': posts,
+        'goals': goals,
+    }  
+
+    return render(request, 'users/main.html', context)
+
+@login_required
+def shop_view(request):
+    user = request.user
+    context = {
+        'user_name': user.username,
+        'user_email': user.email,
+    }
+    return render(request, 'users/shopping.html', context)
+
+@login_required
+def review_view(request):
+    user = request.user
+    context = {
+        'user_name': user.username,
+        'user_email': user.email,
+    }
+    return render(request, 'reviews/review.html', context)
+
+@login_required
+def qna_view(request):
+    user = request.user
+    context = {
+        'user_name': user.username,
+        'user_email': user.email,
+    }
+    return render(request, 'qna/qna.html', context)
 
 def signup_view(request):
     if request.method == "GET":
@@ -32,7 +93,7 @@ def login_view(request):
         
         if user is not None:
             auth_login(request, user)
-            return redirect('main')  # main 페이지로
+            return redirect('users:main')  # main 페이지로
         else:
             error_message = "아이디 또는 비밀번호가 올바르지 않습니다."
             return render(request, 'users/login.html', {'error_message': error_message})

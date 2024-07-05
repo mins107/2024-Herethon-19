@@ -1,0 +1,99 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    font-family: Pretendard, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    background-color: #f1f5ee !important;
+    background-image: url('../img/backdesign.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 화면 전체 높이 */
+}
+
+.maincontainer {
+    position: absolute;
+    top: 10%;
+    margin-bottom: 300px;
+    background-color: white; /* 필요에 따라 배경 색상 추가 */
+    padding-top:40px;
+    padding-right: 30px;
+    padding-left: 30px;
+    width: 450px;
+    height: 1100px;
+    border-radius: 10px; /* 모서리를 둥글게 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+    border: 1px solid #ddd;
+}
+
+.container{
+    justify-content: center;
+    align-items: center;
+}
+
+div h2 {
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+label {
+    margin-top: 30px;
+    text-align: left;
+    font-size: 15px;
+    color: #666666;
+}
+
+input {
+    padding: 15px;
+    margin-bottom: 30px;
+    border: 1px solid #C6C6C6;
+    border-radius: 10px;
+}
+
+textarea {
+    padding: 15px;
+    margin-bottom: 30px;
+    border: 1px solid #C6C6C6;
+    border-radius: 10px;
+    height: 300px;
+}
+
+
+
+input[type="submit"]{
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    background-color: #7DB249;
+    color: #fff;
+    font-size: 18px;
+    cursor: not-allowed;
+    transition: background-color 0.2s ease;
+}
+

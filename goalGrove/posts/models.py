@@ -1,35 +1,46 @@
 from django.db import models
+from users.models import User
+import os
+from uuid import uuid4
 from django.utils import timezone
-from datetime import timedelta
+
+def upload_filepath(instance, filename):
+    today_str = timezone.now().strftime("%Y%m%d")
+    file_basename = os.path.basename(filename)
+    return f'{instance._meta.model_name}/{today_str}/{str(uuid4())}_{file_basename}'
 
 class Category(models.Model):
-    CATEGORY_CHOICES = [
-        ('운동', '운동'),
-        ('식단', '식단'),
-        ('공부', '공부'),
-        ('취미', '취미'),
-        ('자기계발', '자기계발'),
-    ]
-    
-    name = models.CharField(max_length=100, choices=CATEGORY_CHOICES)
+    name = models.CharField(max_length=20)
 
     def __str__(self):
-        return self.name
+        return f'{self.name}'
 
 class Post(models.Model):
-    user = models.ForeignKey('users.User', on_delete=models.CASCADE, related_name='posts') #user.User의 FK, User객체가 사라지면 POST도 사라짐
-    title = models.CharField(max_length=200) #제목
-    date = models.DateField() #게시물 작성 날짜
-    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True) 
-    content = models.TextField() #내용
-    entry_number = models.PositiveIntegerField(null=True)
+    title = models.CharField(max_length=50)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    author = models.ForeignKey(to=User, on_delete=models.CASCADE, related_name="posts")
+    category = models.ManyToManyField(to=Category, through="PostCategory", related_name="posts")
+    like = models.ManyToManyField(to=User, through="Like", related_name="liked_post")
+    image = models.ImageField(upload_to=upload_filepath, blank=True)
+    video = models.FileField(upload_to=upload_filepath, blank=True)
 
     def __str__(self):
-        return f"{self.title} (Entry {self.entry_number})"
+        return f'[{self.id}] {self.title}'
 
-    def save(self, *args, **kwargs):
-        if not self.pk:  # 새로운 객체를 저장할 때 해당 사용자가 작성한 마지막 게시물을 조회
-            last_entry = Post.objects.filter(user=self.user).order_by('entry_number').last()
-            self.entry_number = last_entry.entry_number + 1 if last_entry else 1
+class PostCategory(models.Model):
+    category = models.ForeignKey(to=Category, on_delete=models.PROTECT, related_name="categories_postcategory")
+    post = models.ForeignKey(to=Post, on_delete=models.CASCADE, related_name="posts_postcategory")
 
-        super().save(*args, **kwargs)
+class Like(models.Model):
+    post = models.ForeignKey(to=Post, on_delete=models.CASCADE, related_name="post_likes")
+    user = models.ForeignKey(to=User, on_delete=models.CASCADE, related_name="user_post_likes")
+
+class Comment(models.Model):
+    post = models.ForeignKey(to=Post, on_delete=models.CASCADE, related_name="comments")
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(to=User, on_delete=models.CASCADE, related_name="comments")
+
+    def __str__(self):
+        return f'[{self.id}] {self.content}'

@@ -1,0 +1,357 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Pretendard-Regular';
+    margin: 0;
+    padding: 0;
+    background-color: #f1f5ee;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    position: relative;
+}
+
+.logo-container {
+    position: absolute;
+    top: 20px;
+    left: 100px;
+    z-index: 1;
+}
+
+.logo {
+    width: 116.7px;
+    height: 83px;
+    margin-left: 30px;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 104px;
+    height: 100vh;
+    background-color: #fff;
+    border-radius: 3%;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 0;
+}
+
+.sidebar.active {
+    width: 266px;
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.menu-items {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    text-align: left;
+    flex-grow: 1;
+    margin-top: 70px;
+}
+
+.menu-items li {
+    padding: 30px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.menu-items li a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+    padding-left: 20px;
+    width: 100%;
+}
+
+.menu-items li a img {
+    height: 24px;
+    margin-right: 10px;
+}
+
+.menu-items li a span {
+    display: none;
+}
+
+.sidebar.active .menu-items li a span {
+    display: inline-block;
+}
+
+.menu-items li:hover {
+    background-color: #f0f0f0;
+}
+
+#contents {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 120px;
+    transition: margin-left 0.3s;
+}
+
+.sidebar.active ~ #contents {
+    margin-left: 266px;
+}
+
+.title {
+    font-size: medium;
+    margin-top: 10%;
+}
+
+.goal-info-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    width: 100%;
+    max-width: 1000px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.goal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.goal-left {
+    display: flex;
+    align-items: center;
+}
+
+.title-logo {
+    width: 30px;
+    height: 30px;
+}
+
+.goal-title {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.goal-title .username {
+    font-size: 12px;
+    color: #888;
+}
+
+.goal-right {
+    display: flex;
+    align-items: center;
+}
+
+.category-button {
+    background-color: #8bc34a;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.cart-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.goal-separator {
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    margin: 10px 0;
+}
+
+.goal-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.goal-frequency {
+    font-weight: normal;
+}
+
+.goal-duration {
+    margin-right: 700px;
+    color:#888;
+}
+
+.highlight {
+    background-color: #f2f2f2; 
+    border-radius: 12px; 
+    padding: 5px 10px; 
+}
+
+
+.tabs {
+    display: flex;
+    margin-top: 50px;
+    width: 200px;
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    background-color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.tab.active {
+    background-color: #c0dba7;
+}
+
+.review-box {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    position: relative
+}
+
+.review-input-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: center;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.review-textbox {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 13px;
+    box-sizing: border-box;
+}
+
+.submit-review {
+    background-color: transparent;
+    border-style: none;
+    cursor: pointer;
+}
+
+.submit-review img {
+    width: 30px;
+    height: 30px;
+    margin-left: -50px;
+}
+
+.review-list {
+    width: 100%;
+    max-width: 800px;
+}
+
+.review-list .review {
+    margin-left: -80px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+
+}
+.user-icon{
+    width: 20px;
+    height: 20px;
+}
+.logo-background {
+    background-color: white;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #e0e0e0;
+    border-radius: 50%;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+
+.review-content {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    margin-left: 20px;
+    flex-grow: 1;
+}
+
+.review-username {
+    font-weight: bold;
+}
+
+.review-text {
+    margin-top: 5px;
+}
+
+.review-actions {
+    display: flex;
+    position: relative;
+    right:-150px;
+
+}
+
+.review-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.review-actions button img {
+    width: 24px;
+    height: 24px;
+    margin-right: 1px;
+    transition: all 0.3s ease; /* 이미지 변경에 애니메이션 추가 */
+}
+
+.review-separator {
+
+    border: 1px solid #e0e0e0;
+    margin: 30px 0;
+}

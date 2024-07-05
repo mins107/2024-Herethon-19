@@ -1,0 +1,86 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review</title>
+    <link rel="stylesheet" href="{% static 'css/reviewstyle.css' %}">
+    <script src="{% static 'js/qna.js' %}"></script>
+</head>
+<body>
+    <div class="logo-container">
+        <img src="{% static 'img/asset/Logo1 1.svg' %}" alt="Logo" class="logo">
+    </div>
+    <div class="sidebar" id="sidebar">
+        <div class="menu-icon" onclick="toggleMenu()">
+            <img src="{% static 'img/asset/menu1.svg' %}" alt="menu">
+        </div>
+        <ul class="menu-items">
+            <li><a href="#"><span><div class="nickname">{{ user_name }}</div>
+                <div class="email">{{ user_email }}</div></span>
+                <img src="{% static 'img/asset/Logout.svg' %}" alt="Logout Icon"></a></li>
+            <li><a href="{% url 'users:main' %}"><img src="{% static 'img/asset/Vector.svg' %}" alt="Heart Icon"><span>메인</span></a></li>
+            <li><a href="{% url 'users:shop' %}"><img src="{% static 'img/asset/Vector-2.svg' %}" alt="Cart Icon"><span>목표 쇼핑</span></a></li>
+            <li><a href="{% url 'community:community' %}"><img src="{% static 'img/asset/Vector-3.svg' %}" alt="Community Icon"><span>커뮤니티</span></a></li>
+        </ul>
+    </div>
+
+    <div id="contents">
+        <div class="title"><h1>목표 쇼핑</h1></div>
+        <div class="goal-info-box" id="goalInfoBox">
+            <div class="goal-header">
+                <div class="goal-left">
+                    <div class="logo-background">
+                        <img src="{% static 'img/asset/Logo2 1.svg' %}" alt="Title Logo" class="title-logo">
+                    </div>
+                    <div class="goal-title">
+                        <div class="username">말하는 감자</div>
+                        <div>주 3회 요가</div>
+                    </div>
+                </div>
+                <div class="goal-right">
+                    <button class="category-button">운동</button>
+                    <img src="{% static 'img/asset/Basket_alt_3.svg' %}" alt="Cart Icon" class="cart-icon">
+                </div>
+            </div>
+            <hr class="goal-separator">
+            <div class="goal-details">
+                <div class="goal-frequency"><span class="highlight">일주일에</span> 3회</div>
+                <div class="goal-duration">1회당 1시간 30분 소요</div>
+            </div>
+        </div>
+        <div class="review-section">
+            <div class="tabs">
+                <div class="tab review-tab active">리뷰</div>
+                <a href="{% url 'users:qna' %}" class="tab qna-tab">Q&A</a>
+            </div>
+            <div class="review-box">
+                <form id="reviewForm">
+                    <div class="review-input-box">
+                        <input type="text" id="reviewInput" placeholder="리뷰를 작성하세요." class="review-textbox">
+                        <button type="submit" class="submit-review"><img src="{% static 'img/asset/Send.svg' %}" alt="Send"></button>
+                    </div>
+                </form>
+                <div id="reviewList" class="review-list">
+                    <div class="review">
+                        <div class="logo-background">
+                            <img src="{% static 'img/asset/Logo2 1.svg' %}" alt="User Icon" class="user-icon">
+                        </div>
+                        <div class="review-content">
+                            <div class="review-username">헬아버지의파텍필립</div>
+                            <div class="review-text">요가 시작하면서 거북목이나 척추측만증 때문에 생기던 근육통이 많이 줄고 하루가 조금 더 알차게 느껴져요!</div>
+                        </div>
+
+                        <div class="review-actions">
+                            <button class="thumbs-up"><img src="{% static 'img/asset/Thumbs Up.svg' %}" alt="Thumbs Up"></button>
+                            <button class="thumbs-down"><img src="{% static 'img/asset/Thumbs Down.svg' %}" alt="Thumbs Down"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

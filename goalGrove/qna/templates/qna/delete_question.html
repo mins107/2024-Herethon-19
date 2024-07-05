@@ -1,13 +1,18 @@
 <!-- templates/qna/delete_question.html -->
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>질문 삭제 완료</title>
+    <title>질문 삭제</title>
 </head>
 <body>
-    <h1>질문이 성공적으로 삭제되었습니다.</h1>
-    <p><a href="{% url 'qna:get_questions' %}">질문 목록으로 돌아가기</a></p>
+    <h1>질문 삭제</h1>
+    <p>정말로 삭제하시겠습니까?</p>
+    <p>제목: {{ question.title }}</p>
+    <form method="post" action="{% url 'qna:delete_question' question.id %}">
+        {% csrf_token %}
+        <button type="submit">삭제</button>
+        <a href="{% url 'qna:get_questions' %}">취소</a>
+    </form>
 </body>
 </html>

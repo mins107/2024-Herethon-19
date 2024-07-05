@@ -1,35 +1,30 @@
-from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib.auth.models import User
-from .models import Post
-from .forms import PostForm
-from django.contrib import messages
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Post, Comment, Category 
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def create_post(request):
-    if request.method == 'POST':
-        form = PostForm(request.POST)
-        if form.is_valid():
-            post = form.save(commit=False)
-            post.user = User.objects.first()  # 임시
-            post.save()
-            return redirect('post_list')
-    else:
-        form = PostForm()
-    return render(request, 'posts/create_post.html', {'form': form})
+    categories = Category.objects.all()
 
-def post_list(request):
-    if request.method == "GET":
-        form = PostForm()
-        return render(request, 'posts/post_list.html', {'form': form})
-    
-    form = PostForm(request.POST)
-    if form.is_valid():
-        user = form.save()
-        messages.success(request, '완료')
-        return redirect('post_list')
-    
-    return render(request, 'posts/post_list.html', {'form': form})
+    if request.method == "POST":
+        title = request.POST.get('title')
+        content = request.POST.get('content')
+        video = request.FILES.get('video')
+        image = request.FILES.get('image')
 
+        category_ids = request.POST.getlist('category')
+        category_list = [get_object_or_404(Category, id = category_id) for category_id in category_ids]
 
-#def post_list(request):
-#    posts = Post.objects.all()
-#    return render(request, 'posts/post_list.html', {'posts': posts})
+        post = Post.objects.create(
+            title = title,
+            content = content,
+            author = request.user,
+            image = image,
+            video = video
+        )
+
+        for category in category_list:
+            post.category.add(category)
+
+        return redirect('users:main')
+    return render(request, 'posts/create_post.html', {'categories' : categories})

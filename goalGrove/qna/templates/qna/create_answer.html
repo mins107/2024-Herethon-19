@@ -1,11 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>답변 작성</title>
 </head>
 <body>
-    
+    <h1>답변 작성</h1>
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <form method="post" action="{% url 'qna:create_answer' %}">
+        {% csrf_token %}
+        <input type="hidden" name="question_id" value="{{ question.id }}">
+        <label for="content">내용:</label>
+        <textarea id="content" name="content" required></textarea><br><br>
+        <button type="submit">제출</button>
+    </form>
+    <a href="{% url 'qna:get_questions' %}">질문 목록으로 돌아가기</a>
 </body>
 </html>

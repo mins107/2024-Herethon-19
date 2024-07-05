@@ -1,3 +1,4 @@
+<!-- templates/qna/get_questions.html -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -8,14 +9,18 @@
     <h1>질문 목록</h1>
     <ul>
         {% for question in questions %}
-        <li>
-            <strong>제목:</strong> {{ question.title }}<br>
-            <strong>내용:</strong> {{ question.content }}<br>
-            <strong>작성일:</strong> {{ question.created_at }}<br>
-        </li>
-        {% empty %}
-        <li>질문이 없습니다.</li>
+            <li>
+                {{ question.title }} - {{ question.user.username }} - {{ question.created_at }}
+                {% if request.user == question.user %}
+                    <form method="post" action="{% url 'qna:delete_question' question.id %}" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit">삭제</button>
+                    </form>
+                {% endif %}
+            </li>
         {% endfor %}
     </ul>
+    <a href="{% url 'qna:create_question' %}">새 질문 작성하기</a>
 </body>
 </html>
+
