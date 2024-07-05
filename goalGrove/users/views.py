@@ -1,11 +1,29 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth import authenticate, login as auth_login, get_user_model
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, JsonResponse
 from .forms import SignUpForm
 from .forms import ResetPasswordForm
-
 User = get_user_model()
+
+@login_required
+def main_view(request):
+    user = request.user
+    context = {
+        'user_name': user.username,
+        'user_email': user.email,
+    }
+    return render(request, 'users/main.html', context)
+
+@login_required
+def shop_view(request):
+    user = request.user
+    context = {
+        'user_name': user.username,
+        'user_email': user.email,
+    }
+    return render(request, 'users/shopping.html', context)
 
 def signup_view(request):
     if request.method == "GET":
@@ -32,7 +50,7 @@ def login_view(request):
         
         if user is not None:
             auth_login(request, user)
-            return redirect('main')  # main 페이지로
+            return redirect('users:main')  # main 페이지로
         else:
             error_message = "아이디 또는 비밀번호가 올바르지 않습니다."
             return render(request, 'users/login.html', {'error_message': error_message})

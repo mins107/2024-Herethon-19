@@ -1,19 +1,5 @@
-@font-face {
-  font-family: "Pretendard-Regular";
-  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
-    format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
+/* General Styles */
 body {
-  font-family: "Pretendard-Regular";
-  margin: 0;
-  padding: 0;
-  background-color: #f1f5ee;
-  display: flex;
-  height: 100vh;
-  position: relative;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -21,93 +7,6 @@ body {
   background-color: #f1f5ee;
   width: 80rem;
 }
-
-.logo-container {
-  position: absolute;
-  top: 20px;
-  left: 100px; /* Adjust this value to position the logo correctly */
-  z-index: 1;
-}
-
-.logo {
-  width: 116.7px;
-  height: 83px;
-  margin-left: 30px;
-}
-
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 104px;
-  height: 100vh;
-  background-color: #fff;
-  border-radius: 3%;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  transition: width 0.3s;
-  position: relative;
-  left: 0;
-  top: 0;
-  z-index: 0;
-}
-
-.sidebar.active {
-  width: 266px;
-}
-
-.menu-icon {
-  font-size: 24px;
-  cursor: pointer;
-  margin-bottom: 20px;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-}
-
-.menu-items {
-  list-style-type: none;
-  padding: 0;
-  width: 100%;
-  text-align: left;
-  flex-grow: 1;
-  margin-top: 70px;
-}
-
-.menu-items li {
-  padding: 30px 0;
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.menu-items li a {
-  text-decoration: none;
-  color: #333;
-  display: flex;
-  align-items: center;
-  transition: background-color 0.3s;
-  padding-left: 20px;
-  width: 100%;
-}
-
-.menu-items li a img {
-  height: 24px;
-  margin-right: 10px;
-}
-
-.menu-items li a span {
-  display: none;
-}
-
-.sidebar.active .menu-items li a span {
-  display: inline-block;
-}
-
-.menu-items li:hover {
-  background-color: #f0f0f0;
-}
-
-/* General Styles */
 
 .Wrapper {
   display: flex;
@@ -150,7 +49,7 @@ body {
 }
 
 .menu {
-  background-image: url("image/Menu.png");
+  background-image: url("{% static 'img/Menu.png'%}");
   background-size: cover;
   background-position: center;
   width: 30px;
@@ -161,7 +60,7 @@ body {
 }
 
 .logout {
-  background-image: url("image/Logout.png");
+  background-image: url("{% static 'img/Logout.png'%}");
   background-size: cover;
   background-position: center;
   width: 26px;
@@ -227,13 +126,8 @@ body {
   justify-content: center;
   margin-left: 90px;
   flex-direction: column;
-  align-items: top;
-  height: 330px;
+  height: 270px;
   width: 80%;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-  overflow-y: auto;
 }
 
 .Wrapper8 {
@@ -273,12 +167,10 @@ body {
   margin-top: 20px;
   background-color: #7db249;
   font-family: Pretendard;
-  padding: 7px 0px 8px 0px;
-  margin-left: 180px;
+  padding: 10px;
+  margin-left: 270px;
   margin-right: 5px;
-  border-radius: 10px;
-  margin-top: 50px;
-  width: 25%;
+  width: 30%;
   border: none;
   box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
   display: flex;
@@ -312,79 +204,20 @@ body {
   width: 100%;
 }
 
-.goalingg {
-  background-color: #c0dba7;
-  border-radius: 20px;
-  width: 100%;
-  height: 330px;
-  display: flex;
-  margin-left: 90px;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  flex-direction: column;
-  overflow-y: scroll;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-.goalingg::-webkit-scrollbar {
-  width: 10px; /* 세로축 스크롤바 폭 너비 */
-  height: 15px; /* 가로축 스크롤바 폭 너비 */
-}
-
-.goalingg::-webkit-scrollbar-thumb {
-  background: rgb(102, 102, 102);
-  border-radius: 10px;
-}
-
-.goalingg::-webkit-scrollbar-track {
-  background: #d9d9d9;
-  border-radius: 10px;
-}
-
-.goalIngDetail {
-  font-family: Pretendard;
-  width: 100%;
-  margin-top: 30px;
-  display: none;
-  color: #555555;
-  margin-right: -600px;
-}
-
 .Wrapper3 {
   display: flex;
   background-color: #ffffff;
   border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 30px;
+  padding-right: 30px;
   padding-top: 20px;
-  padding-bottom: 30px;
-  margin-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 90px;
   flex-direction: column;
-  width: 90%;
+  width: 100%;
   height: 120px;
   margin-bottom: 20px;
-}
-
-.Wrapper3::after {
-  content: url("image/downArrow.svg");
-  width: 109%;
-  margin-left: -25px;
-  margin-top: 10px;
-  margin-bottom: 30px;
-  height: 25px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  background-color: #e8eee3;
-  border-radius: 0px 0px 20px 20px;
-}
-
-.Wrapper3.expand::after {
-  margin-top: 40px;
-  content: url("image/Up Chevron.svg");
 }
 
 .Wrapper4 {
@@ -415,34 +248,13 @@ body {
   width: 42%;
 }
 
-.Wrapper10 {
-  overflow-y: scroll;
-  width: 100%;
-  height: 170px;
-}
-
 .Wrapper6 {
   background-color: #f1f1f1;
   box-shadow: 0px 2px 8px 0px rgba(190, 190, 190, 0.6);
   width: 100%;
-  height: 40%;
+  height: 30%;
   border-radius: 20px;
   padding: 15px 0px 30px 0px;
-}
-
-.Wrapper10::-webkit-scrollbar {
-  width: 10px; /* 세로축 스크롤바 폭 너비 */
-  height: 15px; /* 가로축 스크롤바 폭 너비 */
-}
-
-.Wrapper10::-webkit-scrollbar-thumb {
-  background: rgb(102, 102, 102);
-  border-radius: 10px;
-}
-
-.Wrapper10::-webkit-scrollbar-track {
-  background: #d9d9d9;
-  border-radius: 10px;
 }
 
 .detailTxt,
@@ -465,15 +277,6 @@ body {
   font-size: 20px;
   font-weight: bold;
   color: #404040;
-  margin-top: -90px;
-}
-
-.goalTxt2 {
-  font-family: Pretendard;
-  font-size: 20px;
-  font-weight: bold;
-  color: #404040;
-  width: 280px;
 }
 
 .goalExplainInput {
@@ -489,7 +292,7 @@ textarea {
   font-weight: light;
   color: #555555;
   font-size: 13px;
-  width: 100px;
+  width: 100;
   background-color: none;
 }
 

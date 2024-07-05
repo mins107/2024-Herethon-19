@@ -7,9 +7,23 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    
+
+    <div class="sidebar" id="sidebar">
+        <div class="menu-icon" onclick="toggleMenu()">
+            <img src="asset/menu1.svg" alt="menu">
+        </div>
+        <ul class="menu-items">
+            <li><a href="#"><span><div class="nickname">닉네임</div>
+                <div class="email">이메일주소</div></span>
+                <img src="asset/Logout.svg" alt="Logout Icon"></a></li>
+            <li><a href="#"><img src="asset/Vector.svg" alt="Heart Icon"><span>메인</span></a></li>
+            <li><a href="#"><img src="asset/Vector-2.svg" alt="Cart Icon"><span>목표 쇼핑</span></a></li>
+            <li><a href="#"><img src="asset/Vector-3.svg" alt="Community Icon"><span>커뮤니티</span></a></li>
+        </ul>
+    </div>
     <div class="Wrapper">
-      <div class="navBar">
+      
+      <!-- <div class="navBar">
         <button class="menu" id="menuButton"></button>
         <div class="userNav">
           <div class="userNavTxt">
@@ -32,7 +46,7 @@
             <span class="menuText">커뮤니티</span>
           </div>
         </div>
-      </div>
+      </div> -->
       <div>
         <img class="logoTop" alt="상단 로고" src="image/LogoMain.png" />
         <!-- 본문 내용 -->
@@ -181,20 +195,20 @@
                         />
                       </button>
                       <div class="dropdown-contentT">
-                        <div
-                          class="dropdownMainT"
+                        <div 
+                          class="dropdownMainT" id="day"
                           onclick="showMenuT(this.innerText)"
                         >
                           하루에
                         </div>
                         <div
-                          class="dropdownMainT"
+                          class="dropdownMainT" id="week"
                           onclick="showMenuT(this.innerText)"
                         >
                           일주일에
                         </div>
                         <div
-                          class="dropdownMainT"
+                          class="dropdownMainT" id="month"
                           onclick="showMenuT(this.innerText)"
                         >
                           한달에
@@ -289,7 +303,8 @@
                   </div>
                 </div>
                 <div class="line2"></div>
-                <div class="goalDetail2">
+                <div style="display: flex; flex-direction: column;">
+                  <div class="goalDetail2">
                   <div class="goalDetail1">
                     <img
                       src="image/goalIng.png"
@@ -298,7 +313,7 @@
                     />
                     <div class="timeIng">일주일에</div>
                     <div class="countTxt">4회</div>
-                    
+                  
                   </div>
                   
                   <div>
@@ -322,6 +337,11 @@
                     </div>
                   </div>
                 </div>
+                <div class="goalIngDetail">
+                  1회당 1시간 이상 운동하되 시작 전 스트레칭은 운동 시간에 포함시키지 않기 
+                </div>
+                </div>
+                
               </div>
 
               
@@ -340,6 +360,7 @@
             </div>
           </div>
           <!-- 목표 선정 박스 -->
+          <div></div>
           <div class="Wrapper5">
             <div class="goalWrapper">
               <div>
@@ -437,8 +458,13 @@
               />
             </div>
           </div>
+          
         </div>
       </div>
+
+
+
+      
     </div>
     <script src="jscript.js"></script>
   </body>
