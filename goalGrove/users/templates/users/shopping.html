@@ -93,11 +93,15 @@
           </div>
           <hr />
           <div class="goal-actions">
-            <button onclick="window.location.href='review.html'">
-              리뷰 확인하기
+            <button>
+              <a href="{% url 'users:review' %}">
+                리뷰 확인하기
+              </a>
             </button>
-            <button onclick="window.location.href='q&a.html?goal=주 3회 요가'">
-              Q&A
+            <button>
+              <a href="{% url 'users:qna' %}">
+                Q&A
+              </a>
             </button>
           </div>
         </div>

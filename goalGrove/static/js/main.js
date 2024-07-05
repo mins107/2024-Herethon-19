@@ -11,15 +11,14 @@ window.onload = () => {
     };
   }
 
-  dropdown = () => {
+  function dropdown() {
     var v = document.querySelector(".dropdown-content");
     var dropbtn = document.querySelector(".dropbtn");
     v.classList.toggle("show");
     dropbtn.style.borderColor = "rgb(94, 94, 94)";
-  };
+  }
 
-  showMenu = (id) => {
-    var dropbtn_icon = document.querySelector(".dropbtn_icon");
+  function showMenu(id) {
     var dropbtn_content = document.querySelector(".dropbtn_content");
     var goalContent = document.querySelector(".Wrapper2");
     var goalAdd = document.querySelector(".goalAdd");
@@ -30,145 +29,98 @@ window.onload = () => {
       dropbtn_content.innerHTML = "목표 만들기";
 
       goalContent.innerHTML = `
-
-  <div class="goalWrapper">
-    <input placeholder="목표 이름 작성하기" class="goalTxtInput"></input>
-    <div>
-      <span class="categoryExp">카테고리</span>
-      <div class="dropdownCategory">
-        <button class="dropbtn_category">
-          <div class="dropbtn_category_content">취미</div>
-          <img
-            src="/static/img/dropdownWhite.svg"
-            class="dropbtn_category_click dropbtn_category_icon"
-            onclick="dropdownCategory()"
-          />
-        </button>
-      </div>
-      <div class="dropdown-category-content">
-        <div class="category-content" onclick="showCategory('취미')">취미</div>
-        <div class="category-content" onclick="showCategory('건강')">건강</div>
-        <div class="category-content" onclick="showCategory('소비')">소비</div>
-        <div class="category-content" onclick="showCategory('공부')">공부</div>
-        <div class="category-content" onclick="showCategory('식단')">식단</div>
-        <div class="category-content" onclick="showCategory('자기계발')">자기계발</div>
-        <div class="category-content" onclick="showCategory('기타')">기타</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="line"></div>
-  <div class="goalDetail">
-    <img
-      src="/static/img/groveimg.svg"
-      alt="사진 추가"
-      class="goalImg"
-    />
-                <div class="goalContent">
-                  <div class="goalTime">
-                    <span>
-                      <span class="countTxt">일주일에</span>
-                    </span>
-                    <div class="dropdownT">
-                      <button class="dropbtnT">
-                        <div class="dropbtn_contentT">1회</div>
-                        <img
-                          src="/static/img/dropdown.svg"
-                          class="dropbtn_clickT dropbtn_iconT"
-                          onclick="dropdownT()"
-                        />
-                      </button>
-                      <div class="dropdown-contentT">
-                        <div 
-                          class="dropdownMainT" id="t1"
-                          onclick="showMenuT(this.innerText)"
-                        >
-                          1회
-                        </div>
-                        <div 
-                          class="dropdownMainT" id="t2"
-                          onclick="showMenuT(this.innerText)"
-                        >
-                          2회
-                        </div>
-                        <div
-                          class="dropdownMainT" id="t3"
-                          onclick="showMenuT(this.innerText)"
-                        >
-                          3회
-                        </div>
-                        <div
-                          class="dropdownMainT" id="t4"
-                          onclick="showMenuT(this.innerText)"
-                        >
-                          4회
-                        </div>
-                        <div 
-                          class="dropdownMainT" id="t5"
-                          onclick="showMenuT(this.innerText)"
-                        >
-                          5회
-                        </div>
-                        <div 
-                          class="dropdownMainT" id="t6"
-                          onclick="showMenuT(this.innerText)"
-                        >
-                          6회
-                        </div>
-                        <div 
-                          class="dropdownMainT" id="t7"
-                          onclick="showMenuT(this.innerText)"
-                        >
-                          7회
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-      <div class="goalExplain">
-        <textarea rows="1" class="goalExplainInput" placeholder="구체적인 설명 작성하기"></textarea>
-      </div>
-    </div>
-  </div>
-  <button class="goalAdd" onclick="addGoalEvent()">목표 추가하기</button>
-`;
+        <div class="goalWrapper">
+          <input placeholder="목표 이름 작성하기" class="goalTxtInput"></input>
+          <div>
+            <span class="categoryExp">카테고리</span>
+            <div class="dropdownCategory">
+              <button class="dropbtn_category">
+                <div class="dropbtn_category_content">취미</div>
+                <img
+                  src="/static/img/dropdownWhite.svg"
+                  class="dropbtn_category_click dropbtn_category_icon"
+                  onclick="dropdownCategory()"
+                />
+              </button>
+            </div>
+            <div class="dropdown-category-content">
+              <div class="category-content" onclick="showCategory('취미')">취미</div>
+              <div class="category-content" onclick="showCategory('건강')">건강</div>
+              <div class="category-content" onclick="showCategory('소비')">소비</div>
+              <div class="category-content" onclick="showCategory('공부')">공부</div>
+              <div class="category-content" onclick="showCategory('식단')">식단</div>
+              <div class="category-content" onclick="showCategory('자기계발')">자기계발</div>
+              <div class="category-content" onclick="showCategory('기타')">기타</div>
+            </div>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="goalDetail">
+          <img src="/static/img/groveimg.svg" alt="사진 추가" class="goalImg" />
+          <div class="goalContent">
+            <div class="goalTime">
+              <span>
+                <span class="countTxt">일주일에</span>
+              </span>
+              <div class="dropdownT">
+                <button class="dropbtnT">
+                  <div class="dropbtn_contentT">1회</div>
+                  <img
+                    src="/static/img/dropdown.svg"
+                    class="dropbtn_clickT dropbtn_iconT"
+                    onclick="dropdownT()"
+                  />
+                </button>
+                <div class="dropdown-contentT">
+                  <div class="dropdownMainT" id="t1" onclick="showMenuT(this)">1회</div>
+                  <div class="dropdownMainT" id="t2" onclick="showMenuT(this)">2회</div>
+                  <div class="dropdownMainT" id="t3" onclick="showMenuT(this)">3회</div>
+                  <div class="dropdownMainT" id="t4" onclick="showMenuT(this)">4회</div>
+                  <div class="dropdownMainT" id="t5" onclick="showMenuT(this)">5회</div>
+                  <div class="dropdownMainT" id="t6" onclick="showMenuT(this)">6회</div>
+                  <div class="dropdownMainT" id="t7" onclick="showMenuT(this)">7회</div>
+                </div>
+              </div>
+            </div>
+            <div class="goalExplain">
+              <textarea rows="1" class="goalExplainInput" placeholder="구체적인 설명 작성하기"></textarea>
+            </div>
+          </div>
+        </div>
+        <button class="goalAdd" onclick="addGoalEvent()">목표 추가하기</button>
+      `;
     } else if (id === "goalCart") {
       dropbtn_content.innerHTML = "목표 장바구니";
       goalContent.innerHTML = `
-<div class="goalTxt">목표 장바구니</div>
-              <div class="line"></div>
-              <div class="Wrapper10">
-                <div class="Wrapper6">
-                  <div class="goalWrapper">
-                    <span class="marketName">말하는 감자</span>
-                    <img src="/static/img/X.svg" alt="창 닫기" class="marketX" />
+        <div class="goalTxt">목표 장바구니</div>
+        <div class="line"></div>
+        <div class="Wrapper10">
+          <div class="Wrapper6">
+            <div class="goalWrapper">
+              <span class="marketName">말하는 감자</span>
+              <img src="/static/img/X.svg" alt="창 닫기" class="marketX" />
+            </div>
+            <div class="goalWrapper">
+              <div class="marketWrapper">
+                <img src="/static/img/market.svg" alt="장바구니 사진" class="marketImg" />
+                <div class="marketWrapper2">
+                  <div class="marketWrapper3">
+                    <span class="marketgoalTxt">주 3회 요가</span>
+                    <span class="category_content">운동</span>
                   </div>
-                  <div class="goalWrapper">
-                    <div class="marketWrapper">
-                      <img
-                        src="/static/img/market.svg"
-                        alt="장바구니 사진"
-                        class="marketImg"
-                      />
-                      <div class="marketWrapper2">
-                        <div class="marketWrapper3">
-                          <span class="marketgoalTxt">주 3회 요가</span>
-                          <span class="category_content">운동</span>
-                        </div>
-                        <div class="marketWrapper4">
-                          <span class="timeIng_market">일주일에</span>
-                          <span class="countTxt_market">3회</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="marketChoicebtn">선택하기</div>
-                  
+                  <div class="marketWrapper4">
+                    <span class="countTxt_market">일주일에</span>
+                    <span class="timeIng_market">3회</span>
                   </div>
-                
                 </div>
               </div>
-            `;
+              <div class="marketChoicebtn">선택하기</div>
+            </div>
+          </div>
+        </div>
+      `;
     }
-  };
+  }
 
   // 드롭다운 카테고리
   document.querySelector(".dropbtn_category_click").onclick = () => {
@@ -183,14 +135,14 @@ window.onload = () => {
     };
   }
 
-  dropdownCategory = () => {
+  function dropdownCategory() {
     var va = document.querySelector(".dropdown-category-content");
     var dropbtn_category = document.querySelector(".dropbtn_category");
     va.classList.toggle("show");
     dropbtn_category.style.borderColor = "rgb(94, 94, 94)";
-  };
+  }
 
-  showCategory = (value) => {
+  function showCategory(value) {
     var dropbtn_category_icon = document.querySelector(
       ".dropbtn_category_icon"
     );
@@ -200,71 +152,7 @@ window.onload = () => {
 
     dropbtn_category_icon.innerText = "";
     dropbtn_category_content.innerText = value;
-  };
-
-  //드롭다운 카테고리2
-  document.querySelector(".dropbtn_category_click2").onclick = () => {
-    dropdownCategory2();
-  };
-
-  let categoryContentElements2 =
-    document.getElementsByClassName("category-content2");
-  for (let i = 0; i < categoryContentElements2.length; i++) {
-    categoryContentElements2[i].onclick = (event) => {
-      showCategory2(event.target.innerText); // value를 event.target.innerText로 변경
-    };
   }
-
-  dropdownCategory2 = () => {
-    var va2 = document.querySelector(".dropdown-category-content2");
-    var dropbtn_category2 = document.querySelector(".dropbtn_category2");
-    va2.classList.toggle("show");
-    dropbtn_category2.style.borderColor = "rgb(94, 94, 94)";
-  };
-
-  showCategory2 = (value) => {
-    var dropbtn_category_icon2 = document.querySelector(
-      ".dropbtn_category_icon2"
-    );
-    var dropbtn_category_content2 = document.querySelector(
-      ".dropbtn_category_content2"
-    );
-
-    dropbtn_category_icon2.innerText = "";
-    dropbtn_category_content2.innerText = value;
-  };
-
-  //드롭다운 카테고리 3(과정나누기)
-  document.querySelector(".dropbtn_category_click3").onclick = () => {
-    dropdownCategory3();
-  };
-
-  let categoryContentElements3 =
-    document.getElementsByClassName("category-content3");
-  for (let i = 0; i < categoryContentElements3.length; i++) {
-    categoryContentElements3[i].onclick = (event) => {
-      showCategory3(event.target.innerText); // value를 event.target.innerText로 변경
-    };
-  }
-
-  dropdownCategory3 = () => {
-    var va3 = document.querySelector(".dropdown-category-content3");
-    var dropbtn_category3 = document.querySelector(".dropbtn_category3");
-    va3.classList.toggle("show");
-    dropbtn_category3.style.borderColor = "rgb(94, 94, 94)";
-  };
-
-  showCategory3 = (value) => {
-    var dropbtn_category_icon3 = document.querySelector(
-      ".dropbtn_category_icon3"
-    );
-    var dropbtn_category_content3 = document.querySelector(
-      ".dropbtn_category_content3"
-    );
-
-    dropbtn_category_icon3.innerText = "";
-    dropbtn_category_content3.innerText = value;
-  };
 
   const navBtn = document.getElementById("menuButton");
   let clickCount = 0;
@@ -299,7 +187,7 @@ window.onload = () => {
     }
   });
 
-  let selectedValue = ""; // 초기값 설정
+  let selectedValue = "1회"; // 초기값 설정
 
   // 확장 기능 추가 함수
   const addExpandFunctionality = (wrapper) => {
@@ -339,57 +227,52 @@ window.onload = () => {
 
   // 목표 추가 함수
 
-  function addGoalEvent() {
-    let goalName = document.querySelector('.goalTxtInput').value;
-    let category = document.querySelector('.dropbtn_category_content').innerText;
-    let frequency = document.querySelector('.dropbtn_contentT').innerText;
-    let description = document.querySelector('.goalExplainInput').value;
+  const addGoalEvent = () => {
+    const newGoalName = document.querySelector(".goalTxtInput").value;
+    const newGoalDetail = document.querySelector(".goalExplainInput").value;
 
-    let data = {
-        'goal_name': goalName,
-        'category': category,
-        'frequency': frequency,
-        'description': description
-    };
+    const newGoal = document.createElement("div");
+    newGoal.innerHTML = `
+    <div class="Wrapper3">
+      <div class="goalWrapper">
+        <span>
+          <span class="goalTxt2" id="goalTxt">${newGoalName}</span>
+          <span class="categoryExp" id="goal-ing-end">종료하기</span>
+        </span>
+                  <div>
+                    <span class="categoryExp">카테고리</span>
+                    <div class="dropdownCategory2">
 
-    fetch('/add_goal/', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-CSRFToken': getCookie('csrftoken')  // CSRF 토큰을 포함합니다.
-        },
-        body: JSON.stringify(data)
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            // 페이지를 새로고침하거나 DOM을 업데이트하여 새로운 목표를 표시합니다.
-            location.reload();
-        } else {
-            // 오류 처리
-            alert('목표를 추가하는 데 실패했습니다.');
-        }
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-    });
-}
+                        <div class="goalIng-category">취미</div>
+                    </div>
+                  </div>
+                </div>
 
-// CSRF 토큰을 가져오는 함수
-function getCookie(name) {
-  let cookieValue = null;
-  if (document.cookie && document.cookie !== '') {
-      const cookies = document.cookie.split(';');
-      for (let i = 0; i < cookies.length; i++) {
-          const cookie = cookies[i].trim();
-          if (cookie.substring(0, name.length + 1) === (name + '=')) {
-              cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-              break;
-          }
-      }
-  }
-  return cookieValue;
-}
+                <div class="line2"></div>
+                <div class="goalDetail2">
+                  <div class="goalDetail1">
+                    <img src="/static/img/goalIng.png" alt="이루고 있는 목표 이미지" class="imgIng" />
+                    <div class="countTxt">일주일에</div>
+                    <div class="timeIng">${selectedValue}</div>
+                  </div>
+                  <div>
+                    <div class="detailIcon">
+                      <img class="detailIconImg" src="/static/img/Line_up.png" alt="성취율 아이콘" />
+                      <span class="detailTxt2">성취율</span>
+                      <span class="percentage">65%</span>
+                    </div>
+                    <div class="detailIcon">
+                      <img class="detailIconImg" src="/static/img/Chart.png" alt="참가자 아이콘" />
+                      <span class="detailTxt2">참가자</span>
+                      <span class="participant">630명</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="goalIngDetail">
+                  ${newGoalDetail}
+                </div>
+              </div>
+    `;
 
     // 추가된 Wrapper3 요소에 확장 기능 추가
     const newWrapper = newGoal.querySelector(".Wrapper3");
@@ -459,6 +342,48 @@ function getCookie(name) {
 
   // 목표 추가 버튼에 이벤트 리스너 추가
   document.querySelector(".goalAdd").onclick = addGoalEvent;
+
+  // marketChoicebtn에 대한 이벤트 리스너 추가
+  let marketChoiceBtns = document.querySelectorAll(".marketChoicebtn");
+  marketChoiceBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      updateGoalInputsAndShowCreateGoal(btn);
+    });
+  });
+
+  // 목표 입력 내용을 업데이트하고 "목표 만들기"로 화면 변경하는 함수
+  function updateGoalInputsAndShowCreateGoal(button) {
+    // 부모 요소인 marketWrapper를 찾습니다
+    let marketWrapper = button.closest(".marketWrapper");
+
+    // 필요한 내용을 가져옵니다
+    let goalTxt = marketWrapper.querySelector(".marketgoalTxt").innerText;
+    let categoryContent =
+      marketWrapper.querySelector(".category_content").innerText;
+    let timeIng = marketWrapper.querySelector(".timeIng_market").innerText;
+
+    // goalTxtInput, goalExplainInput, dropbtn_contentT 업데이트
+    let goalTxtInput = document.querySelector(".goalTxtInput");
+    if (goalTxtInput) {
+      goalTxtInput.value = goalTxt;
+    }
+
+    let goalExplainInput = document.querySelector(".goalExplainInput");
+    if (goalExplainInput) {
+      goalExplainInput.value = categoryContent;
+    }
+
+    let dropbtn_contentT = document.querySelector(".dropbtn_contentT");
+    if (dropbtn_contentT) {
+      dropbtn_contentT.innerText = timeIng;
+    }
+
+    // "목표 만들기" 선택
+    let createGoalBtn = document.querySelector(".dropdownMain#createGoal");
+    if (createGoalBtn) {
+      showMenu("createGoal");
+    }
+  }
 };
 
 window.onclick = (e) => {
@@ -493,32 +418,6 @@ window.onclick = (e) => {
       let openDropdown_category = dropdowns_category[i];
       if (openDropdown_category.classList.contains("show")) {
         openDropdown_category.classList.remove("show");
-      }
-    }
-  }
-
-  if (!e.target.matches(".dropbtn_category_click2")) {
-    var dropdowns_category2 = document.getElementsByClassName(
-      "dropdown-category-content2"
-    );
-
-    for (let i = 0; i < dropdowns_category2.length; i++) {
-      let openDropdown_category2 = dropdowns_category2[i];
-      if (openDropdown_category2.classList.contains("show")) {
-        openDropdown_category2.classList.remove("show");
-      }
-    }
-  }
-
-  if (!e.target.matches(".dropbtn_category_click3")) {
-    var dropdowns_category3 = document.getElementsByClassName(
-      "dropdown-category-content3"
-    );
-
-    for (let i = 0; i < dropdowns_category3.length; i++) {
-      let openDropdown_category3 = dropdowns_category3[i];
-      if (openDropdown_category3.classList.contains("show")) {
-        openDropdown_category3.classList.remove("show");
       }
     }
   }

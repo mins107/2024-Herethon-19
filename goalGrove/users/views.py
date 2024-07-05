@@ -2,12 +2,11 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth import authenticate, login as auth_login, get_user_model
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse
 from .forms import SignUpForm, ResetPasswordForm
 from django.views.decorators.csrf import csrf_exempt
 import json
 from posts.models import Category
-from goals.models import Goal
 User = get_user_model()
 
 @login_required
@@ -29,6 +28,24 @@ def shop_view(request):
         'user_email': user.email,
     }
     return render(request, 'users/shopping.html', context)
+
+@login_required
+def review_view(request):
+    user = request.user
+    context = {
+        'user_name': user.username,
+        'user_email': user.email,
+    }
+    return render(request, 'reviews/review.html', context)
+
+@login_required
+def qna_view(request):
+    user = request.user
+    context = {
+        'user_name': user.username,
+        'user_email': user.email,
+    }
+    return render(request, 'qna/qna.html', context)
 
 def signup_view(request):
     if request.method == "GET":
@@ -99,28 +116,3 @@ def pwreset_view(request):
     else:
         form = ResetPasswordForm()
         return render(request, 'users/pwreset.html', {'form': form})
-    
-@csrf_exempt
-def add_goal(request):
-    if request.method == 'POST':
-        data = json.loads(request.body)
-        goal_name = data.get('goal_name')
-        category_name = data.get('category')
-        frequency = data.get('frequency')
-        description = data.get('description')
-
-        # 카테고리 찾기 또는 생성
-        category, created = Category.objects.get_or_create(name=category_name)
-
-        # 목표 생성
-        goal = Goal.objects.create(
-            name=goal_name,
-            category=category,
-            frequency=frequency,
-            description=description,
-            user=request.user  # 현재 로그인된 사용자
-        )
-
-        return JsonResponse({'success': True})
-
-    return JsonResponse({'success': False}, status=400)
