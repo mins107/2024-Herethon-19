@@ -144,6 +144,10 @@ body {
 }
 
 
+.category-buttons button:focus {
+    background-color: black;
+    color: #fff;
+}
 
 #goals-container {
     display: flex;
@@ -288,7 +292,8 @@ body {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 
-.goal-actions button:hover {
+goal-actions button:hover,
+.goal-actions button.active {
     background-color: #b8a98c;
 }
 

@@ -5,7 +5,6 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, JsonResponse
 from .forms import SignUpForm
 from .forms import ResetPasswordForm
-
 User = get_user_model()
 
 @login_required
@@ -24,7 +23,7 @@ def shop_view(request):
         'user_name': user.username,
         'user_email': user.email,
     }
-    return render(request, 'users/shopping.html')
+    return render(request, 'users/shopping.html', context)
 
 def signup_view(request):
     if request.method == "GET":
