@@ -1,875 +1,950 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    padding-bottom: 50px;
-    background-color: #f1f5ee;
-    width: 80rem;
-  }
-  
-  .Wrapper {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .navBar {
-    display: flex;
-    flex-direction: column;
-    align-items: top;
-    justify-content: top;
-    background-color: #ffffff;
-    display: flex;
-    width: 104px;
-    min-height: 100vh;
-    padding-top: 20px;
-    border-right: 1px solid #000000;
-    font-family: Pretendard;
-    transition: width 0.3s ease;
-  }
-  
-  .navBarMenu {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: left;
-    margin: 30px;
-  }
-  
-  .navBarMenu:hover {
-    color: #548524;
-    font-weight: bold;
-  }
-  
-  .menuText {
-    text-align: left;
-    display: none;
-    margin-left: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .menu {
-    background-image: url("{% static 'img/Menu.png'%}");
-    background-size: cover;
-    background-position: center;
-    width: 30px;
-    height: 30px;
-    border: none;
-    margin: 30px;
-    background-color: #ffffff;
-  }
-  
-  .logout {
-    background-image: url("{% static 'img/Logout.png'%}");
-    background-size: cover;
-    background-position: center;
-    width: 26px;
-    height: 26px;
-    border: none;
-    background-color: #ffffff;
-    margin-left: 33px;
-    transition: margin 0.3s ease;
-  }
-  
-  .logoTop {
-    width: 100px;
-    margin-left: 50px;
-    margin-top: 10px;
-  }
-  
-  .mainTxt {
-    font-family: Pretendard;
-    font-weight: bold;
-    color: #404040;
-    font-size: 33px;
-  }
-  
-  .Wrapper1 {
-    display: flex;
-    flex-direction: row;
-    margin-left: 90px;
-    margin-top: 50px;
-    margin-bottom: 20px;
-    width: 100%;
-    align-items: center;
-  }
-  
-  .Wrapper7 {
-    display: flex;
-    flex-direction: row;
-    margin-left: 90px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    width: 100%;
-    align-items: center;
-  }
-  
-  .line {
-    border: 1px solid #dadada;
-    margin-top: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .line2 {
-    border: 1px solid #dadada;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .Wrapper2 {
-    display: flex;
-    background-color: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding-left: 30px;
-    padding-right: 30px;
-    justify-content: center;
-    margin-left: 90px;
-    flex-direction: column;
-    height: 270px;
-    width: 80%;
-  }
-  
-  .Wrapper8 {
-    display: flex;
-    background-color: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding-left: 30px;
-    padding-right: 30px;
-    justify-content: center;
-    margin-left: 90px;
-    flex-direction: column;
-    height: 70%;
-    width: 80%;
-    padding-bottom: 30px;
-  }
-  
-  .marketX {
-    margin-right: 30px;
-  }
-  
-  .marketChoicebtn {
-    background-color: #d8cbb8;
-    border-radius: 16px;
-    font-family: Pretendard;
-    font-weight: bold;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    width: 17%;
-    padding: 5px;
-    margin-top: 30px;
-    margin-right: 30px;
-  }
-  
-  .goalAdd {
-    margin-top: 20px;
-    background-color: #7db249;
-    font-family: Pretendard;
-    padding: 10px;
-    margin-left: 270px;
-    margin-right: 5px;
-    width: 30%;
-    border: none;
-    box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-    justify-content: center;
-    color: white;
-  }
-  
-  .Wrapper2market {
-    display: flex;
-    background-color: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 10px;
-    justify-content: center;
-    margin-left: 90px;
-    flex-direction: column;
-    height: 245px;
-    width: 75%;
-    align-items: top;
-  }
-  
-  .goalWrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: top;
-    width: 100%;
-  }
-  
-  .Wrapper3 {
-    display: flex;
-    background-color: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 20px;
-    padding-bottom: 10px;
-    margin-left: 90px;
-    flex-direction: column;
-    width: 100%;
-    height: 120px;
-    margin-bottom: 20px;
-  }
-  
-  .Wrapper4 {
-    display: flex;
-    background-color: #ededed;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    margin-left: 90px;
-    flex-direction: column;
-    margin-top: 20px;
-    justify-content: center;
-    align-items: center;
-    width: 112%;
-  }
-  
-  .Wrapper5 {
-    display: flex;
-    background-color: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 10px;
-    justify-content: center;
-    margin-left: 90px;
-    flex-direction: column;
-    height: 245px;
-    width: 42%;
-  }
-  
-  .Wrapper6 {
-    background-color: #f1f1f1;
-    box-shadow: 0px 2px 8px 0px rgba(190, 190, 190, 0.6);
-    width: 100%;
-    height: 30%;
-    border-radius: 20px;
-    padding: 15px 0px 30px 0px;
-  }
-  
-  .detailTxt,
-  .processT,
-  .marketName {
-    font-family: Pretendard;
-    font-weight: light;
-    color: #555555;
-    margin-left: 30px;
-    font-size: 13px;
-  }
-  
-  .marketImg {
-    width: 17%;
-    margin-left: 30px;
-  }
-  
-  .goalTxt {
-    font-family: Pretendard;
-    font-size: 20px;
-    font-weight: bold;
-    color: #404040;
-  }
-  
-  .goalExplainInput {
-    width: 160%;
-    height: 400%;
-  }
-  
-  textarea {
-    border: none;
-    border-radius: 4px;
-    resize: none; /* 사용자가 수직으로만 크기를 조절할 수 있도록 합니다. */
-    font-family: Pretendard;
-    font-weight: light;
-    color: #555555;
-    font-size: 13px;
-    width: 100;
-    background-color: none;
-  }
-  
-  .goalTxtInput {
-    font-family: Pretendard;
-    font-size: 20px;
-    font-weight: bold;
-    color: #404040;
-    width: 50%;
-    height: 100%;
-    border-radius: 8px;
-    border: none;
-    padding: 2px;
-    padding-left: 5px;
-  }
-  
-  .goalTxtInput:focus,
-  textarea:focus {
-    outline-color: #548524;
-  }
-  
-  .marketgoalTxt {
-    font-family: Pretendard;
-    font-size: 20px;
-    font-weight: bold;
-    color: #404040;
-    margin-left: 20px;
-  }
-  
-  .goalImg {
-    width: 150px;
-    border-radius: 13px;
-  }
-  
-  .processImg {
-    width: 150px;
-    border-radius: 13px;
-    margin-left: 30px;
-  }
-  
-  .marketWrapper {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .countTxt_market {
-    font-family: Pretendard;
-    font-size: 12px;
-    margin-left: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .marketWrapper2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .marketWrapper3 {
-    display: flex;
-    flex-direction: row;
-    width: 13em;
-    padding-bottom: 10px;
-    align-items: center;
-  }
-  
-  .marketWrapper4 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  
-  .goalDetail {
-    display: flex;
-    flex-direction: row;
-    align-items: top;
-  }
-  
-  .goalDetail1 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  
-  .goalDetail2 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  
-  .goalTime {
-    display: flex;
-    flex-direction: row;
-    font-family: Pretendard;
-    align-items: center;
-  }
-  
-  .goalTime2 {
-    display: flex;
-    flex-direction: row;
-    font-family: Pretendard;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .goalContent {
-    margin-left: 20px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .processContent {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    margin-left: 10px;
-  }
-  
-  .processTime {
-    color: #707070;
-    font-family: Pretendard;
-    text-decoration: underline;
-  }
-  
-  .goalExplain {
-    font-family: Pretendard;
-    font-weight: light;
-    color: #555555;
-    margin-top: 20px;
-    font-size: 13px;
-  }
-  
-  .processExplain {
-    font-family: Pretendard;
-    font-weight: light;
-    color: #555555;
-    margin-top: 30px;
-    font-size: 13px;
-  }
-  
-  .countTxt #processCount {
-    text-decoration: none;
-  }
-  
-  .view {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .imgIng {
-    width: 80px;
-  }
-  
-  .goal-img-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .goal-img {
-    width: 80px;
-    height: auto;
-  }
-  
-  .goal-text {
-    position: absolute;
-    color: #000000;
-    font-size: 24px;
-    font-family: Pretendard;
-  }
-  
-  .detailIcon {
-    display: flex;
-    align-items: center;
-    font-family: Pretendard;
-    margin-bottom: 10px;
-    justify-content: left;
-  }
-  
-  .detailIconImg {
-    width: 25px;
-    margin-right: 10px;
-  }
-  
-  .detailTxt2 {
-    font-weight: bold;
-    margin-right: 10px;
-  }
-  
-  .percentage {
-    color: #7db249;
-    font-weight: semibold;
-  }
-  
-  .participant {
-    color: #8f826f;
-  }
-  
-  .count,
-  .countTxt,
-  .categoryExp {
-    font-family: Pretendard;
-  }
-  
-  .count {
-    text-decoration: underline;
-  }
-  
-  .timeIng {
-    border-radius: 24px;
-    background-color: #f2f2f2;
-    font-family: Pretendard;
-    padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-left: 20px;
-    margin-right: 10px;
-    box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
-  }
-  
-  .timeIng_market {
-    border-radius: 24px;
-    font-size: 12px;
-    background-color: #f2f2f2;
-    font-family: Pretendard;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
-    margin-left: -80px;
-    margin-top: -10px;
-  }
-  
-  /* 드롭다운 */
-  
-  .dropdown {
-    display: inline-block;
-  }
-  
-  .dropbtn {
-    border-radius: 24px;
-    background-color: #f2f2f2;
-    font-family: Pretendard;
-    padding: 3px;
-    padding-left: 15px;
-    padding-right: 10px;
-    margin-left: 20px;
-    margin-right: 5px;
-    border: none;
-    box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-    justify-content: space-between;
-  }
-  .dropdown-content {
-    display: none;
-    font-weight: 400;
-    font-family: Pretendard;
-    background-color: #f2f2f2;
-    width: 120px;
-    border-radius: 20px;
-    height: 60px;
-    box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
-    margin-top: 10px;
-    margin-left: 20px;
-    z-index: 1000;
-    position: absolute;
-    padding-top: 7px;
-  }
-  
-  .dropdown-content div {
-    display: block;
-    text-decoration: none;
-    color: rgb(37, 37, 37);
-    font-size: 15px;
-    padding-left: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
-  .dropdown-content div:hover {
-    background-color: rgb(226, 226, 226);
-    border-radius: 20px;
-  }
-  
-  .dropdown-content.show {
-    display: block;
-  }
-  
-  .dropbtn_icon {
-    width: 23px;
-    margin-left: 6px;
-  }
-  
-  /* 카테고리 */
-  .category_content {
-    border-radius: 24px;
-    background-color: #7db249;
-    font-family: Pretendard;
-    width: 20%;
-    padding: 5px;
-    margin-left: 10px;
-    border: none;
-    box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-    justify-content: center;
-    color: white;
-  }
-  
-  /* 드롭다운 카테고리 */
-  .dropdownCategory {
-    display: inline-block;
-  }
-  
-  .dropbtn_category {
-    border-radius: 24px;
-    background-color: #7db249;
-    font-family: Pretendard;
-    padding: 3px;
-    padding-left: 15px;
-    padding-right: 10px;
-    margin-left: 20px;
-    margin-right: 5px;
-    border: none;
-    box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-    justify-content: space-between;
-    color: white;
-  }
-  .dropdown-category-content {
-    display: none;
-    font-weight: 400;
-    font-family: Pretendard;
-    background-color: #7db249;
-    width: 90px;
-    border-radius: 20px;
-    height: 200px;
-    box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
-    margin-top: 10px;
-    z-index: 1000;
-    position: absolute;
-    color: white;
-    text-align: center;
-    margin-left: 75px;
-  }
-  
-  .dropdown-category-content div {
-    display: block;
-    text-decoration: none;
-    color: rgb(37, 37, 37);
-    font-size: 15px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    color: #ffffff;
-  }
-  .dropdown-category-content div:hover {
-    background-color: #548524;
-    border-radius: 20px;
-  }
-  
-  .dropdown-category-content.show {
-    display: block;
-  }
-  
-  .dropbtn_category_icon {
-    width: 23px;
-    margin-left: 6px;
-  }
-  
-  /* 드롭다운 카테고리 2 */
-  .dropdownCategory2 {
-    display: inline-block;
-  }
-  
-  .dropbtn_category2 {
-    border-radius: 24px;
-    background-color: #7db249;
-    font-family: Pretendard;
-    padding: 3px;
-    padding-left: 15px;
-    padding-right: 10px;
-    margin-left: 20px;
-    margin-right: 5px;
-    border: none;
-    box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-    justify-content: space-between;
-    color: white;
-  }
-  .dropdown-category-content2 {
-    display: none;
-    font-weight: 400;
-    font-family: Pretendard;
-    background-color: #7db249;
-    width: 90px;
-    border-radius: 20px;
-    height: 200px;
-    box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
-    margin-top: 10px;
-    z-index: 1000;
-    position: absolute;
-    color: white;
-    text-align: center;
-    margin-left: 75px;
-  }
-  
-  .dropdown-category-content2 div {
-    display: block;
-    text-decoration: none;
-    color: rgb(37, 37, 37);
-    font-size: 15px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    color: #ffffff;
-  }
-  .dropdown-category-content2 div:hover {
-    background-color: #548524;
-    border-radius: 20px;
-  }
-  
-  .dropdown-category-content2.show {
-    display: block;
-  }
-  
-  .dropbtn_category_icon2 {
-    width: 23px;
-    margin-left: 6px;
-  }
-  
-  /* 드롭다운 카테고리3 */
-  .dropdownCategory3 {
-    display: inline-block;
-  }
-  
-  .dropbtn_category3 {
-    border-radius: 24px;
-    background-color: #7db249;
-    font-family: Pretendard;
-    padding: 3px;
-    padding-left: 15px;
-    padding-right: 10px;
-    margin-left: 20px;
-    margin-right: 5px;
-    border: none;
-    box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-    justify-content: space-between;
-    color: white;
-  }
-  .dropdown-category-content3 {
-    display: none;
-    font-weight: 400;
-    font-family: Pretendard;
-    background-color: #7db249;
-    width: 90px;
-    border-radius: 20px;
-    height: 200px;
-    box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
-    margin-top: 10px;
-    z-index: 1000;
-    position: absolute;
-    color: white;
-    text-align: center;
-    margin-left: 75px;
-  }
-  
-  .dropdown-category-content3 div {
-    display: block;
-    text-decoration: none;
-    color: rgb(37, 37, 37);
-    font-size: 15px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    color: #ffffff;
-  }
-  .dropdown-category-content3 div:hover {
-    background-color: #548524;
-    border-radius: 20px;
-  }
-  
-  .dropdown-category-content3.show {
-    display: block;
-  }
-  
-  .dropbtn_category_icon3 {
-    width: 23px;
-    margin-left: 6px;
-  }
-  
-  /* 드롭다운 시간 */
-  .dropdownT {
-    display: inline-block;
-  }
-  
-  .dropbtnT {
-    border-radius: 24px;
-    background-color: #f2f2f2;
-    font-family: Pretendard;
-    padding: 3px;
-    padding-left: 15px;
-    padding-right: 10px;
-    margin-right: 20px;
-    border: none;
-    box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-    justify-content: space-between;
-  }
-  .dropdown-contentT {
-    display: none;
-    font-weight: 400;
-    font-family: Pretendard;
-    background-color: #f2f2f2;
-    width: 90px;
-    border-radius: 20px;
-    height: 90px;
-    box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
-    margin-top: 10px;
-    z-index: 1000;
-    position: absolute;
-    padding-top: 7px;
-  }
-  
-  .dropdown-contentT div {
-    display: block;
-    text-decoration: none;
-    color: rgb(37, 37, 37);
-    font-size: 15px;
-    padding-left: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
-  .dropdown-contentT div:hover {
-    background-color: rgb(226, 226, 226);
-    border-radius: 20px;
-  }
-  
-  .dropdown-contentT.show {
-    display: block;
-  }
-  
-  .dropbtn_iconT {
-    width: 23px;
-    margin-left: 6px;
-  }
-  
-  .userNav {
-    background-color: #ffffff;
-    height: 100px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .userNavTxt {
-    display: none;
-    margin-left: 30px;
-  }
-  
-  .userName {
-    font-weight: bold;
-  }
-  
-  .userEmail {
-    color: #757575;
-    font-size: 15px;
-    margin-top: 5px;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 50px;
+  background-color: #f1f5ee;
+  width: 80rem;
+}
 
-  
+.Wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.navBar {
+  display: flex;
+  flex-direction: column;
+  align-items: top;
+  justify-content: top;
+  background-color: #ffffff;
+  display: flex;
+  width: 104px;
+  min-height: 100vh;
+  padding-top: 20px;
+  border-right: 1px solid #000000;
+  font-family: Pretendard;
+  transition: width 0.3s ease;
+}
+
+.navBarMenu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  margin: 30px;
+}
+
+.navBarMenu:hover {
+  color: #548524;
+  font-weight: bold;
+}
+
+.menuText {
+  text-align: left;
+  display: none;
+  margin-left: 20px;
+  flex-wrap: wrap;
+}
+
+.menu {
+  background-image: url("image/Menu.png");
+  background-size: cover;
+  background-position: center;
+  width: 30px;
+  height: 30px;
+  border: none;
+  margin: 30px;
+  background-color: #ffffff;
+}
+
+.logout {
+  background-image: url("image/Logout.png");
+  background-size: cover;
+  background-position: center;
+  width: 26px;
+  height: 26px;
+  border: none;
+  background-color: #ffffff;
+  margin-left: 33px;
+  transition: margin 0.3s ease;
+}
+
+.logoTop {
+  width: 100px;
+  margin-left: 50px;
+  margin-top: 10px;
+}
+
+.mainTxt {
+  font-family: Pretendard;
+  font-weight: bold;
+  color: #404040;
+  font-size: 33px;
+}
+
+.Wrapper1 {
+  display: flex;
+  flex-direction: row;
+  margin-left: 90px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  width: 100%;
+  align-items: center;
+}
+
+.Wrapper7 {
+  display: flex;
+  flex-direction: row;
+  margin-left: 90px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  align-items: center;
+}
+
+.line {
+  border: 1px solid #dadada;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.line2 {
+  border: 1px solid #dadada;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.Wrapper2 {
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding-left: 30px;
+  padding-right: 30px;
+  justify-content: center;
+  margin-left: 90px;
+  flex-direction: column;
+  align-items: top;
+  height: 330px;
+  width: 80%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  overflow-y: auto;
+}
+
+.Wrapper8 {
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding-left: 30px;
+  padding-right: 30px;
+  justify-content: center;
+  margin-left: 90px;
+  flex-direction: column;
+  height: 70%;
+  width: 80%;
+  padding-bottom: 30px;
+}
+
+.marketX {
+  margin-right: 30px;
+}
+
+.marketChoicebtn {
+  background-color: #d8cbb8;
+  border-radius: 16px;
+  font-family: Pretendard;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 17%;
+  padding: 5px;
+  margin-top: 30px;
+  margin-right: 30px;
+}
+
+.goalAdd {
+  margin-top: 20px;
+  background-color: #7db249;
+  font-family: Pretendard;
+  padding: 7px 0px 8px 0px;
+  margin-left: 180px;
+  margin-right: 5px;
+  border-radius: 10px;
+  margin-top: 50px;
+  width: 25%;
+  border: none;
+  box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  justify-content: center;
+  color: white;
+}
+
+.Wrapper2market {
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 10px;
+  justify-content: center;
+  margin-left: 90px;
+  flex-direction: column;
+  height: 245px;
+  width: 75%;
+  align-items: top;
+}
+
+.goalWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: top;
+  width: 100%;
+}
+
+.goalingg {
+  background-color: #c0dba7;
+  border-radius: 20px;
+  width: 100%;
+  height: 330px;
+  display: flex;
+  margin-left: 90px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  flex-direction: column;
+  overflow-y: scroll;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.goalingg::-webkit-scrollbar {
+  width: 10px; /* 세로축 스크롤바 폭 너비 */
+  height: 15px; /* 가로축 스크롤바 폭 너비 */
+}
+
+.goalingg::-webkit-scrollbar-thumb {
+  background: rgb(102, 102, 102);
+  border-radius: 10px;
+}
+
+.goalingg::-webkit-scrollbar-track {
+  background: #d9d9d9;
+  border-radius: 10px;
+}
+
+.Wrapper3 {
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  margin-top: 10px;
+  flex-direction: column;
+  width: 90%;
+  height: 120px;
+  margin-bottom: 20px;
+}
+
+.Wrapper3::after {
+  content: url("image/downArrow.svg");
+  width: 109%;
+  margin-left: -25px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  height: 25px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: #e8eee3;
+  border-radius: 0px 0px 20px 20px;
+}
+
+.Wrapper4 {
+  display: flex;
+  background-color: #ededed;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin-left: 90px;
+  flex-direction: column;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 112%;
+}
+
+.Wrapper5 {
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 10px;
+  justify-content: center;
+  margin-left: 90px;
+  flex-direction: column;
+  height: 245px;
+  width: 42%;
+}
+
+.Wrapper6 {
+  background-color: #f1f1f1;
+  box-shadow: 0px 2px 8px 0px rgba(190, 190, 190, 0.6);
+  width: 100%;
+  height: 30%;
+  border-radius: 20px;
+  padding: 15px 0px 30px 0px;
+  overflow-y: scroll;
+}
+
+.Wrapper6::-webkit-scrollbar {
+  width: 10px; /* 세로축 스크롤바 폭 너비 */
+  height: 15px; /* 가로축 스크롤바 폭 너비 */
+}
+
+.Wrapper6::-webkit-scrollbar-thumb {
+  background: rgb(102, 102, 102);
+  border-radius: 10px;
+}
+
+.Wrapper6::-webkit-scrollbar-track {
+  background: #d9d9d9;
+  border-radius: 10px;
+}
+
+.detailTxt,
+.processT,
+.marketName {
+  font-family: Pretendard;
+  font-weight: light;
+  color: #555555;
+  margin-left: 30px;
+  font-size: 13px;
+}
+
+.marketImg {
+  width: 17%;
+  margin-left: 30px;
+}
+
+.goalTxt {
+  font-family: Pretendard;
+  font-size: 20px;
+  font-weight: bold;
+  color: #404040;
+  margin-top: -90px;
+}
+
+.goalTxt2 {
+  font-family: Pretendard;
+  font-size: 20px;
+  font-weight: bold;
+  color: #404040;
+  width: 280px;
+}
+
+.goalExplainInput {
+  width: 160%;
+  height: 400%;
+}
+
+textarea {
+  border: none;
+  border-radius: 4px;
+  resize: none; /* 사용자가 수직으로만 크기를 조절할 수 있도록 합니다. */
+  font-family: Pretendard;
+  font-weight: light;
+  color: #555555;
+  font-size: 13px;
+  width: 100px;
+  background-color: none;
+}
+
+.goalTxtInput {
+  font-family: Pretendard;
+  font-size: 20px;
+  font-weight: bold;
+  color: #404040;
+  width: 50%;
+  height: 100%;
+  border-radius: 8px;
+  border: none;
+  padding: 2px;
+  padding-left: 5px;
+}
+
+.goalTxtInput:focus,
+textarea:focus {
+  outline-color: #548524;
+}
+
+.marketgoalTxt {
+  font-family: Pretendard;
+  font-size: 20px;
+  font-weight: bold;
+  color: #404040;
+  margin-left: 20px;
+}
+
+.goalImg {
+  width: 150px;
+  border-radius: 13px;
+}
+
+.processImg {
+  width: 150px;
+  border-radius: 13px;
+  margin-left: 30px;
+}
+
+.marketWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.countTxt_market {
+  font-family: Pretendard;
+  font-size: 12px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.marketWrapper2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.marketWrapper3 {
+  display: flex;
+  flex-direction: row;
+  width: 13em;
+  padding-bottom: 10px;
+  align-items: center;
+}
+
+.marketWrapper4 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.goalDetail {
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+}
+
+.goalDetail1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.goalDetail2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.goalTime {
+  display: flex;
+  flex-direction: row;
+  font-family: Pretendard;
+  align-items: center;
+}
+
+.goalTime2 {
+  display: flex;
+  flex-direction: row;
+  font-family: Pretendard;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.goalContent {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.processContent {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.processTime {
+  color: #707070;
+  font-family: Pretendard;
+  text-decoration: underline;
+}
+
+.goalExplain {
+  font-family: Pretendard;
+  font-weight: light;
+  color: #555555;
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+.processExplain {
+  font-family: Pretendard;
+  font-weight: light;
+  color: #555555;
+  margin-top: 30px;
+  font-size: 13px;
+}
+
+.countTxt #processCount {
+  text-decoration: none;
+}
+
+.view {
+  display: flex;
+  flex-direction: column;
+}
+
+.imgIng {
+  width: 80px;
+}
+
+.goal-img-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.goal-img {
+  width: 80px;
+  height: auto;
+}
+
+.goal-text {
+  position: absolute;
+  color: #000000;
+  font-size: 24px;
+  font-family: Pretendard;
+}
+
+.detailIcon {
+  display: flex;
+  align-items: center;
+  font-family: Pretendard;
+  margin-bottom: 10px;
+  justify-content: left;
+}
+
+.detailIconImg {
+  width: 25px;
+  margin-right: 10px;
+}
+
+.detailTxt2 {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.percentage {
+  color: #7db249;
+  font-weight: semibold;
+}
+
+.participant {
+  color: #8f826f;
+}
+
+.count,
+.countTxt,
+.categoryExp {
+  font-family: Pretendard;
+}
+
+.count {
+  text-decoration: underline;
+}
+
+.timeIng {
+  border-radius: 24px;
+  background-color: #f2f2f2;
+  font-family: Pretendard;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 20px;
+  margin-right: 10px;
+  box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
+}
+
+.timeIng_market {
+  border-radius: 24px;
+  font-size: 12px;
+  background-color: #f2f2f2;
+  font-family: Pretendard;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
+  margin-left: -80px;
+  margin-top: -10px;
+}
+
+/* 드롭다운 */
+
+.dropdown {
+  display: inline-block;
+}
+
+.dropbtn {
+  border-radius: 24px;
+  background-color: #f2f2f2;
+  font-family: Pretendard;
+  padding: 3px;
+  padding-left: 15px;
+  padding-right: 10px;
+  margin-left: 20px;
+  margin-right: 5px;
+  border: none;
+  box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  justify-content: space-between;
+}
+.dropdown-content {
+  display: none;
+  font-weight: 400;
+  font-family: Pretendard;
+  background-color: #f2f2f2;
+  width: 120px;
+  border-radius: 20px;
+  height: 60px;
+  box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
+  margin-top: 10px;
+  margin-left: 20px;
+  z-index: 1000;
+  position: absolute;
+  padding-top: 7px;
+}
+
+.dropdown-content div {
+  display: block;
+  text-decoration: none;
+  color: rgb(37, 37, 37);
+  font-size: 15px;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.dropdown-content div:hover {
+  background-color: rgb(226, 226, 226);
+  border-radius: 20px;
+}
+
+.dropdown-content.show {
+  display: block;
+}
+
+.dropbtn_icon {
+  width: 23px;
+  margin-left: 6px;
+}
+
+/* 카테고리 */
+.category_content {
+  border-radius: 24px;
+  background-color: #7db249;
+  font-family: Pretendard;
+  width: 20%;
+  padding: 5px;
+  margin-left: 10px;
+  border: none;
+  box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  justify-content: center;
+  color: white;
+}
+
+/* 드롭다운 카테고리 */
+.dropdownCategory {
+  display: inline-block;
+}
+
+.dropbtn_category {
+  border-radius: 24px;
+  background-color: #7db249;
+  font-family: Pretendard;
+  padding: 3px;
+  padding-left: 15px;
+  padding-right: 10px;
+  margin-left: 20px;
+  margin-right: 5px;
+  border: none;
+  box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  justify-content: space-between;
+  color: white;
+}
+.dropdown-category-content {
+  display: none;
+  font-weight: 400;
+  font-family: Pretendard;
+  background-color: #7db249;
+  width: 90px;
+  border-radius: 20px;
+  height: 200px;
+  box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
+  margin-top: 10px;
+  z-index: 1000;
+  position: absolute;
+  color: white;
+  text-align: center;
+  margin-left: 75px;
+}
+
+.dropdown-category-content div {
+  display: block;
+  text-decoration: none;
+  color: rgb(37, 37, 37);
+  font-size: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #ffffff;
+}
+.dropdown-category-content div:hover {
+  background-color: #548524;
+  border-radius: 20px;
+}
+
+.dropdown-category-content.show {
+  display: block;
+}
+
+.dropbtn_category_icon {
+  width: 23px;
+  margin-left: 6px;
+}
+
+/* 드롭다운 카테고리 2 */
+.dropdownCategory2 {
+  display: inline-block;
+}
+
+.dropbtn_category2 {
+  border-radius: 24px;
+  background-color: #7db249;
+  font-family: Pretendard;
+  padding: 3px;
+  padding-left: 15px;
+  padding-right: 10px;
+  margin-left: 20px;
+  margin-right: 5px;
+  border: none;
+  box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  justify-content: space-between;
+  color: white;
+}
+.dropdown-category-content2 {
+  display: none;
+  font-weight: 400;
+  font-family: Pretendard;
+  background-color: #7db249;
+  width: 90px;
+  border-radius: 20px;
+  height: 200px;
+  box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
+  margin-top: 10px;
+  z-index: 1000;
+  position: absolute;
+  color: white;
+  text-align: center;
+  margin-left: 75px;
+}
+
+.dropdown-category-content2 div {
+  display: block;
+  text-decoration: none;
+  color: rgb(37, 37, 37);
+  font-size: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #ffffff;
+}
+.dropdown-category-content2 div:hover {
+  background-color: #548524;
+  border-radius: 20px;
+}
+
+.dropdown-category-content2.show {
+  display: block;
+}
+
+.dropbtn_category_icon2 {
+  width: 23px;
+  margin-left: 6px;
+}
+
+/* 드롭다운 카테고리3 */
+.dropdownCategory3 {
+  display: inline-block;
+}
+
+.dropbtn_category3 {
+  border-radius: 24px;
+  background-color: #7db249;
+  font-family: Pretendard;
+  padding: 3px;
+  padding-left: 15px;
+  padding-right: 10px;
+  margin-left: 20px;
+  margin-right: 5px;
+  border: none;
+  box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  justify-content: space-between;
+  color: white;
+}
+.dropdown-category-content3 {
+  display: none;
+  font-weight: 400;
+  font-family: Pretendard;
+  background-color: #7db249;
+  width: 90px;
+  border-radius: 20px;
+  height: 200px;
+  box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
+  margin-top: 10px;
+  z-index: 1000;
+  position: absolute;
+  color: white;
+  text-align: center;
+  margin-left: 75px;
+}
+
+.dropdown-category-content3 div {
+  display: block;
+  text-decoration: none;
+  color: rgb(37, 37, 37);
+  font-size: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #ffffff;
+}
+.dropdown-category-content3 div:hover {
+  background-color: #548524;
+  border-radius: 20px;
+}
+
+.dropdown-category-content3.show {
+  display: block;
+}
+
+.dropbtn_category_icon3 {
+  width: 23px;
+  margin-left: 6px;
+}
+
+/* 드롭다운 시간 */
+.dropdownT {
+  display: inline-block;
+}
+
+.dropbtnT {
+  border-radius: 24px;
+  background-color: #f2f2f2;
+  font-family: Pretendard;
+  padding: 3px;
+  padding-left: 15px;
+  padding-right: 10px;
+  margin-right: 20px;
+  border: none;
+  box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  justify-content: space-between;
+}
+.dropdown-contentT {
+  display: none;
+  font-weight: 400;
+  font-family: Pretendard;
+  background-color: #f2f2f2;
+  width: 90px;
+  border-radius: 20px;
+  height: 90px;
+  box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
+  margin-top: 10px;
+  z-index: 1000;
+  position: absolute;
+  padding-top: 7px;
+}
+
+.dropdown-contentT div {
+  display: block;
+  text-decoration: none;
+  color: rgb(37, 37, 37);
+  font-size: 15px;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.dropdown-contentT div:hover {
+  background-color: rgb(226, 226, 226);
+  border-radius: 20px;
+}
+
+.dropdown-contentT.show {
+  display: block;
+}
+
+.dropbtn_iconT {
+  width: 23px;
+  margin-left: 6px;
+}
+
+.userNav {
+  background-color: #ffffff;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.userNavTxt {
+  display: none;
+  margin-left: 30px;
+}
+
+.userName {
+  font-weight: bold;
+}
+
+.userEmail {
+  color: #757575;
+  font-size: 15px;
+  margin-top: 5px;
+}

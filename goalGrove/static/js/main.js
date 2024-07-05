@@ -444,6 +444,11 @@ window.onload = () => {
 
     goalingg.appendChild(newGoal);
   };
+
+  //메뉴바 닉네임 입력
+  const username = localStorage.getItem("username");
+  const navName = document.getElementsByClassName("userName");
+  navName.innerHTML = username;
 };
 
 window.onclick = (e) => {

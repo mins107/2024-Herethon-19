@@ -7,9 +7,23 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    
+
+    <div class="sidebar" id="sidebar">
+        <div class="menu-icon" onclick="toggleMenu()">
+            <img src="asset/menu1.svg" alt="menu">
+        </div>
+        <ul class="menu-items">
+            <li><a href="#"><span><div class="nickname">닉네임</div>
+                <div class="email">이메일주소</div></span>
+                <img src="asset/Logout.svg" alt="Logout Icon"></a></li>
+            <li><a href="#"><img src="asset/Vector.svg" alt="Heart Icon"><span>메인</span></a></li>
+            <li><a href="#"><img src="asset/Vector-2.svg" alt="Cart Icon"><span>목표 쇼핑</span></a></li>
+            <li><a href="#"><img src="asset/Vector-3.svg" alt="Community Icon"><span>커뮤니티</span></a></li>
+        </ul>
+    </div>
     <div class="Wrapper">
-      <div class="navBar">
+      
+      <!-- <div class="navBar">
         <button class="menu" id="menuButton"></button>
         <div class="userNav">
           <div class="userNavTxt">
@@ -20,21 +34,21 @@
         </div>
         <div id="navBarMenuContainer">
           <div class="navBarMenu">
-            <img src="{% static 'img/Heart.svg' %}" />
+            <img src="image/Heart.svg" />
             <span class="menuText">메인</span>
           </div>
           <div class="navBarMenu">
-            <img src="{% static 'img/Cart.svg' %}" />
+            <img src="image/Cart.svg" />
             <span class="menuText">목표쇼핑</span>
           </div>
           <div class="navBarMenu">
-            <img src="{% static 'img/Group.svg' %}" />
+            <img src="image/Group.svg" />
             <span class="menuText">커뮤니티</span>
           </div>
         </div>
-      </div>
+      </div> -->
       <div>
-        <img class="logoTop" alt="상단 로고" src="img/LogoMain.png" />
+        <img class="logoTop" alt="상단 로고" src="image/LogoMain.png" />
         <!-- 본문 내용 -->
         <div class="Wrapper">
           <!-- 목표 선정 -->
@@ -47,7 +61,7 @@
                 <button class="dropbtn">
                   <div class="dropbtn_content">목표 만들기</div>
                   <img
-                    src="{% static 'img/dropdown.svg' %}"
+                    src="image/dropdown.svg"
                     class="dropbtn_click dropbtn_icon"
                     onclick="dropdown()"
                   />
@@ -74,12 +88,12 @@
               <div class="Wrapper6">
                 <div class="goalWrapper">
                   <span class="marketName">말하는 감자</span>
-                  <img src="img/X.svg" alt="창 닫기" class="marketX" />
+                  <img src="image/X.svg" alt="창 닫기" class="marketX" />
                 </div>
                 <div class="goalWrapper">
                   <div class="marketWrapper">
                     <img
-                      src="img/market.svg"
+                      src="image/market.svg"
                       alt="장바구니 사진"
                       class="marketImg"
                     />
@@ -109,7 +123,7 @@
                     <button class="dropbtn_category">
                       <div class="dropbtn_category_content">취미</div>
                       <img
-                        src="img/dropdownWhite.svg"
+                        src="image/dropdownWhite.svg"
                         class="dropbtn_category_click dropbtn_category_icon"
                         onclick="dropdownCategory()"
                       />
@@ -165,7 +179,7 @@
               <div class="line"></div>
               <div class="goalDetail">
                 <img
-                  src="{% static 'img/groveimg.svg' %}"
+                  src="image/groveimg.svg"
                   alt="사진 추가"
                   class="goalImg"
                 />
@@ -175,26 +189,26 @@
                       <button class="dropbtnT">
                         <div class="dropbtn_contentT">하루에</div>
                         <img
-                          src="{% static 'img/dropdown.svg' %}"
+                          src="image/dropdown.svg"
                           class="dropbtn_clickT dropbtn_iconT"
                           onclick="dropdownT()"
                         />
                       </button>
                       <div class="dropdown-contentT">
-                        <div
-                          class="dropdownMainT"
+                        <div 
+                          class="dropdownMainT" id="day"
                           onclick="showMenuT(this.innerText)"
                         >
                           하루에
                         </div>
                         <div
-                          class="dropdownMainT"
+                          class="dropdownMainT" id="week"
                           onclick="showMenuT(this.innerText)"
                         >
                           일주일에
                         </div>
                         <div
-                          class="dropdownMainT"
+                          class="dropdownMainT" id="month"
                           onclick="showMenuT(this.innerText)"
                         >
                           한달에
@@ -212,10 +226,10 @@
                   </div>
                 </div>
               </div>
-              
+              <button class="goalAdd" onclick="addGoalEvent()">목표 추가하기</button>
+
             </div>
             
-            <button class="goalAdd" onclick="addGoalEvent()">목표 추가하기</button>
           </div>
 
           <!-- 이루고 있는 목표 -->
@@ -229,14 +243,14 @@
             <div class="goalingg">
               <div class="Wrapper3">
                 <div class="goalWrapper">
-                  <div class="goalTxt">주 4회 헬스장에서 운동</div>
+                  <div class="goalTxt2">주 4회 헬스장에서 운동</div>
                   <div>
                     <span class="categoryExp">카테고리</span>
                     <div class="dropdownCategory2">
                       <button class="dropbtn_category2">
                         <div class="dropbtn_category_content2">취미</div>
                         <img
-                          src="{% static 'img/dropdownWhite.svg' %}"
+                          src="image/dropdownWhite.svg"
                           class="dropbtn_category_click2 dropbtn_category_icon2"
                           onclick="dropdownCategory2()"
                         />
@@ -289,23 +303,24 @@
                   </div>
                 </div>
                 <div class="line2"></div>
-                <div class="goalDetail2">
+                <div style="display: flex; flex-direction: column;">
+                  <div class="goalDetail2">
                   <div class="goalDetail1">
                     <img
-                      src="{% static 'img/goalIng.png'%}"
+                      src="image/goalIng.png"
                       alt="이루고 있는 목표 이미지"
                       class="imgIng"
                     />
                     <div class="timeIng">일주일에</div>
                     <div class="countTxt">4회</div>
-                    
+                  
                   </div>
                   
                   <div>
                     <div class="detailIcon">
                       <img
                         class="detailIconImg"
-                        src="{% static 'img/Line_up.png'%}"
+                        src="image/Line_up.png"
                         alt="성취율 아이콘"
                       />
                       <span class="detailTxt2">성취율</span>
@@ -314,7 +329,7 @@
                     <div class="detailIcon">
                       <img
                         class="detailIconImg"
-                        src="{% static 'img/Chart.png' %}"
+                        src="image/Chart.png"
                         alt="참가자 아이콘"
                       />
                       <span class="detailTxt2">참가자</span>
@@ -322,6 +337,11 @@
                     </div>
                   </div>
                 </div>
+                <div class="goalIngDetail">
+                  1회당 1시간 이상 운동하되 시작 전 스트레칭은 운동 시간에 포함시키지 않기 
+                </div>
+                </div>
+                
               </div>
 
               
@@ -340,6 +360,7 @@
             </div>
           </div>
           <!-- 목표 선정 박스 -->
+          <div></div>
           <div class="Wrapper5">
             <div class="goalWrapper">
               <div>
@@ -352,7 +373,7 @@
                   <button class="dropbtn_category3">
                     <div class="dropbtn_category_content3">취미</div>
                     <img
-                      src="{% static 'img/dropdownWhite.svg'%}"
+                      src="image/dropdownWhite.svg"
                       class="dropbtn_category_click3 dropbtn_category_icon3"
                       onclick="dropdownCategory3()"
                     />
@@ -431,15 +452,20 @@
                 </div>
               </div>
               <img
-                src="{% static 'img/groveimg.svg' %}"
+                src="image/groveimg.svg"
                 alt="로고 이미지"
                 class="processImg"
               />
             </div>
           </div>
+          
         </div>
       </div>
+
+
+
+      
     </div>
-    <script src="{% static 'js/main.js' %}"></script>
+    <script src="jscript.js"></script>
   </body>
 </html>
