@@ -307,22 +307,18 @@ window.onload = () => {
 
     const newGoal = document.createElement("div");
     newGoal.innerHTML = `
-                <div class="Wrapper3">
-                  <div class="goalWrapper">
-                    <span>
-                      <span class="goalTxt2" id="goalTxt">${newGoalName}</span>
-                      <span class="categoryExp" id="goal-ing-end">종료하기</span>
-                    </span>
+<div class="Wrapper3">
+                <div class="goalWrapper">
+                  <span>
+                    <span class="goalTxt2">주 4회 헬스장에서 운동</span>
+                    <span class="categoryExp"  id="goalTxt">${newGoalName}</span>
+                  </span>
                   <div>
                     <span class="categoryExp">카테고리</span>
                     <div class="dropdownCategory2">
                       <button class="dropbtn_category2">
                         <div class="dropbtn_category_content2">취미</div>
-                        <img
-                          src="/static/img/dropdownWhite.svg"
-                          class="dropbtn_category_click2 dropbtn_category_icon2"
-                          onclick="dropdownCategory2()"
-                        />
+                        <img src="/static/img/dropdownWhite.svg" class="dropbtn_category_click2 dropbtn_category_icon2" onclick="dropdownCategory2()" />
                       </button>
                     </div>
                     <div class="dropdown-category-content2">
@@ -372,45 +368,25 @@ window.onload = () => {
                   </div>
                 </div>
                 <div class="line2"></div>
-                <div style="display: flex; flex-direction: column;">
-                  <div class="goalDetail2">
+                <div class="goalDetail2">
                   <div class="goalDetail1">
-                    <img
-                      src="/static/img/goalIng.png"
-                      alt="이루고 있는 목표 이미지"
-                      class="imgIng"
-                    />
-                    <div class="timeIng">${selectedValue}</div>
+                    <img src="/static/img/goalIng.png" alt="이루고 있는 목표 이미지" class="imgIng" />
+                    <div class="timeIng">${selectedValue}</div> <!-- 선택된 값 사용 -->
                     <div class="countTxt">4회</div>
-                  
                   </div>
-                  
                   <div>
                     <div class="detailIcon">
-                      <img
-                        class="detailIconImg"
-                        src="/static/img/Line_up.png""
-                        alt="성취율 아이콘"
-                      />
+                      <img class="detailIconImg" src="/static/img/Line_up.png" alt="성취율 아이콘" />
                       <span class="detailTxt2">성취율</span>
                       <span class="percentage">65%</span>
                     </div>
                     <div class="detailIcon">
-                      <img
-                        class="detailIconImg"
-                        src="/static/img/Chart.png"
-                        alt="참가자 아이콘"
-                      />
+                      <img class="detailIconImg" src="/static/img/Chart.png" alt="참가자 아이콘" />
                       <span class="detailTxt2">참가자</span>
                       <span class="participant">630명</span>
                     </div>
                   </div>
                 </div>
-                <div class="goalIngDetail">
-                  ${newGoalDetail}
-                </div>
-                </div>
-                
               </div>
     `;
 
