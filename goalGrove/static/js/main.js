@@ -28,7 +28,7 @@ window.onload = () => {
 
     if (id === "createGoal") {
       dropbtn_content.innerHTML = "목표 만들기";
-      goalAdd.style.display = "block";
+
       goalContent.innerHTML = `
 <div class="goalWrapper">
                 <input placeholder="목표 이름 작성하기" class="goalTxtInput"></input>
@@ -38,7 +38,7 @@ window.onload = () => {
                     <button class="dropbtn_category">
                       <div class="dropbtn_category_content">취미</div>
                       <img
-                        src="{% static 'img/dropdownWhite.svg'%}"
+                        src="image/dropdownWhite.svg"
                         class="dropbtn_category_click dropbtn_category_icon"
                         onclick="dropdownCategory()"
                       />
@@ -94,7 +94,7 @@ window.onload = () => {
               <div class="line"></div>
               <div class="goalDetail">
                 <img
-                  src="{% static 'img/groveimg.svg'%}"
+                  src="image/groveimg.svg"
                   alt="사진 이미지"
                   class="goalImg"
                 />
@@ -104,7 +104,7 @@ window.onload = () => {
                       <button class="dropbtnT">
                         <div class="dropbtn_contentT">하루에</div>
                         <img
-                          src="{% static 'img/dropdown.svg'%}"
+                          src="image/dropdown.svg"
                           class="dropbtn_clickT dropbtn_iconT"
                           onclick="dropdownT()"
                         />
@@ -140,70 +140,46 @@ window.onload = () => {
                     <textarea rows="1"class="goalExplainInput" placeholder="구체적인 설명 작성하기"></textarea>
                   </div>
                 </div>
+              </div>
+              <button class="goalAdd" onclick="addGoalEvent()">목표 추가하기</button>
             `;
     } else if (id === "goalCart") {
       dropbtn_content.innerHTML = "목표 장바구니";
-      goalAdd.style.display = "none";
       goalContent.innerHTML = `
 <div class="goalTxt">목표 장바구니</div>
               <div class="line"></div>
-              <div class="Wrapper6">
-                <div class="goalWrapper">
-                  <span class="marketName">말하는 감자</span>
-                  <img src="{% static 'img/X.svg'%}" alt="창 닫기" class="marketX" />
-                </div>
-                <div class="goalWrapper">
-                  <div class="marketWrapper">
-                    <img
-                      src="{% static 'img/market.svg'%}"
-                      alt="장바구니 사진"
-                      class="marketImg"
-                    />
-                    <div class="marketWrapper2">
-                      <div class="marketWrapper3">
-                        <span class="marketgoalTxt">주 3회 요가</span>
-                        <span class="category_content">운동</span>
-                      </div>
-                      <div class="marketWrapper4">
-                        <span class="timeIng_market">일주일에</span>
-                        <span class="countTxt_market">3회</span>
+              <div class="Wrapper10">
+                <div class="Wrapper6">
+                  <div class="goalWrapper">
+                    <span class="marketName">말하는 감자</span>
+                    <img src="image/X.svg" alt="창 닫기" class="marketX" />
+                  </div>
+                  <div class="goalWrapper">
+                    <div class="marketWrapper">
+                      <img
+                        src="image/market.svg"
+                        alt="장바구니 사진"
+                        class="marketImg"
+                      />
+                      <div class="marketWrapper2">
+                        <div class="marketWrapper3">
+                          <span class="marketgoalTxt">주 3회 요가</span>
+                          <span class="category_content">운동</span>
+                        </div>
+                        <div class="marketWrapper4">
+                          <span class="timeIng_market">일주일에</span>
+                          <span class="countTxt_market">3회</span>
+                        </div>
                       </div>
                     </div>
+                    <div class="marketChoicebtn">선택하기</div>
+                  
                   </div>
-                  <div class="marketChoicebtn">선택하기</div>
                 
                 </div>
-              
               </div>
             `;
     }
-  };
-
-  //드롭다운 횟수
-  document.querySelector(".dropbtn_clickT").onclick = () => {
-    dropdownT();
-  };
-
-  let dropdownMainElementsT = document.getElementsByClassName("dropdownMainT");
-  for (let i = 0; i < dropdownMainElementsT.length; i++) {
-    dropdownMainElementsT[i].onclick = (event) => {
-      showMenuT(event.target.innerText); // value를 event.target.innerText로 변경
-    };
-  }
-
-  dropdownT = () => {
-    var vT = document.querySelector(".dropdown-contentT");
-    var dropbtnT = document.querySelector(".dropbtnT");
-    vT.classList.toggle("show");
-    dropbtnT.style.borderColor = "rgb(94, 94, 94)";
-  };
-
-  showMenuT = (value) => {
-    var dropbtn_iconT = document.querySelector(".dropbtn_iconT");
-    var dropbtn_contentT = document.querySelector(".dropbtn_contentT");
-
-    dropbtn_iconT.innerText = "";
-    dropbtn_contentT.innerText = value;
   };
 
   // 드롭다운 카테고리
@@ -335,120 +311,148 @@ window.onload = () => {
     }
   });
 
-  //목표 추가하기 버튼
+  // function toggleMenu() {
+  //   var sidebar = document.getElementById("sidebar");
+  //   sidebar.classList.toggle("active");
+  // }
 
-  var addgoalbtn = document.querySelector(".goalAdd");
-  var goalingg = document.querySelector(".goalingg");
+  let selectedValue = "일주일에"; // 초기값 설정
 
-  addGoalEvent = () => {
-    var newGoalName = document.querySelector(".goalTxtInput").value;
-
-    var newGoal = document.createElement("div");
-    newGoal.innerHTML = `
-  
-  <div class="Wrapper3">
-    <div class="goalWrapper">
-      <div class="goalTxt" id="goalTxt">${newGoalName}</div>
-      <div>
-        <span class="categoryExp">카테고리</span>
-        <div class="dropdownCategory2">
-          <button class="dropbtn_category2">
-            <div class="dropbtn_category_content2">취미</div>
-            <img
-              src="{% static 'img/dropdownWhite.svg'%}"
-              class="dropbtn_category_click2 dropbtn_category_icon2"
-              onclick="dropdownCategory2()"
-            />
-          </button>
-        </div>
-        <div class="dropdown-category-content2">
-          <div
-            class="category-content2"
-            onclick="showCategory2(this.innerText)"
-          >
-            취미
-          </div>
-          <div
-            class="category-content2"
-            onclick="showCategory2(this.innerText)"
-          >
-            건강
-          </div>
-          <div
-            class="category-content2"
-            onclick="showCategory2(this.innerText)"
-          >
-            소비
-          </div>
-          <div
-            class="category-content2"
-            onclick="showCategory2(this.innerText)"
-          >
-            공부
-          </div>
-          <div
-            class="category-content2"
-            onclick="showCategory2(this.innerText)"
-          >
-            식단
-          </div>
-          <div
-            class="category-content2"
-            onclick="showCategory2(this.innerText)"
-          >
-            자기계발
-          </div>
-          <div
-            class="category-content2"
-            onclick="showCategory2(this.innerText)"
-          >
-            기타
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="line2"></div>
-    <div class="goalDetail2">
-      <div class="goalDetail1">
-        <img
-          src="{% static 'img/goalIng.png'%}"
-          alt="이루고 있는 목표 이미지"
-          class="imgIng"
-        />
-        <div class="timeIng">일주일에</div>
-        <div class="countTxt">4회</div>
-      </div>
-      <div>
-        <div class="detailIcon">
-          <img
-            class="detailIconImg"
-            src="{% static 'img/Line_up.png'%}"
-            alt="성취율 아이콘"
-          />
-          <span class="detailTxt2">성취율</span>
-          <span class="percentage">65%</span>
-        </div>
-        <div class="detailIcon">
-          <img
-            class="detailIconImg"
-            src="{% static 'img/Chart.png'%}"
-            alt="참가자 아이콘"
-          />
-          <span class="detailTxt2">참가자</span>
-          <span class="participant">630명</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  `;
-
-    goalingg.appendChild(newGoal);
+  // 확장 기능 추가 함수
+  const addExpandFunctionality = (wrapper) => {
+    wrapper.onclick = () => {
+      if (wrapper.classList.contains("expand")) {
+        goalOriginal(wrapper);
+      } else {
+        goalExpand(wrapper);
+      }
+    };
   };
 
-  //메뉴바 닉네임 입력
-  const username = localStorage.getItem("username");
-  const navName = document.getElementsByClassName("userName");
-  navName.innerHTML = username;
+  // 확장 함수
+  const goalExpand = (wrapper) => {
+    const goalIngDetail = wrapper.querySelector(".goalIngDetail");
+
+    wrapper.style.paddingBottom = "120px";
+    wrapper.classList.add("expand");
+    if (goalIngDetail) {
+      goalIngDetail.style.display = "block";
+    }
+  };
+
+  // 축소 함수
+  const goalOriginal = (wrapper) => {
+    const goalIngDetail = wrapper.querySelector(".goalIngDetail");
+
+    wrapper.style.paddingBottom = "";
+    wrapper.classList.remove("expand");
+    if (goalIngDetail) {
+      goalIngDetail.style.display = "";
+    }
+  };
+
+  // 기존 Wrapper3 요소에 확장 기능 추가
+  document.querySelectorAll(".Wrapper3").forEach(addExpandFunctionality);
+
+  // 목표 추가 함수
+  const addGoalEvent = () => {
+    const newGoalName = document.querySelector(".goalTxtInput").value;
+
+    const newGoal = document.createElement("div");
+    newGoal.innerHTML = `
+      <div class="Wrapper3">
+        <div class="goalWrapper">
+          <div class="goalTxt2" id="goalTxt">${newGoalName}</div>
+          <div>
+            <span class="categoryExp">카테고리</span>
+            <div class="dropdownCategory2">
+              <button class="dropbtn_category2">
+                <div class="dropbtn_category_content2">취미</div>
+                <img src="image/dropdownWhite.svg" class="dropbtn_category_click2 dropbtn_category_icon2" onclick="dropdownCategory2()" />
+              </button>
+            </div>
+            <div class="dropdown-category-content2">
+              <div class="category-content2" onclick="showCategory2(this.innerText)">취미</div>
+              <div class="category-content2" onclick="showCategory2(this.innerText)">건강</div>
+              <div class="category-content2" onclick="showCategory2(this.innerText)">소비</div>
+              <div class="category-content2" onclick="showCategory2(this.innerText)">공부</div>
+              <div class="category-content2" onclick="showCategory2(this.innerText)">식단</div>
+              <div class="category-content2" onclick="showCategory2(this.innerText)">자기계발</div>
+              <div class="category-content2" onclick="showCategory2(this.innerText)">기타</div>
+            </div>
+          </div>
+        </div>
+        <div class="line2"></div>
+        <div class="goalDetail2">
+          <div class="goalDetail1">
+            <img src="image/goalIng.png" alt="이루고 있는 목표 이미지" class="imgIng" />
+            <div class="timeIng">${selectedValue}</div> <!-- 선택된 값 사용 -->
+            <div class="countTxt">4회</div>
+          </div>
+          <div>
+            <div class="detailIcon">
+              <img class="detailIconImg" src="image/Line_up.png" alt="성취율 아이콘" />
+              <span class="detailTxt2">성취율</span>
+              <span class="percentage">65%</span>
+            </div>
+            <div class="detailIcon">
+              <img class="detailIconImg" src="image/Chart.png" alt="참가자 아이콘" />
+              <span class="detailTxt2">참가자</span>
+              <span class="participant">630명</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    const newWrapper = newGoal.querySelector(".Wrapper3");
+    document.querySelector(".goalingg").appendChild(newGoal);
+
+    // 추가된 Wrapper3 요소에 확장 기능 추가
+    addExpandFunctionality(newWrapper);
+  };
+
+  // 드롭다운 기능
+  document.querySelector(".dropbtn_clickT").onclick = () => {
+    dropdownT();
+  };
+
+  let dropdownMainElementsT = document.getElementsByClassName("dropdownMainT");
+  for (let i = 0; i < dropdownMainElementsT.length; i++) {
+    dropdownMainElementsT[i].onclick = (event) => {
+      showMenuT(event.target);
+    };
+  }
+
+  dropdownT = () => {
+    var vT = document.querySelector(".dropdown-contentT");
+    var dropbtnT = document.querySelector(".dropbtnT");
+    vT.classList.toggle("show");
+    dropbtnT.style.borderColor = "rgb(94, 94, 94)";
+  };
+
+  showMenuT = (element) => {
+    var dropbtn_iconT = document.querySelector(".dropbtn_iconT");
+    var dropbtn_contentT = document.querySelector(".dropbtn_contentT");
+
+    var value = element.innerText;
+    var id = element.id;
+
+    dropbtn_iconT.innerText = "";
+    dropbtn_contentT.innerText = value;
+
+    // 선택된 값을 저장
+    selectedValue = value;
+
+    // .timeIng 요소의 내용을 변경
+    var timeIng = document.querySelector(".timeIng");
+    if (timeIng) {
+      timeIng.innerHTML = value;
+    }
+  };
+
+  // 목표 추가 버튼에 이벤트 리스너 추가
+  document.querySelector(".goalAdd").onclick = addGoalEvent;
 };
 
 window.onclick = (e) => {

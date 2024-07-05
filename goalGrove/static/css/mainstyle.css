@@ -1,5 +1,28 @@
-/* General Styles */
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+#goal-ing-end {
+  background-color: #8f826f;
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
 body {
+  font-family: "Pretendard-Regular";
+  margin: 0;
+  padding: 0;
+  background-color: #f1f5ee;
+  display: flex;
+  height: 100vh;
+  position: relative;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -7,6 +30,8 @@ body {
   background-color: #f1f5ee;
   width: 80rem;
 }
+
+/* General Styles */
 
 .Wrapper {
   display: flex;
@@ -242,6 +267,15 @@ body {
   border-radius: 10px;
 }
 
+.goalIngDetail {
+  font-family: Pretendard;
+  width: 100%;
+  margin-top: 30px;
+  display: none;
+  color: #555555;
+  margin-right: -600px;
+}
+
 .Wrapper3 {
   display: flex;
   background-color: #ffffff;
@@ -272,6 +306,11 @@ body {
   border-radius: 0px 0px 20px 20px;
 }
 
+.Wrapper3.expand::after {
+  margin-top: 40px;
+  content: url("image/Up Chevron.svg");
+}
+
 .Wrapper4 {
   display: flex;
   background-color: #ededed;
@@ -300,27 +339,32 @@ body {
   width: 42%;
 }
 
+.Wrapper10 {
+  overflow-y: scroll;
+  width: 100%;
+  height: 170px;
+}
+
 .Wrapper6 {
   background-color: #f1f1f1;
   box-shadow: 0px 2px 8px 0px rgba(190, 190, 190, 0.6);
   width: 100%;
-  height: 30%;
+  height: 40%;
   border-radius: 20px;
   padding: 15px 0px 30px 0px;
-  overflow-y: scroll;
 }
 
-.Wrapper6::-webkit-scrollbar {
+.Wrapper10::-webkit-scrollbar {
   width: 10px; /* 세로축 스크롤바 폭 너비 */
   height: 15px; /* 가로축 스크롤바 폭 너비 */
 }
 
-.Wrapper6::-webkit-scrollbar-thumb {
+.Wrapper10::-webkit-scrollbar-thumb {
   background: rgb(102, 102, 102);
   border-radius: 10px;
 }
 
-.Wrapper6::-webkit-scrollbar-track {
+.Wrapper10::-webkit-scrollbar-track {
   background: #d9d9d9;
   border-radius: 10px;
 }
