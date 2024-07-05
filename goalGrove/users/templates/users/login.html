@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="{% static 'css/loginstyles.css' %}">
 </head>
 <body>
-    <div class="container">
+    <div class="container"
+        data-hideicon-url="{% static 'img/hideicon.svg' %}" 
+        data-showicon-url="{% static 'img/showicon.svg' %}">
         <div class="logo-container">
             <img src="{% static 'img/logo_shadow.svg' %}" alt="GoalGrove 로고" class="logo">
             <p class="description">
@@ -41,7 +43,7 @@
                 <div class="social-buttons">
                     <button class="social-button kakao">카카오톡으로 로그인하기</button>
                 </div>
-                <a href="#" class="forgot-password">비밀번호찾기</a>
+                <a href="{% url 'users:pwverification' %}" class="forgot-password">비밀번호찾기</a>
             </div>
             <div class="signup-container">
                 <p class="signup">

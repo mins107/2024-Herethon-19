@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>질문 목록</title>
+</head>
+<body>
+    <h1>질문 목록</h1>
+    <ul>
+        {% for question in questions %}
+        <li>
+            <strong>제목:</strong> {{ question.title }}<br>
+            <strong>내용:</strong> {{ question.content }}<br>
+            <strong>작성일:</strong> {{ question.created_at }}<br>
+        </li>
+        {% empty %}
+        <li>질문이 없습니다.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
