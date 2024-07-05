@@ -150,7 +150,7 @@ a {
 }
 
 .Wrapper11 {
-  margin-left: 3rem;
+  margin-left: 50px;
 }
 
 .Wrapper2 {
@@ -210,7 +210,7 @@ a {
   background-color: #7db249;
   font-family: Pretendard;
   padding: 7px 0px 8px 0px;
-  margin-left: 180px;
+  margin-left: 230px;
   margin-right: 5px;
   border-radius: 10px;
   margin-top: 50px;
@@ -305,22 +305,13 @@ a {
 }
 
 .Wrapper3::after {
-  content: url("image/downArrow.svg");
-  width: 109%;
-  margin-left: -25px;
-  margin-top: 10px;
-  margin-bottom: 30px;
-  height: 25px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  background-color: #e8eee3;
-  border-radius: 0px 0px 20px 20px;
+  content: url("/static/img/downArrow.svg");
+  margin-left: 230px;
 }
 
 .Wrapper3.expand::after {
   margin-top: 40px;
-  content: url("image/Up Chevron.svg");
+  content: url("/static/img/Up Chevron.svg");
 }
 
 .Wrapper4 {
@@ -577,6 +568,7 @@ textarea:focus {
 
 .imgIng {
   width: 80px;
+  margin-right: 20px;
 }
 
 .goal-img-container {
@@ -928,6 +920,7 @@ textarea:focus {
 /* 드롭다운 시간 */
 .dropdownT {
   display: inline-block;
+  margin-left: 20px;
 }
 
 .dropbtnT {

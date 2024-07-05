@@ -6,18 +6,17 @@
     <title>Community</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/communitystyle.css' %}">
-    <script src="{% static 'js/community.js' %}" defer></script>
+    <script src="{% static 'js/community.js' %}"></script>
 </head>
 <body>
 
   <div class="Wrapper">
-      
     <div class="navBar">
       <button class="menu" id="menuButton"></button>
       <div class="userNav">
         <div class="userNavTxt">
-          <div class="userName">{{ user_name }}</div>
-          <div class="userEmail">{{ user_email }}</div>
+          <div class="userName">{{ user.username }}</div>
+          <div class="userEmail">{{ user.email }}</div>
         </div>
         <button class="logout"></button>
       </div>

@@ -1,115 +1,115 @@
 @font-face {
-    font-family: 'Pretendard';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
+  font-family: 'Pretendard';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
 }
 
 body {
-    font-family: Pretendard, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f1f5ee;
-    width: 80rem;
-  }
-  
-  .Wrapper {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .navBar {
-    display: flex;
-    flex-direction: column;
-    align-items: top;
-    justify-content: top;
-    background-color: #ffffff;
-    display: flex;
-    width: 104px;
-    min-height: 100vh;
-    padding-top: 20px;
-    border-right: 1px solid #000000;
-    font-family: Pretendard;
-    transition: width 0.3s ease;
-  }
-  
-  .navBarMenu {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: left;
-    margin: 30px;
-  }
-  
-  .navBarMenu:hover {
-    color: #548524;
-    font-weight: bold;
-  }
-  
-  .menuText {
-    text-align: left;
-    display: none;
-    margin-left: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .menu {
-    background-image: url("img/Menu.png");
-    background-size: cover;
-    background-position: center;
-    width: 30px;
-    height: 30px;
-    border: none;
-    margin: 30px;
-    background-color: #ffffff;
-  }
-  
-  .logout {
-    background-image: url("img/Logout.png");
-    background-size: cover;
-    background-position: center;
-    width: 26px;
-    height: 26px;
-    border: none;
-    background-color: #ffffff;
-    margin-left: 33px;
-    transition: margin 0.3s ease;
-  }
-  
-  .logoTop {
-    width: 100px;
-    margin-left: 30px;
-    margin-top: 10px;
-  }
-  
-  
-  
-  .userNav {
-    background-color: #ffffff;
-    height: 100px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .userNavTxt {
-    display: none;
-    margin-left: 30px;
-  }
-  
-  .userName {
-    font-weight: bold;
-  }
-  
-  .userEmail {
-    color: #757575;
-    font-size: 15px;
-    margin-top: 5px;
-  }
-  
-  .title {
-    margin-left:30px;
-  }
-  
+  font-family: Pretendard, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f5ee;
+  width: 80rem;
+}
+
+.Wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.navBar {
+  display: flex;
+  flex-direction: column;
+  align-items: top;
+  justify-content: top;
+  background-color: #ffffff;
+  display: flex;
+  width: 104px;
+  min-height: 100vh;
+  padding-top: 20px;
+  border-right: 1px solid #000000;
+  font-family: Pretendard;
+  transition: width 0.3s ease;
+}
+
+.navBarMenu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  margin: 30px;
+}
+
+.navBarMenu:hover {
+  color: #548524;
+  font-weight: bold;
+}
+
+.menuText {
+  text-align: left;
+  display: none;
+  margin-left: 20px;
+  flex-wrap: wrap;
+}
+
+.menu {
+  background-image: url("img/Menu.png");
+  background-size: cover;
+  background-position: center;
+  width: 30px;
+  height: 30px;
+  border: none;
+  margin: 30px;
+  background-color: #ffffff;
+}
+
+.logout {
+  background-image: url("img/Logout.png");
+  background-size: cover;
+  background-position: center;
+  width: 26px;
+  height: 26px;
+  border: none;
+  background-color: #ffffff;
+  margin-left: 33px;
+  transition: margin 0.3s ease;
+}
+
+.logoTop {
+  width: 100px;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+
+
+.userNav {
+  background-color: #ffffff;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.userNavTxt {
+  display: none;
+  margin-left: 30px;
+}
+
+.userName {
+  font-weight: bold;
+}
+
+.userEmail {
+  color: #757575;
+  font-size: 15px;
+  margin-top: 5px;
+}
+
+.title {
+  margin-left:30px;
+}
+
 
 
 
@@ -117,300 +117,300 @@ body {
 
 
 .top{
-    margin-left: 30px;
-    display: flex;
-    width: 100%;
+  margin-left: 30px;
+  display: flex;
+  width: 100%;
 }
 
 .category-buttons{
-    width: 800px;
+  width: 800px;
 }
 
 .category-buttons button {
-    padding: 10px 20px;
-    border: none;
-    background-color: #fff;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: background-color 0.3s;
-    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
 }
 .category-buttons button + button {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .category-buttons button:hover, .category-buttons button.active {
-    background-color: black;
-    color: #fff;
+  background-color: black;
+  color: #fff;
 }
 
 .category-buttons .forGrove-btn {
-    color: white;
-    background-color: #7db249; /* Green background for the forGrove button */
+  color: white;
+  background-color: #7db249; /* Green background for the forGrove button */
 }
 
 .category-buttons .forGrove-btn:hover {
-    background-color: #7db249; /* Darker green on hover */
+  background-color: #7db249; /* Darker green on hover */
 }
 
 #goals-container {
-    display: flex;
-    flex-direction: row; 
-    gap: 20px;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 30px; 
-    margin-left: 30px;
-    transition: margin-left 0.3s;
+  display: flex;
+  flex-direction: row; 
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 30px; 
+  margin-left: 30px;
+  transition: margin-left 0.3s;
 }
 
 .sidebar.active ~ #goals-container {
-    margin-left: 200px;
+  margin-left: 200px;
 }
 
 .goal-card {
-    background-color: white;
-    border: 1px solid #e0e0e0;
-    border-radius: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    padding: 20px 30px 0px 30px;
-    position: relative;
-    width: 500px;
-    height: 400px;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px 0px 30px;
+  position: relative;
+  width: 500px;
+  height: 400px;
 }
 
 
 .goal-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  position: relative;
 }
 
 .goal-left{
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .goal-right{
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 
 
 .goal-header .logo-background {
-    background-color: white;
-    border-style: solid;
-    border-width: 3px;
-    border-color: #e0e0e0;
-    border-radius: 100%;
-    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.3);
-    padding: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: white;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #e0e0e0;
+  border-radius: 100%;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.3);
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .goal-header img{
-    width: 60px;
-    height: 60px;
+  width: 60px;
+  height: 60px;
 }
 
 .goal-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 10px;
 }
 
 .goal-nickname {
-    font-size: 11px;
-    color: #888;
+  font-size: 11px;
+  color: #888;
 
-    left: 80px;
-    top: 0;
+  left: 80px;
+  top: 0;
 }
 
 .goal-type {
-    font-size: 15px;
-    background-color: #7db249;
-    padding: 5px 10px;
-    border-radius: 15px;
-    margin-left: auto;
-    color: #ffffff;
+  font-size: 15px;
+  background-color: #7db249;
+  padding: 5px 10px;
+  border-radius: 15px;
+  margin-left: auto;
+  color: #ffffff;
 }
 
 .cart-icon {
-    margin-left: 5px;
-    cursor: pointer;
+  margin-left: 5px;
+  cursor: pointer;
 }
 
 .goal-info {
-    display: flex;
-    margin-top: 30px;
-    justify-content: space-between;
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-between;
 }
 
 .goal-info img {
-    border-radius: 8px;
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    margin-top: 5px;
+  border-radius: 8px;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-top: 5px;
 }
 
 .goal-details {
-    flex-grow: 1;
-    margin:0px 10px;
+  flex-grow: 1;
+  margin:0px 10px;
 }
 
 .goal-details div {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .goal-details p {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
 .goal-details .highlight {
-    background-color: #F2F2F2;
-    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
-    padding: 8px 13px;
-    border-radius: 15px;
-    font-weight: lighter;
-    display: inline-block;
-    margin-right: 5px;
+  background-color: #F2F2F2;
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+  padding: 8px 13px;
+  border-radius: 15px;
+  font-weight: lighter;
+  display: inline-block;
+  margin-right: 5px;
 }
 
 .goal-actions {
-    display: flex;
-    justify-content: right;
-    margin-top: -35px; 
+  display: flex;
+  justify-content: right;
+  margin-top: -35px; 
 }
 
 .goal-actions button {
-    background-color: #d8cbb8;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 10px;
-    cursor: pointer;
-    margin: 0 10px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  background-color: #d8cbb8;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 0 10px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .goal-actions button:hover {
-    background-color: #b8a98c;
+  background-color: #b8a98c;
 }
 
 .goal-card hr {
-    border-top: 1px solid #e0e0e0;
-    margin: 110px 0px; 
-    position: absolute;
-    width: 90%;
-    top: 0;
+  border-top: 1px solid #e0e0e0;
+  margin: 110px 0px; 
+  position: absolute;
+  width: 90%;
+  top: 0;
 }
 
 
 .firstline{
-    width: 90%;
-    display:flex;
-    justify-content: space-between
+  width: 90%;
+  display:flex;
+  justify-content: space-between
 }
 
 .second-line{
-    padding-right:10px;
-    letter-spacing: 0.5px; 
-    line-height: 25px;
-    color: #555555;
+  padding-right:10px;
+  letter-spacing: 0.5px; 
+  line-height: 25px;
+  color: #555555;
 }
 
 .challengecount{
-    color: #707070;
-    text-decoration: underline;
-    padding:8px 0;
+  color: #707070;
+  text-decoration: underline;
+  padding:8px 0;
 
 }
 
 .cart-icon
 .dropdownCategory {
-    display: inline-block;
-  }
-  
-  .dropbtn_category {
-    border-radius: 24px;
-    background-color: #F2F2F2;
-    font-family: Pretendard;
-    padding: 3px;
-    padding-left: 15px;
-    padding-right: 10px;
-    margin-left:200px;
-    margin-right: 5px;
-    border: none;
-    box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-    justify-content: space-between;
-    color: black;
-  }
+  display: inline-block;
+}
 
-  .dropdown-category-content {
-    display: none;
-    font-weight: 400;
-    font-family: Pretendard;
-    background-color: #F2F2F2;
-    width: 90px;
-    border-radius: 20px;
-    height: 200px;
-    box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
-    margin-top: 10px;
-    z-index: 1000;
-    position: absolute;
-    color: black;
-    text-align: center;
-    margin-left: 75px;
-  }
-  
-  .dropdown-category-content div {
-    display: block;
-    text-decoration: none;
-    color: rgb(37, 37, 37);
-    font-size: 15px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    color: #ffffff;
-  }
-  .dropdown-category-content div {
-    background-color: #548524;
-    border-radius: 20px;
-  }
-  
-  .dropdown-category-content.show {
-    display: block;
-  }
-  
-  .dropbtn_category_icon {
-    width: 23px;
-    margin-left: 6px;
-  }
+.dropbtn_category {
+  border-radius: 24px;
+  background-color: #F2F2F2;
+  font-family: Pretendard;
+  padding: 3px;
+  padding-left: 15px;
+  padding-right: 10px;
+  margin-left:200px;
+  margin-right: 5px;
+  border: none;
+  box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  justify-content: space-between;
+  color: black;
+}
 
-  .right-block .ThumbsUp, .right-block .ThumbsDown {
-    width: 28px;
-    height: 28px;
-    margin-right: 5px;
-  }
+.dropdown-category-content {
+  display: none;
+  font-weight: 400;
+  font-family: Pretendard;
+  background-color: #F2F2F2;
+  width: 90px;
+  border-radius: 20px;
+  height: 200px;
+  box-shadow: 0px 2px 4px 1px rgba(190, 190, 190, 0.6);
+  margin-top: 10px;
+  z-index: 1000;
+  position: absolute;
+  color: black;
+  text-align: center;
+  margin-left: 75px;
+}
 
-  .like-container{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-top: 15px;
-  }
+.dropdown-category-content div {
+  display: block;
+  text-decoration: none;
+  color: rgb(37, 37, 37);
+  font-size: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #ffffff;
+}
+.dropdown-category-content div {
+  background-color: #548524;
+  border-radius: 20px;
+}
 
-  .like-container a{
-    margin-right: 10px;
-  }
+.dropdown-category-content.show {
+  display: block;
+}
+
+.dropbtn_category_icon {
+  width: 23px;
+  margin-left: 6px;
+}
+
+.right-block .ThumbsUp, .right-block .ThumbsDown {
+  width: 28px;
+  height: 28px;
+  margin-right: 5px;
+}
+
+.like-container{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.like-container a{
+  margin-right: 10px;
+}
