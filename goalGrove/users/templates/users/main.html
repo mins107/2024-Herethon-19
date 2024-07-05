@@ -3,11 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<<<<<<< HEAD
-    <title>Document</title>
-=======
     <title>Main</title>
->>>>>>> 13dc50d10c6b60c5cbc36f67bc77c22a20072dd8
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/mainstyle.css' %}" />
   </head>
@@ -39,20 +35,6 @@
           <button class="logout"></button>
         </div>
         <div id="navBarMenuContainer">
-<<<<<<< HEAD
-          <div class="navBarMenu">
-            <img src="{% static 'img/Heart.svg' %}" />
-            <span class="menuText">메인</span>
-          </div>
-          <div class="navBarMenu">
-            <img src="{% static 'img/Cart.svg' %}" />
-            <span class="menuText">목표쇼핑</span>
-          </div>
-          <div class="navBarMenu">
-            <img src="{% static 'img/Group.svg' %}" />
-            <span class="menuText">커뮤니티</span>
-          </div>
-=======
           <a href="{% url 'users:main' %}">
             <div class="navBarMenu">
               <img src="{% static 'img/Heart.svg' %}" />
@@ -71,7 +53,6 @@
               <span class="menuText">커뮤니티</span>
             </div>
           </a>
->>>>>>> 13dc50d10c6b60c5cbc36f67bc77c22a20072dd8
         </div>
       </div>
       <div>
@@ -212,9 +193,12 @@
                 />
                 <div class="goalContent">
                   <div class="goalTime">
+                    <span>
+                      <span class="countTxt">일주일에</span>
+                    </span>
                     <div class="dropdownT">
                       <button class="dropbtnT">
-                        <div class="dropbtn_contentT">하루에</div>
+                        <div class="dropbtn_contentT">1회</div>
                         <img
                           src="{% static 'img/dropdown.svg' %}"
                           class="dropbtn_clickT dropbtn_iconT"
@@ -226,26 +210,22 @@
                           class="dropdownMainT" id="day"
                           onclick="showMenuT(this.innerText)"
                         >
-                          하루에
+                          2회
                         </div>
                         <div
                           class="dropdownMainT" id="week"
                           onclick="showMenuT(this.innerText)"
                         >
-                          일주일에
+                          3회
                         </div>
                         <div
                           class="dropdownMainT" id="month"
                           onclick="showMenuT(this.innerText)"
                         >
-                          한달에
+                          4회
                         </div>
                       </div>
                     </div>
-                    <span>
-                      <span class="count">1</span>
-                      <span class="countTxt">회</span>
-                    </span>
                   </div>
 
                   <div class="goalExplain">
@@ -341,8 +321,8 @@
                       alt="이루고 있는 목표 이미지"
                       class="imgIng"
                     />
-                    <div class="timeIng">일주일에</div>
-                    <div class="countTxt">4회</div>
+                    <div class="countTxt">일주일에</div>
+                    <div class="timeIng">4회</div>
                   
                   </div>
                   
@@ -464,10 +444,10 @@
                     <span>회차</span>
                   </span>
                   <div>
-                    <span class="timeIng">일주일에</span>
+                    <span class="countTxt">일주일에</span>
                     <span>
-                      <span class="countTxt" id="processCount">1</span>
-                      <span class="countTxt">회</span>
+                      
+                      <span class="timeIng" id="processCount">1회</span>
                     </span>
                   </div>
                 </div>
