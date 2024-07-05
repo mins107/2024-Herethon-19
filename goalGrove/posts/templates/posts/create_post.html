@@ -6,11 +6,21 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1>과정나누기</h1>
-        <form method="post" enctype="multipart/form-data">
+        <h2>과정 나누기</h2>
+        <form method="POST" action="{% url 'posts:create_post' %}" enctype="multipart/form-data">
             {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="btn btn-primary">생성</button>
+            목표 - <input type="text" name="title"><br><br>
+            과정 - <textarea name="content"></textarea><br><br>
+            동영상 - <input type="file" name="video"><br><br>
+            이미지 - <input type="file" name="image"><br><br>
+            카테고리 -
+            <select name="category" multiple>
+                {% for category in categories %}
+                <option value="{{ category.id }}">{{ category.name }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+            <input type="submit" value="작성하기">
         </form>
     </div>
 </body>

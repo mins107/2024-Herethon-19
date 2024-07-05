@@ -7,5 +7,4 @@ app_name = 'posts'
 
 urlpatterns = [
     path('create/', create_post, name='create_post'),
-    path('', post_list, name='post_list'),
-]
+]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
